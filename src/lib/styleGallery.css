@@ -1,0 +1,223 @@
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/* https://codepen.io/thebabydino/pen/oWqpzw                          */
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/* styling in header                                                  */
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+body > header > section:nth-child(1) > figure:nth-child(1) img {
+    margin-top: -5px;
+    margin-left: 40px;
+}
+  
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/* styling in main                                                    */
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+body > main {
+    --d: 100vmin;  
+    --f: .40;    /* size of pictures around rim */
+    --ty: calc(.5rem + var(--d));
+    --tx: calc(42vmin - .5*var(--f)*var(--d)); /* originally calc(50vmin - .5*var(--f)*var(--d)) */
+    --oy: 1rem;  
+    display: flex;
+    overflow-x: hidden;
+    flex-direction: column;
+    min-width: .75rem;
+    min-height: 100vh;  /* originally 100vh */
+    background: gainsboro;
+    font: .75rem satisfy, cursive;
+    padding-left: 20px;
+}
+
+input {
+    position: absolute;
+    left: -200vw;
+}
+  
+label {
+    font-size: 0;
+    cursor: pointer;
+}
+  
+img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+  
+.gallery {
+    flex: 1;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.gallery__item {
+    overflow: hidden;
+    position: absolute;
+    top: var(--oy);
+    left: 50%;
+    margin: 0 calc(-.5*var(--d));
+    width: var(--d);
+    height: var(--d);
+    border: solid calc(.008*var(--d)) hsla(12, 95%, 47%, 0.93); 
+    border-radius: 50%;
+    --a: calc(var(--k)*22.5deg);
+    transform: translateY(var(--ty)) rotate(var(--a)) translate(var(--tx)) scale(var(--f)) rotateX(10deg) scaleY(1.01543) rotate(calc(-1*var(--a)));
+    filter: grayscale(1);
+    transition: .3s;
+}
+
+.gallery__item:nth-child(2) {
+    --k: 0;
+}
+
+.gallery__item:nth-child(4) {
+    --k: 1;
+}
+
+.gallery__item:nth-child(6) {
+    --k: 2;
+}
+
+.gallery__item:nth-child(8) {
+    --k: 3;
+}
+
+.gallery__item:nth-child(10) {
+    --k: 4;
+}
+
+.gallery__item:nth-child(12) {
+    --k: 5;
+}
+
+.gallery__item:nth-child(14) {
+    --k: 6;
+}
+
+.gallery__item:nth-child(16) {
+    --k: 7;
+}
+.gallery__item:nth-child(18) {
+    --k: 8;
+}
+
+.gallery__item:nth-child(20) {
+    --k: 9;
+}
+
+.gallery__item:nth-child(22) {
+    --k: 10;
+}
+
+.gallery__item:nth-child(24) {
+    --k: 11;
+}
+
+.gallery__item:nth-child(26) {
+    --k: 12;
+}
+
+.gallery__item:nth-child(28) {
+    --k: 13;
+}
+
+.gallery__item:nth-child(30) {
+    --k: 14;
+}
+
+.gallery__item:nth-child(32) {
+    --k: 15;
+}
+  
+[type='radio']:focus + .gallery__item, .gallery__item:hover {
+    filter: none;
+}
+
+[type='radio']:checked + .gallery__item {
+    border-radius: 1rem;
+    transform: rotate(0deg) translate3d(0, 0, -1rem) rotatex(0deg) scale(1.0);
+    filter: none;
+}
+
+[type='radio']:checked + #reuby {
+    border-radius: 1rem;
+    transform: rotate(90deg) translate3d(0, 0, -1rem) rotatex(0deg) scale(1.0);
+    filter: none;
+}
+
+@media (min-width: 320px) { /* screen is 320px wide or more */
+    body > main {
+        --f: .23;
+        --d: 16rem;  /* size of selected picture */
+        --ty: calc(1.9*var(--tx) + 4rem); /*  calc(2*var(--tx) + 1rem) */
+        padding-left: 5px;
+    }
+}
+
+@media (min-width: 360px) { /* screen is 360px wide or more */
+    body > main {
+        --f: .26;
+        --d: 18rem;  /* size of selected picture */
+        --ty: calc(1.9*var(--tx) + 5rem); /*  calc(2*var(--tx) + 1rem) */
+    }
+}
+
+@media (min-width: 415px) { /* screen is 410px wide or more */
+    body > main {
+        --f: .3;
+        --d: 20rem;  /* size of selected picture */
+        --ty: calc(1.9*var(--tx) + 6rem); /*  calc(2*var(--tx) + 1rem) */
+    }
+}
+
+@media (min-width: 470px) { /* screen is 470px wide or more */
+    body > main {
+        --f: .3;
+        --d: 25rem;  /* originally 22.5rem */
+        --ty: calc(2.1*var(--tx) + 7rem); /*  calc(2*var(--tx) + 1rem) */
+    }
+}
+
+@media (min-width: 545px) { /* screen is 545px wide or more */
+    body > main {
+        --f: .35;
+        --d: 25rem;  /* originally 22.5rem */
+        --ty: calc(1.8*var(--tx) + 9rem); /*  calc(2*var(--tx) + 1rem) */
+    }
+}
+
+@media (min-width: 700px) { /* screen is 700px wide or more */
+    body > main {
+        --f: .4;
+        --d: 25rem;  /* originally 22.5rem */
+        --ty: calc(1.7*var(--tx) + 8rem); /*  calc(2*var(--tx) + 1rem) */
+    }
+}
+
+@media (min-width: 960px)  {  /* screen is 960px wide or more  */
+    body > main {
+        --tx: calc((0.70711 + .5*var(--f))*var(--d));
+        --ty: 0;
+        --oy: calc(var(--tx) - .5*(1 - var(--f))*var(--d) + 1rem);
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    body > section > ul {
+        top: -30px;
+    }
+    body > section > ul:hover {
+        top: 100px;
+    }
+}
+  
+  
+  
+  
+  
