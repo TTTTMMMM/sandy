@@ -2,7 +2,6 @@
 /* https://codepen.io/thebabydino/pen/oWqpzw                          */
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
-
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 /* styling in header                                                  */
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
@@ -25,28 +24,35 @@ body > main {
     background: gainsboro;
     font: .75rem satisfy, cursive;
     padding-left: 20px;
+    overflow-y: hidden;
 }
 
-input {
+body > main > div > input {
     position: absolute;
     left: -200vw;
 }
   
-label {
+body > main > div > label {
     font-size: 0;
     cursor: pointer;
 }
   
-img {
+body > main > div > img {
     position: absolute;
     width: 100%;
     height: 100%;
+}
+
+#waver {
+    clip-path: inset(10% 10% 10% 10%);
+    -webkit-clip-path: inset(10% 10% 10% 10%);
 }
   
 .gallery {
     flex: 1;
     position: relative;
     transform-style: preserve-3d;
+    overflow: auto;
 }
 
 .gallery__item {
@@ -143,6 +149,10 @@ img {
     transform: rotate(90deg) translate3d(0, 0, -1rem) rotatex(0deg) scale(1.0);
     filter: none;
 }
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/* make it responsive                                                 */
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
 @media (min-width: 320px) { /* screen is 320px wide or more */
     body > main {

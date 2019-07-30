@@ -19,19 +19,19 @@ body {
 }
 
 /* the 'bullet-shot' facebook image from http://www.serie3.info/img/s3ShareIt/facebook.png */
-body > img {
+body > a > img {
   right: 0px;
   position: fixed;
-  z-index: 5px;
+  z-index: 5;
 }
 
-body > img:hover {
+body > a > img:hover {
   top: 310px;
-  left: 5px;
+  left: 3px;
   transition: all .5s;
 }
 
-body > img:not(:hover) {
+body > a > img:not(:hover) {
   top: 310px;
   left: -10px;
   transition: all .5s;
