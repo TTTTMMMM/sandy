@@ -42,11 +42,6 @@ body > main > div > img {
     width: 100%;
     height: 100%;
 }
-
-#waver {
-    clip-path: inset(10% 10% 10% 10%);
-    -webkit-clip-path: inset(10% 10% 10% 10%);
-}
   
 .gallery {
     flex: 1;
@@ -148,6 +143,24 @@ body > main > div > img {
     border-radius: 1rem;
     transform: rotate(90deg) translate3d(0, 0, -1rem) rotatex(0deg) scale(1.0);
     filter: none;
+}
+
+#waver {
+    clip-path: inset(25% 00% 0% 0%); 
+    -webkit-clip-path: inset(25% 00% 0% 0%);
+    transform: translate(-70px, -320px) scale(.75);
+}
+
+#governor {
+    clip-path: inset(10% 5% 2% 10%);
+    -webkit-clip-path: inset(10% 5% 2% 10%);
+    transform: translate(-80px, -60px) scale(.95);
+}
+
+#redtop {
+    /* clip-path: inset(30% 5% 2% 10%); */
+    -webkit-clip-path: inset(26% 5% 0% 15%);
+    transform: translate(-70px, -230px) scale(1.05);
 }
 
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
