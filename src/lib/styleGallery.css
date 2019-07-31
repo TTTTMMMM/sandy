@@ -158,9 +158,61 @@ body > main > div > img {
 }
 
 #redtop {
-    /* clip-path: inset(30% 5% 2% 10%); */
+    clip-path: inset(26% 5% 0% 15%);
     -webkit-clip-path: inset(26% 5% 0% 15%);
     transform: translate(-70px, -230px) scale(1.05);
+}
+
+#belt {
+    transform: translate(-500px, -300px) scale(.45);
+}
+
+#fourscooters {
+    clip-path: inset(16% 0% 20% 7%);
+    -webkit-clip-path: inset(16% 0% 20% 7%);
+    transform: translate(-0px, -30px) scale(1.35);
+}
+
+#reubenonbeach {
+    clip-path: inset(16% 0% 10% 14%);
+    -webkit-clip-path: inset(16% 0% 10% 14%);
+    transform: translate(-60px, -200px) scale(1.1);
+}
+
+#packing {
+    clip-path: inset(16% 10% 0% 0%);
+    -webkit-clip-path: inset(16% 10% 0% 0%);
+    transform: translate(-137px, -300px) scale(.62);
+}
+
+#shstep {
+    clip-path: inset(0% 0% 0% 0%);
+    -webkit-clip-path: inset(0% 0% 0% 0%);
+    transform: translate(-60px, -0px) scaleX(.85);
+}
+
+#handcontrol {
+    clip-path: inset(0% 0% 0% 0%); 
+    -webkit-clip-path: inset(0% 0% 0% 0%);
+    transform: translate(-80px, 5px) scaleX(.85) scaleY(1.03);
+}
+
+#twowheels {
+    clip-path: inset(0% 0% 0% 0%);  
+    -webkit-clip-path: inset(0% 0% 0% 0%);
+    transform: translate(-95px, -0px) scaleX(.8) scaleY(1.0);
+}
+
+#scooter2{
+    clip-path: inset(10% 0% 0% 20%);
+    -webkit-clip-path: inset(10% 0% 0% 20%);
+    transform: translate(-120px, -50px) scale(1.3);
+}
+
+#scooter22{
+    /* clip-path: inset(10% 0% 0% 20%); */
+    -webkit-clip-path: inset(0% 0% 0% 10%);
+    transform: translate(-100px, -0px) scale(1.05);
 }
 
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
