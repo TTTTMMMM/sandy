@@ -1,14 +1,13 @@
-var webpack = require("webpack");
+/* var webpack = require("webpack"); */
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require("path");
 var DIST_DIR = path.resolve(__dirname, "dist");
 var SRC_DIR = path.resolve(__dirname, "src");
 
 var config = {
-    entry: SRC_DIR + "/app/index.js",
-    output: {
-        path: DIST_DIR + "/app",
-        filename: "bundle.js",
-        publicPath: "/app/"
+    entry: {
+        index: SRC_DIR + "/app/index.js", 
+        gallery: SRC_DIR + "/app/gallery.js"
     },
     module: {
         rules: [
@@ -25,7 +24,21 @@ var config = {
                 use:['style-loader','css-loader']
             }
         ]
-    }
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: SRC_DIR + '/index.html',
+            inject: true,
+            chunks: ['index'],
+            filename: 'index.html'
+        }),
+        new HtmlWebpackPlugin({
+            template: SRC_DIR + '/gallery.html',
+            inject: true,
+            chunks: ['gallery'],
+            filename: 'gallery.html'
+        }),
+    ]
 };
 
 module.exports = config;

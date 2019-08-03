@@ -234,7 +234,7 @@ body > main > div > img {
 }
 
 #lounging {
-    /* clip-path: inset(5% 8% 0% 5%);  */
+    clip-path: inset(5% 0% 0% 5%);
     -webkit-clip-path: inset(5% 0% 0% 5%);
     transform: translate(-60px, -0px) scaleX(.95) scaleY(1.1);
 }
