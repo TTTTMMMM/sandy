@@ -1,12 +1,10 @@
 
 @import url('https://use.fontawesome.com/releases/v5.9.0/css/all.css'); 
-@import url('https://fonts.googleapis.com/css?family=Karla|Josefin+Sans:400|Indie+Flower|Macondo+Swash+Caps&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Karla|Josefin+Sans:400&display=swap');
 
 html {
   background: #DCE3E6;
   font-family: 'Josefin Sans', monospace; 
-  --headerURL: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/slider-2.jpg');
-  --respHeaderURL: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/slider-2.jpg');
 }
 
 body {
@@ -94,7 +92,6 @@ body > header > section > nav > ul > li > a:before {
 body > header {
   font-family: 'Karla', monospace; 
   background-color: honeydew;
-  background: var(--headerURL) no-repeat center center fixed; 
   background-size: cover;
   border: 0 solid #000;
   color: #000;
@@ -545,8 +542,7 @@ span {
 @media only screen and (max-width: 960px) {
 
 body > header {
-  background: var(--respHeaderURL) no-repeat fixed; 
-  background-position: center right; 
+  background-position: top left; 
 }
 body > main {
   padding-top: 120px;

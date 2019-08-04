@@ -1,9 +1,9 @@
 /* var webpack = require("webpack"); */
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 var path = require("path");
 var DIST_DIR = path.resolve(__dirname, "dist");
 var SRC_DIR = path.resolve(__dirname, "src");
-var IMG_DIR = path.resolve(__dirname, "dist/images");
 
 var config = {
     entry: {
@@ -41,6 +41,7 @@ var config = {
         ]
     },
     plugins: [
+        new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             template: SRC_DIR + '/index.html',
             inject: true,
