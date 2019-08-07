@@ -8,7 +8,8 @@ var SRC_DIR = path.resolve(__dirname, "src");
 var config = {
     entry: {
         index: SRC_DIR + "/app/index.js", 
-        gallery: SRC_DIR + "/app/gallery.js"
+        gallery: SRC_DIR + "/app/gallery.js",
+        faq: SRC_DIR + "/app/faq.js"
     },
     module: {
         rules: [
@@ -53,6 +54,12 @@ var config = {
             inject: true,
             chunks: ['gallery'],
             filename: 'gallery.html'
+        }),
+        new HtmlWebpackPlugin({
+            template: SRC_DIR + '/faq.html',
+            inject: true,
+            chunks: ['faq'],
+            filename: 'faq.html'
         }),
     ]
 };
