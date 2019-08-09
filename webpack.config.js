@@ -9,7 +9,8 @@ var config = {
     entry: {
         index: SRC_DIR + "/app/index.js", 
         gallery: SRC_DIR + "/app/gallery.js",
-        faq: SRC_DIR + "/app/faq.js"
+        faq: SRC_DIR + "/app/faq.js",
+        locations: SRC_DIR + "/app/locations.js",
     },
     module: {
         rules: [
@@ -60,6 +61,12 @@ var config = {
             inject: true,
             chunks: ['faq'],
             filename: 'faq.html'
+        }),
+        new HtmlWebpackPlugin({
+            template: SRC_DIR + '/locations.html',
+            inject: true,
+            chunks: ['locations'],
+            filename: 'locations.html'
         }),
     ]
 };
