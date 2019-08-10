@@ -4,7 +4,7 @@
     background-color: #DCE3E6;
     display: block;
     box-sizing: border-box;
-    padding: 10px 50px 9px 20px;
+    padding: 10px 20px 9px 20px;
     font-weight: 400;
     font-size: 18px;
     outline: 0;
@@ -158,6 +158,12 @@ body > main > div > div > div > div > div > button {
     padding: 0;
     transition: all .75s;
   }
+
+/* plusMinus button styling  on hover */
+body > main > div > div > div > div > div > button {
+    cursor: pointer;
+}
+
   .plus,
   .minus {
     color: rgb(250,245,198);
@@ -175,19 +181,29 @@ body > main > div > div > div > div > div > button {
     /* box-sizing: border-box; */
     transition: .5s all ease-out;
   }
+
   .plus {
     opacity: 1;
     transform: rotate(0deg);
   }
+
   body > main > div > div > div > div > div > button.active .plus {
     opacity: 0;
     transform: rotate(90deg);
   }
+
   .minus {
     opacity: 0;
     transform: rotate(-90deg);
   }
+
   body > main > div > div > div > div > div > button.active .minus {
     opacity: 1;
     transform: rotate(0deg);
   }
+
+@media only screen and (max-width: 490px) {
+    body > main {
+        padding-top: 135px;
+    }
+}

@@ -1,5 +1,8 @@
 
-/* verbiage on how to use the embedded maps */
+body > main {
+    padding-left: 6px;
+}
+/* Section 1: verbiage on how to use the embedded maps */
 body > main > section:nth-of-type(1) {
     display: block;
     width: 95%;
@@ -8,72 +11,89 @@ body > main > section:nth-of-type(1) {
     border-radius: 6px;
     padding-left: 7px;
     padding-right: 7px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 700px;
 }
 
-/* container for two embedded maps */
+/* Section 2: container for two embedded maps */
 body > main > section:nth-of-type(2) {
     display: block;
     height: auto;
     box-shadow:  none;
+    text-align: center;
 }
 
-/* the verbiage of where Sand Helpers can be rented by state/beach */
+/* Section 3: the container holding the unordered list holding the list items holding the state <divs/> */
 body > main > section:nth-of-type(3) {
     display: block;
-    width: 95%;
-    height: auto;
-    box-shadow:  .1em .1em .3em #000;
+    box-shadow:  .1em .1em .3em #000; 
     border-radius: 6px;
-    padding: 7px;
-    margin-left: 1vw; 
-}
-
-/* first map iframe */
-body > main > section:nth-of-type(2) > iframe:nth-last-of-type(1) {
-    width: 68vw;
-    border-radius: 14px;
-    box-shadow:  .1em .1em .3em #000;
-    margin-top: 10px;
-}
-
-/* second map iframe */
-body > main > section:nth-of-type(2) > iframe:nth-last-of-type(2) {
-    width: 68vw;
-    border-radius: 14px;
-    box-shadow:  .1em .1em .3em #000;
-    margin-top: 10px;
-}
-
-
-/* the container holding the unordered list holding the list items holding the state <divs/> */
-body > main > section:nth-of-type(3) {
-    float: none;
-    display: inline-block;
-    position: relative;
-    margin-left: 1vw;
+    padding-left: 7px;
+    padding-right: 7px;
     min-width: 150px;
     width: 96%;
     text-align: left;
     overflow: hidden;
-    z-index: 0;
     height: auto;
+}
+/*-----------------------------------------------*/
+/* first section styling                         */
+/*-----------------------------------------------*/
+/* drop cap */
+main > section:nth-of-type(1) > p:nth-of-type(1):first-letter {
+    color: hsla(12, 95%, 47%, 0.93);;
+    float: left;
+    font-family: Georgia;
+    font-size: 75px;
+    line-height: 60px;
+    padding-top: 4px;
+    padding-right: 8px;
+    padding-left: 3px;
+  }
+/*-----------------------------------------------*/
+/* second section styling                        */
+/*-----------------------------------------------*/
+body > main > section:nth-of-type(2) > iframe {
+    width: 70vw;
+    border-radius: 14px;
+    box-shadow:  .1em .1em .3em #000;
+    margin-top: 10px;
+}
+
+/*----------------------------------------------*/
+/* third section styling                        */
+/*----------------------------------------------*/
+/* Title verbiage ("Beaches where Sand Helper Wheelchairs can be Found */
+body > main > section:nth-of-type(3) > h3 {
+    text-decoration: none;
+    margin-block-start: .5em;
+    margin-block-end: 0em;
+}
+
+/* centering the div that holds the states <uls/> */
+body > main > section:nth-of-type(3) > div {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
 /* the unordered list holding the list items holding the state <divs/> */
-body > main > section:nth-of-type(3) >  ul {
+body > main > section:nth-of-type(3) > div > ul {
     list-style-type: none; 
     display: inline-table;
     position: relative; 
+    text-align: left;
   }
 
 /* the list items holding the state <divs/> */
-body > main > section:nth-of-type(3) > ul > li {
+body > main > section:nth-of-type(3) > div > ul > li {
     float: left;
 }
 
 /* state <divs/> */
-body > main > section:nth-of-type(3) > ul > li > div {
-    box-shadow:  .1em .1em .3em #000;
+body > main > section:nth-of-type(3) > div > ul > li > div {
+    box-shadow:  .1em .1em .3em #000; 
     margin-top: 6px;
     border-radius: 4px;
     padding: 3px;
@@ -82,27 +102,29 @@ body > main > section:nth-of-type(3) > ul > li > div {
     margin-right: 7px;
 }
 
-/* Title verbiage ("Beaches where Sand Helper Wheelchairs can be Found */
-body > main > section:nth-of-type(3) > h3 {
-    text-decoration: none;
-    margin-block-start: .5em;
-    margin-block-end: 0em;
-}
-
 /* state/beach verbiage */
-body > main > section:nth-of-type(3) > ul > li > div > h4, p {
+body > main > section:nth-of-type(3) > div > ul > li > div > h4, p {
     text-decoration: none;
     margin-block-start: .5em;
     margin-block-end: .5em;
 }
 
 /* name of state */
-body > main > section:nth-of-type(3) > ul > li > div > h4 {
+body > main > section:nth-of-type(3) > div > ul > li > div > h4 {
     margin-left: 20px;
     color:  hsla(12, 95%, 47%, 1);
+    font-size: 18px;
+    margin-top: 14px;
 }
 
 /* beaches */
-body > main > section:nth-of-type(3) > ul > li > div > p {
+body > main > section:nth-of-type(3) > div > ul > li > div > p {
     margin-left: 30px;
+}
+
+/**************************/
+/* really narrow screens  */
+/**************************/
+@media only screen and (max-width: 490px) {
+
 }

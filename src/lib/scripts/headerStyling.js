@@ -9,7 +9,7 @@ document.querySelector("body > header > section:nth-child(1) > figure:nth-child(
 /* short mascot image */
 document.querySelector("body > header > section:nth-of-type(2) > figure:nth-child(1) img").src = shortMascot;
 
-/* bullet shot facebook image */
+/* bullet shot facebook image  https://pt.vectorhq.com/psd/cracked-facebook-logo-psd-451808 */
 document.querySelector("body > a > img").src = fbImage;
 
 /* header background image */
