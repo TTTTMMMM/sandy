@@ -254,7 +254,7 @@ main > div > section:nth-of-type(2) > p::first-letter {
 
 /* The first section in main holds the flipping (animated) images */
 body > main > section:nth-of-type(1) {
-  width: 80%;  
+  width: 82%;  
   height: 35vw; 
   overflow: hidden;  
   position: relative;    
@@ -272,8 +272,8 @@ body > main > section:nth-of-type(1) > img {
   opacity: 0; 
   width: 98%; 
   height: auto;
-  border-radius: 10px;
-  box-shadow: .3em .3em .5em #000; 
+  border-radius: 12px;
+  box-shadow: .3em .3em .4em #000; 
 }
 
 @keyframes myAnimation {
@@ -726,8 +726,102 @@ body > main > section:nth-of-type(1) {
   }
 
   body {
-    width: 95vw;
+    width: 96vw;
     margin: 8px;
+  }
+
+  body > header {
+    display: none;
+  }
+
+  body > section > ul {
+    display: block;
+    list-style: none;
+    font-family: "Karla";
+    font-size: 20px;
+    visibility: visible;
+    position: fixed;
+    top: -130px;
+    width: 200px;
+    background: hsla(12, 95%, 47%, 0.93);
+    color: white;
+    margin: 0 0 0 0;
+    padding: 0.1em 0.1em 0.1em .1em;
+    transition: 1s;
+    height: auto;
+    z-index: 9;
+    border-radius: 0em 0em .5em .5em;
+    box-shadow:  .1em .1em .3em #000;
+    right: 5%;
+  }
+    /* on hover, menu moves down to reveal list items */
+    body > section > ul:hover { 
+      top: -3px;
+    }
+  
+    /* on hover, menu moves down to reveal list items */
+    body > section > ul:active { 
+      top: -3px;
+    }
+  
+  body > main {
+    padding-top: 12px;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  body > footer > section:nth-of-type(3) {
+    display: none;
+  }
+  body > footer > section:nth-of-type(2) {
+    transform: translate(12vw);
+    width: 16vw;
+    border-radius: 5px;
+    box-shadow:  .1em .1em .3em #000;
+  }
+
+  body {
+    width: 107vw;
+    margin: 8px;
+  }
+}
+
+@media only screen and (max-height: 415px) {
+  body > header {
+    display: none;
+  }
+  body > section > ul {
+    display: block;
+    list-style: none;
+    font-family: "Karla";
+    font-size: 20px;
+    visibility: visible;
+    position: fixed;
+    top: -130px;
+    width: 200px;
+    background: hsla(12, 95%, 47%, 0.93);
+    color: white;
+    margin: 0 0 0 0;
+    padding: 0.1em 0.1em 0.1em .1em;
+    transition: 1s;
+    height: auto;
+    z-index: 9;
+    border-radius: 0em 0em .5em .5em;
+    box-shadow:  .1em .1em .3em #000;
+    right: 5%;
+  }
+    /* on hover, menu moves down to reveal list items */
+    body > section > ul:hover { 
+      top: -3px;
+    }
+  
+    /* on hover, menu moves down to reveal list items */
+    body > section > ul:active { 
+      top: -3px;
+    }
+  
+  body > main {
+    padding-top: 10px;
   }
 }
 

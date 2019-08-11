@@ -55,7 +55,7 @@ main > section:nth-of-type(1) > p:nth-of-type(1):first-letter {
 /* second section styling                        */
 /*-----------------------------------------------*/
 body > main > section:nth-of-type(2) > iframe {
-    width: 70vw;
+    width: 68vw;
     border-radius: 14px;
     box-shadow:  .1em .1em .3em #000;
     margin-top: 10px;
@@ -102,6 +102,20 @@ body > main > section:nth-of-type(3) > div > ul > li > div {
     margin-right: 7px;
 }
 
+/* state <divs/> */
+body > main > section:nth-of-type(3) > div > ul > li:nth-of-type(1)  > div{
+    transform: rotate(.2deg);
+}
+body > main > section:nth-of-type(3) > div > ul > li:nth-of-type(2) > div {
+    transform: rotate(-.1deg);
+}
+body > main > section:nth-of-type(3) > div > ul > li:nth-of-type(3) > div {
+    transform: rotate(.7deg);
+}
+body > main > section:nth-of-type(3) > div > ul > li:nth-of-type(4) > div {
+    transform: rotate(-.5deg);
+}
+
 /* state/beach verbiage */
 body > main > section:nth-of-type(3) > div > ul > li > div > h4, p {
     text-decoration: none;
@@ -113,7 +127,7 @@ body > main > section:nth-of-type(3) > div > ul > li > div > h4, p {
 body > main > section:nth-of-type(3) > div > ul > li > div > h4 {
     margin-left: 20px;
     color:  hsla(12, 95%, 47%, 1);
-    font-size: 18px;
+    font-size: 20px;
     margin-top: 14px;
 }
 
