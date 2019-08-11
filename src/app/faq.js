@@ -8,6 +8,7 @@ import '../lib/scripts/footerStyling.js';
 
 import accordianArrow from '../lib/images/accordianArrow.png';
 
+
 const accordianHeading = document.querySelector(".accordion-heading"); // h3
 const accordianToggle = document.querySelector(".accordion-toggle");  //the link
 const accordianBody = document.querySelector(".accordion-body");  // container for all questions

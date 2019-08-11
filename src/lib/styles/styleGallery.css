@@ -246,6 +246,8 @@ body > footer {
 
 @media (min-width: 320px) { /* screen is 320px wide or more */
     body > main {
+        border-radius: 10px;
+        padding-top: 23px;
         --f: .23;
         --d: 16rem;  /* size of selected picture */
         --ty: calc(1.9*var(--tx) + 4rem); /*  calc(2*var(--tx) + 1rem) */
@@ -301,9 +303,6 @@ body > footer {
     }
 }
 
-@media only screen and (max-width: 960px) {
-
-}
   
   
   

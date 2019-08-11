@@ -2,6 +2,7 @@ import fbImage from './../images/facebook.png';
 import longMascot from './../images/longMascot.png';
 import shortMascot from './../images/shortMascot.png';
 import headerBackgroundImageURL from './../images/headerBackground.jpg';
+import longMascotIcon from './../images/longMascotIcon.png';
 
 /* long mascot image */
 document.querySelector("body > header > section:nth-child(1) > figure:nth-child(1) img").src = longMascot;
@@ -14,4 +15,7 @@ document.querySelector("body > a > img").src = fbImage;
 
 /* header background image */
 document.querySelector("body > header").style.backgroundImage = `url('${headerBackgroundImageURL}')`;
+
+/* icon image in the menu */
+document.querySelector("body > section > ul > li:nth-child(5) > img").src = longMascotIcon;
 
