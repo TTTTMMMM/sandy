@@ -140,5 +140,7 @@ body > main > section:nth-of-type(3) > div > ul > li > div > p {
 /* really narrow screens  */
 /**************************/
 @media only screen and (max-width: 490px) {
-
+    body > main {
+        padding-top: 43px;
+      }
 }

@@ -23,20 +23,20 @@ body > a > img {
 }
 
 body > a > img:hover {
-  top: 310px;
+  top: 33vh;
   left: 3px;
   transition: all .5s;
 }
 
 /* Does this work for a touch device? Do I even need it? */
 body > a > img:active {
-  top: 310px;
+  top: 33vh;
   left: 3px;
   transition: all .5s;
 }
 
 body > a > img:not(:hover) {
-  top: 310px;
+  top: 33vh;
   left: -10px;
   transition: all .5s;
 }
@@ -687,7 +687,7 @@ body > section > ul > li > a:before {
 /* styling the SH icon in the responsive menu */  
 body > section > ul > li:nth-child(5) > img {
   width: 33px;
-  transform: translate(-20px, 5px);
+  transform: translate(-20px, 5px); 
 }
 /*---------------------------------------------------*/
 
@@ -763,14 +763,15 @@ body > main > section:nth-of-type(1) {
       display: none;
     }
 
+    /* the responsive menu that's always lurking */
     body > section > ul {
       display: block;
       list-style: none;
       font-family: "Karla";
-      font-size: 20px;
+      font-size: 21px;
       visibility: visible;
       position: fixed;
-      top: -130px;
+      top: -150px; 
       width: 200px;
       background: hsla(12, 95%, 47%, 0.93);
       color: white;
@@ -779,23 +780,31 @@ body > main > section:nth-of-type(1) {
       transition: 1s;
       height: auto;
       z-index: 9;
-      border-radius: 0em 0em .5em .5em;
+      border-radius: .5em .5em .5em .5em;
       box-shadow:  .1em .1em .3em #000;
       right: 5%;
+      padding-top: 20px;
     }
-
+    
     /* on hover, menu moves down to reveal list items */
     body > section > ul:hover { 
-      top: -3px;
+      top: -15px;
     }
 
     /* on hover, menu moves down to reveal list items */
     body > section > ul:active { 
-      top: -3px;
+      top: -15px;
     }
 
     body > main {
-      padding-top: 17px;
+      padding-top: 33px;
+    }
+
+    body > main > section:nth-of-type(1) > img {
+      height: 32vw;
+      width: auto;
+      box-shadow:  .1em .1em .3em #000;
+      margin-left: 4vw;
     }
 }
 
@@ -817,6 +826,10 @@ body > main > section:nth-of-type(1) {
     width: 104vw;
     margin: 8px;
   }
+
+  body > main > section:nth-of-type(1) > img {
+    margin-left: 7vw;
+  }
 }
 
 /*-----------------------------------------*/
@@ -836,6 +849,10 @@ body > main > section:nth-of-type(1) {
   body {
     width: 110vw;
     margin: 8px;
+  }
+
+  body > main > section:nth-of-type(1) > img {
+    margin-left: 10vw;
   }
 }
 
