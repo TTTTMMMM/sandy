@@ -1,0 +1,66 @@
+
+body > main {
+    padding-left: 6px;
+}
+/* Section 1: verbiage on how to use the embedded maps */
+body > main > section:nth-of-type(1) {
+    display: block;
+    width: 95%;
+    height: auto;
+    box-shadow:  .1em .1em .3em #000;
+    border-radius: 6px;
+    padding-left: 7px;
+    padding-right: 7px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 700px;
+}
+
+/* Section 2: container for two embedded maps */
+body > main > section:nth-of-type(2) {
+    display: block;
+    height: auto;
+    box-shadow:  none;
+    text-align: center;
+}
+
+/* Section 3: the container holding the unordered list holding the list items holding the state <divs/> */
+/*
+body > main > section:nth-of-type(3) {
+
+}
+*/
+/*-----------------------------------------------*/
+/* first section styling                         */
+/*-----------------------------------------------*/
+/* 
+main > section:nth-of-type(1)  {
+
+  }
+  */
+/*-----------------------------------------------*/
+/* second section styling                        */
+/*-----------------------------------------------*/
+/*
+body > main > section:nth-of-type(2)  {
+
+}
+*/
+/*----------------------------------------------*/
+/* third section styling                        */
+/*----------------------------------------------*/
+/* 
+body > main > section:nth-of-type(3) {
+
+}
+*/
+
+
+/**************************/
+/* really narrow screens  */
+/**************************/
+@media only screen and (max-width: 490px) {
+    body > main {
+        padding-top: 43px;
+      }
+}
