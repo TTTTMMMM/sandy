@@ -3,6 +3,7 @@ import './../lib/styles/styleGMaps.css';
 import '../lib/scripts/headerStyling.js';
 import '../lib/scripts/footerStyling.js';
 
+
 var map;
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {

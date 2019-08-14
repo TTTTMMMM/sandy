@@ -1,17 +1,46 @@
 
 html, body {
-    height: 100%;
+    height: 100vh;
     margin: 0;
     padding: 0;
+    box-shadow: unset;
   }
 
 body > main {
     padding-top: 171px;
-    display: block;
+    display: flex;
+    flex-direction: column;
 }
 
+body > main > section:nth-of-type(1) {
+    height: auto; 
+    width: 82%;  
+    overflow: hidden;  
+    position: relative;    
+    border-radius: 3px;
+    margin-bottom: 12px;
+    margin-left: auto;   /* center section horizontally  #1 */
+    margin-right: auto  /* center section horizontally  #2 */ 
+  }
+
+body > main > section:nth-of-type(2) {
+    all: unset;
+    margin-bottom: 10px;
+}
+
+/*body > main > section:nth-of-type(3) {
+    height: auto; 
+    width: 82%;  
+    overflow: hidden;  
+    position: relative;    
+    border-radius: 3px;
+    margin-bottom: 12px;
+    margin-left: auto;   // center section horizontally  #1 
+    margin-right: auto  // center section horizontally  #2  
+}*/
+
 #map {
-    height: 75vw;
+    height: 75vh;
     width: 75vw; 
     border-radius: 10px;
     box-shadow: .3em .3em 1em #000;
@@ -19,3 +48,115 @@ body > main {
     margin-left: auto;
 }
 
+/* Section 3: the container holding the unordered list holding the list items holding the state <divs/> */
+body > main > section:nth-of-type(3) {
+    display: block;
+    border-radius: 6px;
+    padding-left: 7px;
+    padding-right: 7px;
+    min-width: 150px;
+    width: 82%;
+    text-align: left;
+    overflow: hidden;
+    height: auto;
+    margin-left: auto;   
+    margin-right: auto;   
+}
+/*-----------------------------------------------*/
+/* first section styling                         */
+/*-----------------------------------------------*/
+/* drop cap */
+main > section:nth-of-type(1) > p:nth-of-type(1):first-letter {
+    color: hsla(12, 95%, 47%, 0.93);;
+    float: left;
+    font-family: Georgia;
+    font-size: 75px;
+    line-height: 60px;
+    padding-top: 4px;
+    padding-right: 8px;
+    padding-left: 3px;
+  }
+
+/*----------------------------------------------*/
+/* third section styling                        */
+/*----------------------------------------------*/
+/* Title verbiage ("Beaches where Sand Helper Wheelchairs can be Found */
+body > main > section:nth-of-type(3) > h3 {
+    text-decoration: none;
+    margin-block-start: .5em;
+    margin-block-end: 0em;
+}
+
+/* centering the div that holds the states <uls/> */
+body > main > section:nth-of-type(3) > div {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+/* the unordered list holding the list items holding the state <divs/> */
+body > main > section:nth-of-type(3) > div > ul {
+    list-style-type: none; 
+    display: inline-table;
+    position: relative; 
+    text-align: left;
+  }
+
+/* the list items holding the state <divs/> */
+body > main > section:nth-of-type(3) > div > ul > li {
+    float: left;
+}
+
+/* state <divs/> */
+body > main > section:nth-of-type(3) > div > ul > li > div {
+    box-shadow:  .1em .1em .3em #000; 
+    margin-top: 6px;
+    border-radius: 4px;
+    padding: 3px;
+    padding-right: 8px;
+    display: flexbox;
+    margin-right: 7px;
+}
+
+/* state <divs/> */
+body > main > section:nth-of-type(3) > div > ul > li:nth-of-type(1)  > div{
+    transform: rotate(.2deg);
+}
+body > main > section:nth-of-type(3) > div > ul > li:nth-of-type(2) > div {
+    transform: rotate(-.1deg);
+}
+body > main > section:nth-of-type(3) > div > ul > li:nth-of-type(3) > div {
+    transform: rotate(.7deg);
+}
+body > main > section:nth-of-type(3) > div > ul > li:nth-of-type(4) > div {
+    transform: rotate(-.5deg);
+}
+
+/* state/beach verbiage */
+body > main > section:nth-of-type(3) > div > ul > li > div > h4, p {
+    text-decoration: none;
+    margin-block-start: .5em;
+    margin-block-end: .5em;
+}
+
+/* name of state */
+body > main > section:nth-of-type(3) > div > ul > li > div > h4 {
+    margin-left: 20px;
+    color:  hsla(12, 95%, 47%, 1);
+    font-size: 20px;
+    margin-top: 14px;
+}
+
+/* beaches */
+body > main > section:nth-of-type(3) > div > ul > li > div > p {
+    margin-left: 30px;
+}
+
+/**************************/
+/* really narrow screens  */
+/**************************/
+@media only screen and (max-width: 490px) {
+    body > main {
+        padding-top: 43px;
+      }
+}
