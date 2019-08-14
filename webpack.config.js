@@ -11,7 +11,7 @@ var config = {
         gallery: SRC_DIR + "/app/gallery.js",
         faq: SRC_DIR + "/app/faq.js",
         locations: SRC_DIR + "/app/locations.js",
-        locations: SRC_DIR + "/app/gMaps.js",
+        gMaps: SRC_DIR + "/app/gMaps.js",
     },
     module: {
         rules: [
@@ -64,16 +64,16 @@ var config = {
             filename: 'faq.html'
         }),
         new HtmlWebpackPlugin({
+            template: SRC_DIR + '/gMaps.html',
+            inject: true,
+            chunks: ['gMaps'],
+            filename: 'gMaps.html'
+        }),
+        new HtmlWebpackPlugin({
             template: SRC_DIR + '/locations.html',
             inject: true,
             chunks: ['locations'],
             filename: 'locations.html'
-        }),
-        new HtmlWebpackPlugin({
-            template: SRC_DIR + '/gMaps.html',
-            inject: true,
-            chunks: ['gmaps'],
-            filename: 'gMaps.html'
         }),
     ]
 };
