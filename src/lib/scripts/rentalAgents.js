@@ -3,7 +3,7 @@ export const rentalAgents = [
         "agent": "Sand Helper",
         "phone": "(855) 743-5737",
         "email": "rent@sandhelper.com",
-        "url": "http://sandhelper.com",
+        "url": "https://ocwheelchairs.checkfront.com/reserve/?tid=sand-helper-locations",
         "notes": "",
         "locations": [
             {
@@ -254,13 +254,14 @@ tempLocationRentals.map(locR => {
 //console.log(`${JSON.stringify(rentalAgentsKeyedByBeach["Ocean City, MD"])}`);
 //console.log(`${Object.keys(rentalAgentsKeyedByBeach["Ocean City, MD"]).length}`);
 
-/* make the html div element that will be displayed by google maps when a SH icon is clicked */
+/* make the html div element (infoWindow) that will be displayed by google maps when a SH icon is clicked */
 let theBeaches = Object.keys(rentalAgentsKeyedByBeach);
 
 export let theIWArray = [];
 theBeaches.forEach(b => {
     let theIWDiv = document.createElement("div");
     theIWDiv.classList.add("IWdiv");
+    theIWDiv.style.visibility = "visible";
     let theBeachName = document.createElement("p");
     theBeachName.classList.add("IWp");
     theBeachName.innerHTML = b;
@@ -294,7 +295,9 @@ theBeaches.forEach(b => {
         let theRentalAgentsListItemURL = document.createElement("li");
         let theWebsiteLink = document.createElement("a");
         theWebsiteLink.setAttribute('href', ra.url);
-        theWebsiteLink.innerHTML = "Website";
+        theWebsiteLink.setAttribute('target', "_blank");
+        theWebsiteLink.innerHTML = "Info, Pricing and Reservations";
+ 
         theRentalAgentsListItemURL.appendChild(theWebsiteLink);
         theRentalAgentsListItemURL.classList.add("IWliURL");
         theRentalAgentsListItemURL.style.fontFamily = "Josefin Sans, monotype";
@@ -306,15 +309,12 @@ theBeaches.forEach(b => {
         theRentalAgentsListItemNotes.innerHTML = ra.notes;
         theRentalAgentsList.appendChild(theRentalAgentsListItemNotes);
     })
-    theIWArray[b] = theIWDiv.outerHTML;
-    //console.log(theIWDiv.outerHTML);
+    // theIWArray[b] = theIWDiv.outerHTML;
+    theIWArray[b] = theIWDiv;
+    //console.log(`${theIWArray[b]}`);
 });
 
-// console.log(Object.keys(theIWArray));
-// console.log(theIWArray["Ocean City, MD"]);
-/* theIWArray.forEach( x => {
-    console.log(x);
-}); */
+
 
 
 

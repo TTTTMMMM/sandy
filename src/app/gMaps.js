@@ -4,11 +4,10 @@ import '../lib/scripts/headerStyling.js';
 import '../lib/scripts/footerStyling.js';
 import {api_key} from '../lib/scripts/apikey.js';
 import {rentalAgents} from '../lib/scripts/rentalAgents.js';
-import {rentalAgentsKeyedByBeach} from '../lib/scripts/rentalAgents.js';
+// import {rentalAgentsKeyedByBeach} from '../lib/scripts/rentalAgents.js';
 import {theIWArray} from '../lib/scripts/rentalAgents.js';
 
 // console.log(`${JSON.stringify(rentalAgentsKeyedByBeach["Ocean City, MD"])}`);
-console.log(theIWArray["Ocean City, MD"]);
 
 
 let myStyle = [
@@ -185,15 +184,24 @@ function initMap() {
         })
 
         /* create an infoWindow, which shows when the markers are clicked  */
-        let contentString = `${JSON.stringify(rentalAgentsKeyedByBeach[loc.beach])}`;
-        contentString = theIWArray[loc.beach];
+        let contentString = theIWArray[loc.beach].outerHTML;
         let iw = new google.maps.InfoWindow({
-                content: contentString,
+                content: contentString, 
             });
         
         /* create the listener for each marker, which displays the infoWindow content */
         rentMarker.addListener('click', function () {
-            iw.open(map, rentMarker);
+            let theIWDiv = theIWArray[loc.beach];
+            /* toggle opening and closing of infowWindow object */
+            if(theIWDiv.style.visibility === 'hidden') {  
+                theIWDiv.style.visibility = 'visible';
+                let contentString = theIWArray[loc.beach].outerHTML;
+                iw.content =  contentString;
+                iw.open(map, rentMarker);
+            } else {
+                iw.close(map, rentMarker);
+                theIWDiv.style.visibility = 'hidden';
+            }
         })
     })); 
   
