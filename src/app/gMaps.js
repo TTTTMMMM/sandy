@@ -4,92 +4,10 @@ import '../lib/scripts/headerStyling.js';
 import '../lib/scripts/footerStyling.js';
 import {api_key} from '../lib/scripts/apikey.js';
 import {rentalAgents} from '../lib/scripts/rentalAgents.js';
-// import {rentalAgentsKeyedByBeach} from '../lib/scripts/rentalAgents.js';
+import {mapStyle1} from '../lib/scripts/mapStyle1.js';
 import {theIWArray} from '../lib/scripts/rentalAgents.js';
 
 // console.log(`${JSON.stringify(rentalAgentsKeyedByBeach["Ocean City, MD"])}`);
-
-
-let myStyle = [
-    {
-        "featureType": "administrative",
-        "elementType": "labels.text.fill",
-        "stylers": [
-            {
-                "color": "#444444"
-            }
-        ]
-    },
-    {
-        "featureType": "landscape",
-        "elementType": "all",
-        "stylers": [
-            {
-                "color": "#f2f2f2"
-            }
-        ]
-    },
-    {
-        "featureType": "poi",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "road",
-        "elementType": "all",
-        "stylers": [
-            {
-                "saturation": -100
-            },
-            {
-                "lightness": 45
-            }
-        ]
-    },
-    {
-        "featureType": "road.highway",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "simplified"
-            }
-        ]
-    },
-    {
-        "featureType": "road.arterial",
-        "elementType": "labels.icon",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "transit",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "water",
-        "elementType": "all",
-        "stylers": [
-            {
-                "color": "#1b7499"
-            },
-            {
-                "visibility": "on"
-            }
-        ]
-    }
-];
 
 var map;
 var vabeach = {lat: 36.50, lng: -75.9};
@@ -137,7 +55,7 @@ function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         zoom: 9,
         center: ocmd,
-        styles: myStyle,
+        styles: mapStyle1,
         mapTypeControl: false,
         streetViewControl: false,
         restriction: {
@@ -146,6 +64,7 @@ function initMap() {
         },
     });
 
+    // Put 4 Buttons on the map that automatically zoom to the beach on the Google map
     let centerControlDiv1 = document.createElement('div');
     CenterControl(centerControlDiv1, map, 'Jersey Shore', joiseyShore, 9 );
 
@@ -158,6 +77,7 @@ function initMap() {
     let centerControlDiv4 = document.createElement('div'); 
     CenterControl(centerControlDiv4, map, 'Carolina Beaches', ncBeaches, 9 );
     
+    // Put an "instructions" label on the map
     let instructionControlDiv = document.createElement('div');
     anotherControl(instructionControlDiv);
     
@@ -168,13 +88,14 @@ function initMap() {
     
     map.controls[google.maps.ControlPosition.TOP_CENTER].push(instructionControlDiv);
 
+    // This is the image that will be put onto the google map, scaled appropriately
     let url = `./lib/images/longMascotIcon.png`;
         let image = {
         url: url, 
         scaledSize: new google.maps.Size(38, 38),
     };
 
-    /* put a marker on the map for each location, using the SH logo  */
+    /* put a marker on the map for each location, using the SH logo defined above */
     rentalAgents.forEach(agent => agent.locations.forEach(loc => {
         /* create a marker with the SH logo at every location based on rentalAgents[] */
         let rentMarker = new google.maps.Marker({
@@ -214,7 +135,25 @@ function initMap() {
             }
     });
 }
-
+// Done with initMap()
 // Do not delete! //
 window.initMap = initMap;
 // Do not delete! //
+/*   
+Set up Listeners on the list of beaches in Section 3 of main
+   */
+    let allBeachPTags = document.querySelectorAll("body > main > section:nth-of-type(3) > div > ul > li > div p");
+
+    allBeachPTags.forEach(pTag => {
+        pTag.addEventListener('click', function() {
+            const  theList = theIWArray[pTag.innerHTML].children[1];
+            let rAObject = {};
+            rAObject.name = theList.children[0].innerHTML;
+            rAObject.phoneNumber = theList.children[1].innerHTML;
+            rAObject.email = theList.children[2].children[0].innerHTML;
+            rAObject.url = theList.children[3].children[0].innerHTML;
+            rAObject.notes = theList.children[4].innerHTML;
+            console.log(theList);
+            console.log(JSON.stringify(rAObject));
+        })
+    });
