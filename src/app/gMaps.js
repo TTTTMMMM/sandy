@@ -6,8 +6,9 @@ import {api_key} from '../lib/scripts/apikey.js';
 import {rentalAgents} from '../lib/scripts/rentalAgents.js';
 import {mapStyle1} from '../lib/scripts/mapStyle1.js';
 import {theIWArray} from '../lib/scripts/rentalAgents.js';
+import {theBeachesKeyedByState} from '../lib/scripts/rentalAgents.js';
 
-// console.log(`${JSON.stringify(rentalAgentsKeyedByBeach["Ocean City, MD"])}`);
+// console.log(`${Object.keys(theBeachesKeyedByState)[1]}: ${JSON.stringify(theBeachesKeyedByState[Object.keys(theBeachesKeyedByState)[1]])}`);
 
 var map;
 var vabeach = {lat: 36.50, lng: -75.9};
@@ -64,7 +65,7 @@ function initMap() {
         },
     });
 
-    // Put 4 Buttons on the map that automatically zoom to the beach on the Google map
+    // Put 4 Buttons on the Google map that automatically zoom to the beach
     let centerControlDiv1 = document.createElement('div');
     CenterControl(centerControlDiv1, map, 'Jersey Shore', joiseyShore, 9 );
 
@@ -81,11 +82,13 @@ function initMap() {
     let instructionControlDiv = document.createElement('div');
     anotherControl(instructionControlDiv);
     
+    // Place Beach Buttons Top Left
     map.controls[google.maps.ControlPosition.LEFT_TOP].push(centerControlDiv1);
     map.controls[google.maps.ControlPosition.LEFT_TOP].push(centerControlDiv2);
     map.controls[google.maps.ControlPosition.LEFT_TOP].push(centerControlDiv3);
     map.controls[google.maps.ControlPosition.LEFT_TOP].push(centerControlDiv4);
     
+    // Place Instruction Label Top Center
     map.controls[google.maps.ControlPosition.TOP_CENTER].push(instructionControlDiv);
 
     // This is the image that will be put onto the google map, scaled appropriately
@@ -126,6 +129,7 @@ function initMap() {
         })
     })); 
   
+    // Don't let the user zoom in too close or too far
     map.addListener('zoom_changed', function () {
         if(map.getZoom() < 6) {
             map.setZoom(6);
@@ -139,21 +143,77 @@ function initMap() {
 // Do not delete! //
 window.initMap = initMap;
 // Do not delete! //
-/*   
-Set up Listeners on the list of beaches in Section 3 of main
-   */
-    let allBeachPTags = document.querySelectorAll("body > main > section:nth-of-type(3) > div > ul > li > div p");
 
-    allBeachPTags.forEach(pTag => {
-        pTag.addEventListener('click', function() {
-            const  theList = theIWArray[pTag.innerHTML].children[1];
-            let rAObject = {};
-            rAObject.name = theList.children[0].innerHTML;
-            rAObject.phoneNumber = theList.children[1].innerHTML;
-            rAObject.email = theList.children[2].children[0].innerHTML;
-            rAObject.url = theList.children[3].children[0].innerHTML;
-            rAObject.notes = theList.children[4].innerHTML;
-            console.log(theList);
-            console.log(JSON.stringify(rAObject));
-        })
-    });
+/* 
+    Let's throw some states and their beaches on the map, shall we?
+ */
+
+const ulStates = document.querySelector("body > main > section:nth-of-type(3) > div > ul");
+
+/*  const theStates = Object.keys(theBeachesKeyedByState);
+ theStates.forEach(s => {
+    const stateListItem = document.createElement("li");
+    const stateDiv = document.createElement("div");
+    stateListItem.appendChild(stateDiv);
+    const h4 = document.createElement("h4");
+    stateDiv.appendChild(h4);
+    h4.innerHTML = s;
+    ulStates.appendChild(stateListItem);
+    theBeachesKeyedByState[s].forEach(bb => {
+        const ptagBeach = document.createElement("p");
+        stateDiv.appendChild(ptagBeach);
+        ptagBeach.innerHTML = bb.beach;
+    });  
+ });
+ */
+
+const plusMinusButtons = document.querySelectorAll("body > main > section:nth-of-type(3) > div > ul > li > div > div > button"); // plusMinus button next to beach name
+const plusMinusButtonsArray = Array.from(plusMinusButtons);
+const questionLinks  = document.querySelectorAll("body > main > section:nth-of-type(3) > div > ul > li > div > div > div > a"); // each question in the FAQ
+const questionLinksArray = Array.from(questionLinks);
+/* plusMinus button hocus pocus */
+function morphTheButton(e) {
+    /*  if(this.className.includes('active')) {
+          this.removeAttribute('class');
+      } else {
+          this.className += 'active';
+      } */
+      let theAnswer = this.parentElement.querySelector(".accordion-container .accordion-content"); // as seen from the plusMinus <button>
+      if(theAnswer.style.opacity == 0) {
+          theAnswer.style.maxHeight = "500px";
+          theAnswer.style.opacity = 1;
+          this.className += 'active';
+      } else {
+          theAnswer.style.maxHeight = 0;
+          theAnswer.style.opacity = 0;
+          this.removeAttribute('class');
+      }
+  };
+
+/* this function toggles the answer (accordian-content) to the FAQ question   */
+/* the class name of the answer must be 'accordion-content'                   */
+function toggleAccordionContent(e) {
+    let theAnswer = this.parentElement.querySelector(".accordion-content");   // as seen from the question <a> tag
+    let theButton = this.parentElement.parentElement.querySelector("button"); // as seen from the question <a> tag
+
+    if(theAnswer.style.opacity == 0) {
+        theAnswer.style.maxHeight = "500px";
+        theAnswer.style.opacity = 1;
+        theButton.className += 'active';
+    } else {
+        theAnswer.style.maxHeight = 0;
+        theAnswer.style.opacity = 0;
+        theButton.removeAttribute('class');
+    }
+};
+  
+
+plusMinusButtonsArray.forEach(x => {
+    x.addEventListener("click", morphTheButton);
+});
+
+questionLinksArray.forEach(x => {
+    x.addEventListener("click", toggleAccordionContent);
+});
+
+

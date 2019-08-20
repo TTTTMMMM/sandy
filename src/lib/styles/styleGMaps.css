@@ -241,69 +241,129 @@ body > main > section:nth-of-type(3) > div {
 /* the unordered list holding the list items holding the state <divs/> */
 body > main > section:nth-of-type(3) > div > ul {
     list-style-type: none; 
-    display: inline-table;
     position: relative; 
-    text-align: left;
   }
 
 /* the list items holding the state <divs/> */
 body > main > section:nth-of-type(3) > div > ul > li {
-    float: left;
+    float: left; 
+    width: 95%;
+    text-align: left;
 }
 
-/* state <divs/> */
-body > main > section:nth-of-type(3) > div > ul > li > div {
-    box-shadow:  .1em .1em .3em #000; 
-    margin-top: 6px;
-    border-radius: 4px;
-    padding: 3px;
-    padding-right: 8px;
-    display: flexbox;
-    flex-direction: column;
-    margin-right: 7px;
+/* styling for the state header */
+body > main > section:nth-of-type(3) > div > ul > li > h4 {
+text-align: center;
+background-color: hsla(12, 95%, 47%, 0.93);
+color: rgb(250, 245, 198);
+border-radius: 4px;
+box-shadow:  .1em .1em .3em #000; 
+padding: 7px;
+padding-top: 8px;
+font-size: 20px;
+margin-block-start: .1em;
+margin-block-end: .1em;
 }
 
-/* state <divs/> */
-body > main > section:nth-of-type(3) > div > ul > li:nth-of-type(1)  > div {
-    transform: rotate(.2deg);
-}
-body > main > section:nth-of-type(3) > div > ul > li:nth-of-type(2) > div {
-    transform: rotate(-.1deg);
-}
-body > main > section:nth-of-type(3) > div > ul > li:nth-of-type(3) > div {
-    transform: rotate(.7deg);
-}
-body > main > section:nth-of-type(3) > div > ul > li:nth-of-type(4) > div {
-    transform: rotate(-.5deg);
+.inner-accordion {
+  border-bottom: 1px solid #d8d8d8;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 4px;
+  background-color: #f7f7f7; 
+  border-radius: 5px;
+  transition: all .75s;
 }
 
-/* state/beach verbiage */
-body > main > section:nth-of-type(3) > div > ul > li > div > h4, a {
-    text-decoration: none;
-    margin-block-start: .5em;
-    margin-block-end: .5em;
+.beachline {
+  display: flex;
 }
 
-/* name of state */
-body > main > section:nth-of-type(3) > div > ul > li > div > h4 {
-    margin-left: 20px;
-    color:  hsla(12, 95%, 47%, 1);
-    font-size: 20px;
-    margin-top: 14px;
+/* question and answer container */
+.accordion-container {
+  padding: 0px 15px; 
+  color: rgb(71, 71, 233); 
+  font-weight: bold;
+  font-size: 16px;
+  transition: all .75s;
 }
 
-/* beaches */
-body > main > section:nth-of-type(3) > div > ul > li > div > p {
-    margin-left: 30px;
-    font-size: 16px;
-    transition: all .5s;
+/* The answer to the question  */
+.accordion-content {
+  font-family: "Karla", monospace;
+  font-weight: 400;
+  font-size: 15px;
+  display: visible;
+  padding-left: 10px;
+  transition: all .75s;
 }
 
-body > main > section:nth-of-type(3) > div > ul > li > div > p:hover {
-    margin-left: 30px;
+body > main > section:nth-of-type(3) > div > ul > li > div > div > div > a {
+  font-size: 20px;
+}
+
+[role=button] {
     cursor: pointer;
-    font-style: italic;
-    text-decoration: underline;
+}
+
+/* plusMinus button styling */
+body > main > section:nth-of-type(3) > div > ul > li > div > div > button {
+  color: rgb(250,245,198);
+  background:  hsla(12, 95%, 47%, 0.93);
+  width: 20px;
+  height: 20px;
+  position: relative;
+  font-size: 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+  padding: 0;
+  top: -2px;
+  transition: all .75s;
+}
+
+/* plusMinus button styling  on hover */
+body > main > section:nth-of-type(3) > div > ul > li > div > div > button {
+  cursor: pointer;
+}
+
+.plus,
+.minus {
+  color: rgb(250,245,198);
+  padding-top: 3px;
+  width: 20px;
+  height: 20px;
+  line-height: 15px;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  /* box-sizing: border-box; */
+  transition: .5s all ease-out;
+}
+
+.plus {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+body > main > section:nth-of-type(3) > div > ul > li > div > div > button.active .plus {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+
+.minus {
+  opacity: 0;
+  transform: rotate(-90deg);
+}
+
+body > main > section:nth-of-type(3) > div > ul > li > div > div > button.active .minus {
+  opacity: 1;
+  transform: rotate(0deg);
 }
 
 /**************************/

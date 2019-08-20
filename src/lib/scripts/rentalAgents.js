@@ -1,5 +1,139 @@
 // rentalAgents array maps rental agents to beaches (locations)
 // gets you to think about all the beaches an agent services
+
+let theBeaches = {
+    "ocmd": {
+            "beach": "Ocean City, MD",
+            "location": {lat: 38.3365, lng: -75.0849},
+            "state": "Maryland",
+            },
+    "fenwick": {
+            "beach": "Fenwick",
+            "location": {lat: 38.4623, lng: -75.0513},
+            "state": "Delaware",
+            },
+    "bethany": {
+            "beach": "Bethany",
+            "location": {lat: 38.5395, lng: -75.0552},
+            "state": "Delaware",
+            },
+    "assateague": {
+            "beach": "Assateague",
+            "location": {lat: 38.0917, lng: -75.2038},
+            "state": "Maryland",
+            },
+    "rehoboth": {
+            "beach": "Rehoboth",
+            "location": {lat: 38.7168, lng: -75.0760},
+            "state": "Delaware",
+            },
+    "lewes": {
+            "beach": "Lewes",
+            "location": {lat: 38.7745, lng: -75.1393},
+            "state": "Delaware",
+            },
+    "dewey": {
+            "beach": "Dewey",
+            "location": {lat: 38.6929, lng: -75.0746},
+            "state": "Delaware",
+            },
+    "stoneHarbor": {
+            "beach": "Stone Harbor",
+            "location": {lat: 39.0509, lng: -74.7579},
+            "state": "New Jersey",
+            },
+    "capeMay": { 
+            "beach": "Cape May",
+            "location": {lat: 38.9593, lng: -74.9274},
+            "state": "New Jersey",
+            },
+    "avalon":  {
+            "beach": "Avalon",
+            "location": {lat: 39.0918, lng: -74.7365},
+            "state": "New Jersey",
+            },
+    "seaIsleCity": {
+            "beach": "Sea Isle City",
+            "location": {lat: 39.1526, lng: -74.6974},
+            "state": "New Jersey",
+            },
+    "wildwood": {
+            "beach": "Wildwood",
+            "location": {lat: 38.9890, lng: -74.8199},
+            "state": "New Jersey",
+            },
+    "ocnj": {
+            "beach": "Ocean City, NJ",
+            "location": {lat: 39.2776, lng: -74.5746},
+            "state": "New Jersey",
+            },
+    "lbi": {
+            "beach": "Long Beach Island",
+            "location": {lat: 39.6598, lng: -74.1708},
+            "state": "New Jersey",
+            },
+    "acnj": {
+            "beach": "Atlantic City",
+            "location": {lat: 39.3784, lng: -74.4233},
+            "state": "New Jersey",
+            },
+    "seasideHeights": {
+            "beach": "Seaside Heights",
+            "location": {lat: 39.9443, lng: -74.0729},
+            "state": "New Jersey",
+            },
+    "vaBeach": {
+            "beach": "Virginia Beach",
+            "location": {lat: 36.8529, lng: -75.97798},
+            "state": "Virginia",
+            },
+    "obx": {
+            "beach": "OBX (Corolla to Nags Head)",
+            "location": {lat: 36.1696, lng: -75.7552},
+            "state": "North Carolina",
+            },
+    "sunsetBeach":  {
+            "beach": "Sunset Beach",
+            "location": {lat: 33.8830, lng: -78.5122},
+            "state": "North Carolina",
+            },
+    "oib": {
+            "beach": "Ocean Isle Beach",
+            "location": {lat: 33.9000, lng: -78.4267},
+            "state": "North Carolina",
+            },
+    "holdenBeach": {
+            "beach": "Holden Beach",
+            "location": {lat: 33.91416, lng: -78.30696},
+            "state": "North Carolina",
+            },
+    "northMyrtle": {
+            "beach": "North Myrtle Beach",
+            "location": {lat: 33.8250, lng: -78.67997},
+            "state": "South Carolina",
+            },
+    "wilmington": {
+            "beach": "Wilmington",
+            "location": {lat: 34.2085, lng: -77.79637},
+            "state": "North Carolina",
+            },
+    "southport": {
+            "beach": "Southport",
+            "location": {lat: 33.92156, lng: -78.02027},
+            "state": "North Carolina",
+            },
+    "leland":  {
+            "beach": "Leland",
+            "location": {lat: 34.25628, lng: -78.04471},
+            "state": "North Carolina",
+            },
+    "myrtle": {
+            "beach": "Myrtle Beach",
+            "location": {lat: 33.6897, lng: -78.8867},
+            "state": "South Carolina",
+            },
+    };
+// console.log(`theBeaches.ocmd: ${JSON.stringify(theBeaches["ocmd"])}`);
 export const rentalAgents = [
 	{
         "agent": "Sand Helper",
@@ -8,22 +142,10 @@ export const rentalAgents = [
         "url": "https://ocwheelchairs.checkfront.com/reserve/?tid=sand-helper-locations",
         "notes": "",
         "locations": [
-            {
-            "beach": "Ocean City, MD",
-            "location": {lat: 38.3365, lng: -75.0849},
-            },
-            {
-            "beach": "Fenwick",
-            "location": {lat: 38.4623, lng: -75.0513},
-            },   
-            {
-            "beach": "Bethany",
-            "location": {lat: 38.5395, lng: -75.0552},
-            }, 
-            {
-            "beach": "Assateague",
-            "location": {lat: 38.0917, lng: -75.2038},
-            }, 
+            theBeaches["ocmd"],
+            theBeaches["fenwick"],
+            theBeaches["bethany"],
+            theBeaches["assateague"],
    		]
     },
    
@@ -34,18 +156,9 @@ export const rentalAgents = [
   	    "url": "https://www.227rent.com/shop/vacation-items/beach-wheelchair-770.html",
         "notes": "",
         "locations": [
-            {
-            "beach": "Rehoboth",
-            "location": {lat: 38.7168, lng: -75.0760},
-            },
-            {
-            "beach": "Lewes",
-            "location": {lat: 38.7745, lng: -75.1393},
-            },   
-            {
-            "beach": "Dewey",
-            "location": {lat: 38.6929, lng: -75.0746},
-            }, 
+            theBeaches["rehoboth"],
+            theBeaches["lewes"],   
+            theBeaches["dewey"], 
    		]
     },
    
@@ -56,30 +169,12 @@ export const rentalAgents = [
         "email": "info@stoneharborcribrental.com",
         "url": "http://www.stoneharborcribrental.com/Beach-Equipment/",
         "locations": [
-                {
-                "beach": "Stone Harbor",
-                "location": {lat: 39.0509, lng: -74.7579},
-                },
-                {
-                "beach": "Cape May",
-                "location": {lat: 38.9593, lng: -74.9274},
-                },   
-                {
-                "beach": "Avalon",
-                "location": {lat: 39.0918, lng: -74.7365},
-                }, 
-                            {
-                "beach": "Sea Isle City ",
-                "location": {lat: 39.1526, lng: -74.6974},
-                },
-                {
-                "beach": "Wildwood",
-                "location": {lat: 38.9890, lng: -74.8199},
-                },   
-                {
-                "beach": "Ocean City, NJ",
-                "location": {lat: 39.2776, lng: -74.5746},
-                }, 
+            theBeaches["stoneHarbor"],
+            theBeaches["capeMay"],   
+            theBeaches["avalon"], 
+            theBeaches["seaIsleCity"],
+            theBeaches["wildwood"],   
+            theBeaches["ocnj"], 
             ]
     },
    
@@ -90,22 +185,10 @@ export const rentalAgents = [
         "email": "kim@beacheasynj.com",
         "url": "https://beacheasynj.com/",
         "locations": [
-            {
-                "beach": "Long Beach Island",
-                "location": {lat: 39.6598, lng: -74.1708},
-            },
-            {
-                "beach": "Atlantic City",
-                "location": {lat: 39.3784, lng: -74.4233},
-            },   
-            {
-                "beach": "Seaside Heights",
-                "location": {lat: 39.9443, lng: -74.0729},
-            }, 
-            {
-                "beach": "Ocean City, NJ",
-                "location": {lat: 39.2776, lng: -74.5746},
-            },
+            theBeaches["lbi"],
+            theBeaches["acnj"],   
+            theBeaches["seasideHeights"], 
+            theBeaches["ocnj"],
         ]
     },
    
@@ -116,10 +199,7 @@ export const rentalAgents = [
         "email": "info@aeromedic.com",
         "url": "https://beachpowermobility.rezdy.com/catalog/282257/sandhelper",
         "locations": [
-            {
-                "beach": "Virginia Beach",
-                "location": {lat: 36.8529, lng: -75.97798},
-            },
+            theBeaches["vaBeach"],
         ]
     },
    
@@ -130,10 +210,7 @@ export const rentalAgents = [
         "email": "rentals@justforthebeach.com",
         "url": "https://justforthebeach.com/product/electric-beach-wheel-chair/",
         "locations": [
-            {
-                "beach": "OBX (Corolla to Nags Head)",
-                "location": {lat: 36.1696, lng: -75.7552},
-            },
+            theBeaches["obx"],
         ]
     },
 
@@ -144,22 +221,10 @@ export const rentalAgents = [
         "url": "https://juliesrentals.com/beach-gear-rentals-umbrella-rentals-beach-wagon/",
         "notes": "",
         "locations": [
-            {
-            "beach": "Sunset Beach",
-            "location": {lat: 33.8807, lng: -78.5122},
-            },
-            {
-            "beach": "Ocean Isle Beach",
-            "location": {lat: 33.8943, lng: -78.4267},
-            },   
-            {
-            "beach": "Holden Beach",
-            "location": {lat: 33.91416, lng: -78.30696},
-            }, 
-            {
-            "beach": "North Myrtle Beach",
-            "location": {lat: 33.81809, lng: -78.67997},
-            }, 
+            theBeaches["sunsetBeach"],
+            theBeaches["oib"],   
+            theBeaches["holdenBeach"], 
+            theBeaches["northMyrtle"], 
         ]
     },
 
@@ -170,30 +235,12 @@ export const rentalAgents = [
         "email": "missy@coastalgolfcartrentals.com",
         "url": "https://www.coastalgolfcartrentals.com/Power-Beach-Wheelchair-Rentals",
         "locations": [
-            {
-            "beach": "Ocean Isle Beach",
-            "location": {lat: 33.8943, lng: -78.42667},
-            },
-            {
-            "beach": "Wilmington",
-            "location": {lat: 34.2085, lng: -77.79637},
-            },   
-            {
-            "beach": "Southport",
-            "location": {lat: 33.92156, lng: -78.02027},
-            }, 
-                        {
-            "beach": "Holden Beach",
-            "location": {lat: 33.91416, lng: -78.30696},
-            },
-            {
-            "beach": "Sunset Beach",
-            "location": {lat: 33.8807, lng: -78.5122},
-            },   
-            {
-            "beach": "Leland",
-            "location": {lat: 34.25628, lng: -78.04471},
-            }, 
+            theBeaches["oib"],
+            theBeaches["wilmington"],   
+            theBeaches["southport"], 
+            theBeaches["holdenBeach"],
+            theBeaches["sunsetBeach"],   
+            theBeaches["leland"], 
         ]
     },
 
@@ -204,10 +251,7 @@ export const rentalAgents = [
         "email": "info@mobility-center.com",
         "url": "http://mobility-center.com/equipment-rentals/",
         "locations": [
-           {
-              "beach": "Myrtle Beach",
-              "location": {lat: 33.68906, lng: -78.88669},
-           },
+            theBeaches["myrtle"],
         ]
      },
 
@@ -218,10 +262,7 @@ export const rentalAgents = [
         "email": "contact@ocmdbikerentals.com",
         "url": "http://ocmdbikerentals.com/index.html",
         "locations": [
-           {
-              "beach": "Ocean City, MD",
-              "location": {lat: 38.3365, lng: -75.0849},
-           },
+            theBeaches["ocmd"],
         ]
      },
    
@@ -246,7 +287,7 @@ let rentalAgentsKeyedByBeach = {};
 tempLocationRentals.map(locR => {
 	if(rentalAgentsKeyedByBeach.hasOwnProperty(locR.beach)) { // this magical step checks to see if I've already seen this beach (think: counting word frequency problem)
    	    let skinnyLocR = {};
-        Object.assign(skinnyLocR, locR);  // Object.assign(dest, src);
+        Object.assign(skinnyLocR, locR),  // Object.assign(dest, src),
         delete skinnyLocR.beach;            // don't need the name of the beach since it's the key of this array
         rentalAgentsKeyedByBeach[locR.beach].push(skinnyLocR);
    } else {
@@ -259,11 +300,11 @@ tempLocationRentals.map(locR => {
 //console.log(`${JSON.stringify(rentalAgentsKeyedByBeach["Ocean City, MD"])}`);
 //console.log(`${Object.keys(rentalAgentsKeyedByBeach["Ocean City, MD"]).length}`);
 
-/* make the html div element (infoWindow) that will be displayed by google maps when a SH icon is clicked */
-let theBeaches = Object.keys(rentalAgentsKeyedByBeach);  // gets all the beaches so I can troll through them below
+/* create the html div element (infoWindow) that will be displayed by google maps when a SH icon is clicked */
+let theBeaches1 = Object.keys(rentalAgentsKeyedByBeach);  // gets all the beaches so I can troll through them below
 
 export let theIWArray = [];
-theBeaches.forEach(b => {
+theBeaches1.forEach(b => {
     let theIWDiv = document.createElement("div");
     theIWDiv.classList.add("IWdiv");
     theIWDiv.style.visibility = "visible";   // this property allows me to toggle the infoWindow on the Google map
@@ -318,7 +359,53 @@ theBeaches.forEach(b => {
     //console.log(`${theIWArray[b]}`);
 });
 
+ 
+// Set up the array for the next map to create an object ob beaches keyed by state
+let theBeachesInArrayForm = Object.keys(theBeaches).map(key => {
+    return theBeaches[key];
+});
+//  now, this step makes the state a key (therefore unique) and has each beach name as the value
+export let theBeachesKeyedByState = {};
+theBeachesInArrayForm.map(w => {
+	if(theBeachesKeyedByState.hasOwnProperty(w.state)) { // this magical step checks to see if I've already seen this beach (think: counting word frequency problem) 
+        let skinnyBeach = {};
+        Object.assign(skinnyBeach, w);  // Object.assign(dest, src);
+        delete skinnyBeach.location;       // don't need the location coordinates
+        delete skinnyBeach.state;          // don't need the name of the state since it's the key of this array
+        theBeachesKeyedByState[w.state].push(skinnyBeach);
+   } else {
+   	    let skinnyBeach = {};
+   	    Object.assign(skinnyBeach, w);
+        delete skinnyBeach.location;       // don't need the location coordinates
+        delete skinnyBeach.state;          // don't need the name of the state since it's the key of this array
+        theBeachesKeyedByState[w.state] = [skinnyBeach]; // note: this is an array of 1 object, not just an object
+   } 
+});
 
+/* console.log(`North Carolina Beaches: ${JSON.stringify(theBeachesKeyedByState["North Carolina"])}`);
+console.log(`Maryland Beaches: ${JSON.stringify(theBeachesKeyedByState["Maryland"])}`);
+console.log(`Delaware Beaches: ${JSON.stringify(theBeachesKeyedByState["Delaware"])}`);
+ */
+/*   
+Set up Listeners on the list of beaches in Section 3 of main
+   */
+  let allBeachPTags = document.querySelectorAll("body > main > section:nth-of-type(3) > div > ul > li > div p");
 
+  allBeachPTags.forEach(pTag => {
+      pTag.addEventListener('click', function() {
+        //console.log(pTag.innerHTML);
+        //console.log(theIWArray[pTag.innerHTML]);
+
+/*           const  theList = theIWArray[pTag.innerHTML].children[1];
+          let rAObject = {};
+          rAObject.name = theList.children[0].innerHTML;
+          rAObject.phoneNumber = theList.children[1].innerHTML;
+          rAObject.email = theList.children[2].children[0].innerHTML;
+          rAObject.url = theList.children[3].children[0].innerHTML;
+          rAObject.notes = theList.children[4].innerHTML;
+          console.log(theList);
+          console.log(JSON.stringify(rAObject)); */
+      })
+  });
 
 
