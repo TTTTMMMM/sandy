@@ -4,6 +4,7 @@ import '../lib/scripts/headerStyling.js';
 import '../lib/scripts/footerStyling.js';
 import {api_key} from '../lib/scripts/apikey.js';
 import {rentalAgents} from '../lib/scripts/rentalAgents.js';
+import {rentalAgentsKeyedByBeach} from '../lib/scripts/rentalAgents.js';
 import {mapStyle1} from '../lib/scripts/mapStyle1.js';
 import {theIWArray} from '../lib/scripts/rentalAgents.js';
 import {theBeachesKeyedByState} from '../lib/scripts/rentalAgents.js';
@@ -91,7 +92,7 @@ function initMap() {
     // Place Instruction Label Top Center
     map.controls[google.maps.ControlPosition.TOP_CENTER].push(instructionControlDiv);
 
-    // This is the image that will be put onto the google map, scaled appropriately
+    // This is the image that will be used for the google map markers, scaled appropriately
     let url = `./lib/images/longMascotIcon.png`;
         let image = {
         url: url, 
@@ -113,7 +114,7 @@ function initMap() {
                 content: contentString, 
             });
         
-        /* create the listener for each marker, which displays the infoWindow content */
+        /* create the listener for each marker, which displays the infoWindow content when the marker is clicked */
         rentMarker.addListener('click', function () {
             let theIWDiv = theIWArray[loc.beach];
             /* toggle opening and closing of infowWindow object */
@@ -140,12 +141,12 @@ function initMap() {
     });
 }
 // Done with initMap()
-// Do not delete! //
+// Do not delete! the HTML page (call to Google maps api) needs to see the initMap function //
 window.initMap = initMap;
 // Do not delete! //
 
 /* 
-    Let's throw some states and their beaches on the map, shall we?
+    Let's throw some states and their beaches on section 3, shall we?
  */
 
 const ulStates = document.querySelector("body > main > section:nth-of-type(3) > div > ul");
@@ -192,7 +193,55 @@ const ulStates = document.querySelector("body > main > section:nth-of-type(3) > 
         divBeachline.appendChild(divAccordionContainer);
         divAccordionContainer.appendChild(anchorButton);
         divAccordionContainer.appendChild(divAccordionContent);
-        divAccordionContent.innerHTML = `${bb.beach} rental info here`;
+        // Display Rental Agent Information below
+        //divAccordionContent.innerHTML = `${bb.beach} rental info here`;
+        rentalAgentsKeyedByBeach[bb.beach].forEach( ra => {
+            const divIWDiv = document.createElement("div");
+            divIWDiv.classList.add("IWdiv");
+            divAccordionContent.appendChild(divIWDiv);
+
+            const theRentalAgentsList = document.createElement("ul");
+            theRentalAgentsList.classList.add("IWul");
+            divIWDiv.appendChild(theRentalAgentsList);
+
+            let theRentalAgentsListItemName = document.createElement("li");  // each rental agent will be an item on the unordered list
+            theRentalAgentsListItemName.classList.add("IWliName");
+            theRentalAgentsListItemName.style.fontFamily = "Josefin Sans, monotype";
+            theRentalAgentsListItemName.innerHTML = ra.rentalAgent;
+            theRentalAgentsList.appendChild(theRentalAgentsListItemName);
+
+            let theRentalAgentsListItemPhone = document.createElement("li");  // get the phone #
+            theRentalAgentsListItemPhone.classList.add("IWliPhone");
+            theRentalAgentsListItemPhone.style.fontFamily = "Josefin Sans, monotype";
+            theRentalAgentsListItemPhone.innerHTML = ra.phone;
+            theRentalAgentsList.appendChild(theRentalAgentsListItemPhone);
+
+            let theRentalAgentsListItemEmail = document.createElement("li");   // get the email address
+            let theEmailLink = document.createElement("a");
+            theEmailLink.setAttribute('href', "mailto:" + ra.email);
+            theEmailLink.innerHTML = ra.email;
+            theRentalAgentsListItemEmail.appendChild(theEmailLink);
+            theRentalAgentsListItemEmail.classList.add("IWliEmail");
+            theRentalAgentsListItemEmail.style.fontFamily = "Josefin Sans, monotype";
+            theRentalAgentsList.appendChild(theRentalAgentsListItemEmail);
+
+            let theRentalAgentsListItemURL = document.createElement("li");   // get the URL (make it a link that opens in a new tab)
+            let theWebsiteLink = document.createElement("a");
+            theWebsiteLink.setAttribute('href', ra.url);
+            theWebsiteLink.setAttribute('target', "_blank");
+            theWebsiteLink.innerHTML = "Info, Pricing and Reservations";
+     
+            theRentalAgentsListItemURL.appendChild(theWebsiteLink);
+            theRentalAgentsListItemURL.classList.add("IWliURL");
+            theRentalAgentsListItemURL.style.fontFamily = "Josefin Sans, monotype";
+            theRentalAgentsList.appendChild(theRentalAgentsListItemURL);
+    
+            let theRentalAgentsListItemNotes = document.createElement("li");   // grab the notes
+            theRentalAgentsListItemNotes.classList.add("IWliNotes");
+            theRentalAgentsListItemNotes.style.fontFamily = "Josefin Sans, monotype";
+            theRentalAgentsListItemNotes.innerHTML = ra.notes;
+            theRentalAgentsList.appendChild(theRentalAgentsListItemNotes);
+        }); 
     });   
 
  });

@@ -283,7 +283,7 @@ rentalAgents.forEach(agent => agent.locations.forEach(loc => {
 }));
 
 //  now, this step makes the beach a key (therefore unique) and has each rental agent object as the value
-let rentalAgentsKeyedByBeach = {};
+export let rentalAgentsKeyedByBeach = {};
 tempLocationRentals.map(locR => {
 	if(rentalAgentsKeyedByBeach.hasOwnProperty(locR.beach)) { // this magical step checks to see if I've already seen this beach (think: counting word frequency problem)
    	    let skinnyLocR = {};
@@ -297,8 +297,13 @@ tempLocationRentals.map(locR => {
         rentalAgentsKeyedByBeach[locR.beach] = [skinnyLocR]; // note: this is an array of 1 object, not just an object
    }
 });
-//console.log(`${JSON.stringify(rentalAgentsKeyedByBeach["Ocean City, MD"])}`);
-//console.log(`${Object.keys(rentalAgentsKeyedByBeach["Ocean City, MD"]).length}`);
+/* 
+console.log(`rentalAgentsKeyedByBeach: ${JSON.stringify(rentalAgentsKeyedByBeach["Ocean City, MD"])}`);
+console.log(`==================`);
+rentalAgentsKeyedByBeach["Ocean City, MD"].forEach( ra => {
+        console.log(`    ${JSON.stringify(ra)}`);
+}); 
+*/
 
 /* create the html div element (infoWindow) that will be displayed by google maps when a SH icon is clicked */
 let theBeaches1 = Object.keys(rentalAgentsKeyedByBeach);  // gets all the beaches so I can troll through them below
@@ -360,7 +365,7 @@ theBeaches1.forEach(b => {
 });
 
  
-// Set up the array for the next map to create an object ob beaches keyed by state
+// Set up the array for the next Array.map() to create an object of beaches keyed by state
 let theBeachesInArrayForm = Object.keys(theBeaches).map(key => {
     return theBeaches[key];
 });
@@ -386,26 +391,6 @@ theBeachesInArrayForm.map(w => {
 console.log(`Maryland Beaches: ${JSON.stringify(theBeachesKeyedByState["Maryland"])}`);
 console.log(`Delaware Beaches: ${JSON.stringify(theBeachesKeyedByState["Delaware"])}`);
  */
-/*   
-Set up Listeners on the list of beaches in Section 3 of main
-   */
-  let allBeachPTags = document.querySelectorAll("body > main > section:nth-of-type(3) > div > ul > li > div p");
 
-  allBeachPTags.forEach(pTag => {
-      pTag.addEventListener('click', function() {
-        //console.log(pTag.innerHTML);
-        //console.log(theIWArray[pTag.innerHTML]);
-
-/*           const  theList = theIWArray[pTag.innerHTML].children[1];
-          let rAObject = {};
-          rAObject.name = theList.children[0].innerHTML;
-          rAObject.phoneNumber = theList.children[1].innerHTML;
-          rAObject.email = theList.children[2].children[0].innerHTML;
-          rAObject.url = theList.children[3].children[0].innerHTML;
-          rAObject.notes = theList.children[4].innerHTML;
-          console.log(theList);
-          console.log(JSON.stringify(rAObject)); */
-      })
-  });
 
 
