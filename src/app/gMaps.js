@@ -150,59 +150,85 @@ window.initMap = initMap;
 
 const ulStates = document.querySelector("body > main > section:nth-of-type(3) > div > ul");
 
-/*  const theStates = Object.keys(theBeachesKeyedByState);
+ const theStates = Object.keys(theBeachesKeyedByState);
  theStates.forEach(s => {
     const stateListItem = document.createElement("li");
-    const stateDiv = document.createElement("div");
-    stateListItem.appendChild(stateDiv);
-    const h4 = document.createElement("h4");
-    stateDiv.appendChild(h4);
-    h4.innerHTML = s;
+    const stateH4 = document.createElement("h4");
+    stateH4.innerHTML = s;
+    stateListItem.appendChild(stateH4);
     ulStates.appendChild(stateListItem);
     theBeachesKeyedByState[s].forEach(bb => {
-        const ptagBeach = document.createElement("p");
-        stateDiv.appendChild(ptagBeach);
-        ptagBeach.innerHTML = bb.beach;
-    });  
- });
- */
+        const innerAccordionListItem = document.createElement("li");
+        ulStates.appendChild(innerAccordionListItem);
+        const divInnerAccordion = document.createElement("div");
+        divInnerAccordion.classList.add("inner-accordion");
+        const divBeachline = document.createElement("div");
+        divBeachline.classList.add("beachline");
+        const plusMinusButton = document.createElement("button");
+        const spanPlus = document.createElement("span");
+        const spanMinus = document.createElement("span");
+        plusMinusButton.appendChild(spanPlus);
+        plusMinusButton.appendChild(spanMinus);
+        spanPlus.classList.add("plus");
+        spanMinus.classList.add("minus");
+        const iFramePlus = document.createElement("i");
+        const iFrameMinus = document.createElement("i");
+        spanPlus.appendChild(iFramePlus);
+        spanMinus.appendChild(iFrameMinus);
+        iFramePlus.classList.add("fa",  "fa-plus");
+        iFrameMinus.classList.add("fa", "fa-minus");
+        const divAccordionContainer = document.createElement("div");
+        divAccordionContainer.classList.add("accordion-container");
+        const anchorButton = document.createElement("a");
+        anchorButton.style.role = "button";
+        anchorButton.innerHTML = bb.beach;
+        const divAccordionContent = document.createElement("div");
+        divAccordionContent.classList.add("accordion-content");
+        divAccordionContent.style.opacity = 0;
+        divAccordionContent.style.maxHeight = 0;
+        innerAccordionListItem.appendChild(divInnerAccordion);
+        divInnerAccordion.appendChild(divBeachline);
+        divBeachline.appendChild(plusMinusButton);
+        divBeachline.appendChild(divAccordionContainer);
+        divAccordionContainer.appendChild(anchorButton);
+        divAccordionContainer.appendChild(divAccordionContent);
+        divAccordionContent.innerHTML = `${bb.beach} rental info here`;
+    });   
 
-const plusMinusButtons = document.querySelectorAll("body > main > section:nth-of-type(3) > div > ul > li > div > div > button"); // plusMinus button next to beach name
+ });
+
+
+const plusMinusButtons = document.querySelectorAll("body > main > section:nth-of-type(3) > div > ul > li > div > div > button"); 
 const plusMinusButtonsArray = Array.from(plusMinusButtons);
-const questionLinks  = document.querySelectorAll("body > main > section:nth-of-type(3) > div > ul > li > div > div > div > a"); // each question in the FAQ
-const questionLinksArray = Array.from(questionLinks);
+const beachLinks  = document.querySelectorAll("body > main > section:nth-of-type(3) > div > ul > li > div > div > div > a"); 
+const beachLinksArray = Array.from(beachLinks);
 /* plusMinus button hocus pocus */
 function morphTheButton(e) {
-    /*  if(this.className.includes('active')) {
-          this.removeAttribute('class');
-      } else {
-          this.className += 'active';
-      } */
-      let theAnswer = this.parentElement.querySelector(".accordion-container .accordion-content"); // as seen from the plusMinus <button>
-      if(theAnswer.style.opacity == 0) {
-          theAnswer.style.maxHeight = "500px";
-          theAnswer.style.opacity = 1;
+      let beachRentalInfo = this.parentElement.querySelector(".accordion-container .accordion-content"); // as seen from the plusMinus <button>
+      if(beachRentalInfo.style.opacity == 0) {
+          beachRentalInfo.style.maxHeight = "500px";
+          beachRentalInfo.style.opacity = 1;
           this.className += 'active';
       } else {
-          theAnswer.style.maxHeight = 0;
-          theAnswer.style.opacity = 0;
+          beachRentalInfo.style.maxHeight = 0;
+          beachRentalInfo.style.opacity = 0;
           this.removeAttribute('class');
       }
   };
 
-/* this function toggles the answer (accordian-content) to the FAQ question   */
-/* the class name of the answer must be 'accordion-content'                   */
+/* this function toggles the beach rental info                   */
+/* the class name of the rental info must be 'accordion-content' */
 function toggleAccordionContent(e) {
-    let theAnswer = this.parentElement.querySelector(".accordion-content");   // as seen from the question <a> tag
-    let theButton = this.parentElement.parentElement.querySelector("button"); // as seen from the question <a> tag
+    let beachRentalInfo = this.parentElement.querySelector(".accordion-content");   // as seen from the beach <a> tag
+    let theButton = this.parentElement.parentElement.querySelector("button"); // as seen from the beach <a> tag
 
-    if(theAnswer.style.opacity == 0) {
-        theAnswer.style.maxHeight = "500px";
-        theAnswer.style.opacity = 1;
+    if(beachRentalInfo.style.opacity == 0) {
+        beachRentalInfo.style.maxHeight = "500px";
+        beachRentalInfo.style.opacity = 1;
         theButton.className += 'active';
     } else {
-        theAnswer.style.maxHeight = 0;
-        theAnswer.style.opacity = 0;
+        beachRentalInfo.style.maxHeight = 0;
+        beachRentalInfo.style.opacity = 0;
         theButton.removeAttribute('class');
     }
 };
@@ -212,7 +238,7 @@ plusMinusButtonsArray.forEach(x => {
     x.addEventListener("click", morphTheButton);
 });
 
-questionLinksArray.forEach(x => {
+beachLinksArray.forEach(x => {
     x.addEventListener("click", toggleAccordionContent);
 });
 
