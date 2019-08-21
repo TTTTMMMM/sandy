@@ -106,7 +106,7 @@ function initMap() {
             position: new google.maps.LatLng(loc.location),
             map: map,
             icon: image,
-        })
+        });
 
         /* create an infoWindow, which shows when the markers are clicked  */
         let contentString = theIWArray[loc.beach].outerHTML;
@@ -229,7 +229,7 @@ const ulStates = document.querySelector("body > main > section:nth-of-type(3) > 
             let theWebsiteLink = document.createElement("a");
             theWebsiteLink.setAttribute('href', ra.url);
             theWebsiteLink.setAttribute('target', "_blank");
-            theWebsiteLink.innerHTML = "Info, Pricing and Reservations";
+            theWebsiteLink.innerHTML = "Click/touch for info, pricing and reservations";
      
             theRentalAgentsListItemURL.appendChild(theWebsiteLink);
             theRentalAgentsListItemURL.classList.add("IWliURL");

@@ -137,7 +137,7 @@ let theBeaches = {
 export const rentalAgents = [
 	{
         "agent": "Sand Helper",
-        "phone": "(855) 743-5737",
+        "phone": "855-743-5737",
         "email": "rent@sandhelper.com",
         "url": "https://ocwheelchairs.checkfront.com/reserve/?tid=sand-helper-locations",
         "notes": "",
@@ -151,7 +151,7 @@ export const rentalAgents = [
    
    {
         "agent": "Grand Rental Station",
-        "phone": "(302) 227-7368",
+        "phone": "302-227-7368",
         "email": "info@227rent.com",
   	    "url": "https://www.227rent.com/shop/vacation-items/beach-wheelchair-770.html",
         "notes": "",
@@ -164,7 +164,7 @@ export const rentalAgents = [
    
    {
         "agent": "Stone Harbor Crib & Beach Rental",
-        "phone": "(609) 368-7271",
+        "phone": "609-368-7271",
         "notes": "",
         "email": "info@stoneharborcribrental.com",
         "url": "http://www.stoneharborcribrental.com/Beach-Equipment/",
@@ -180,7 +180,7 @@ export const rentalAgents = [
    
    {
         "agent": "Beach Easy Rentals",
-        "phone": "(609) 234-4698 ",
+        "phone": "609-234-4698 ",
         "notes": "",
         "email": "kim@beacheasynj.com",
         "url": "https://beacheasynj.com/",
@@ -194,7 +194,7 @@ export const rentalAgents = [
    
    {
         "agent": "Beach Power Mobility",
-        "phone": "(757) 481-1590",
+        "phone": "757-481-1590",
         "notes": "",
         "email": "info@aeromedic.com",
         "url": "https://beachpowermobility.rezdy.com/catalog/282257/sandhelper",
@@ -205,7 +205,7 @@ export const rentalAgents = [
    
     {
         "agent": "Just for Beach Rentals",
-        "phone": "(866) 629-7368",
+        "phone": "866-629-7368",
         "notes": "",
         "email": "rentals@justforthebeach.com",
         "url": "https://justforthebeach.com/product/electric-beach-wheel-chair/",
@@ -216,7 +216,7 @@ export const rentalAgents = [
 
     {
         "agent": "Julie's Rentals",
-        "phone": "(910) 579-1211",
+        "phone": "910-579-1211",
         "email": "customerservice@juliesrentals.com",
         "url": "https://juliesrentals.com/beach-gear-rentals-umbrella-rentals-beach-wagon/",
         "notes": "",
@@ -230,7 +230,7 @@ export const rentalAgents = [
 
     {
         "agent": "Coastal Golf Cart Rentals",
-        "phone": "(910) 477-0716",
+        "phone": "910-477-0716",
         "notes": "",
         "email": "missy@coastalgolfcartrentals.com",
         "url": "https://www.coastalgolfcartrentals.com/Power-Beach-Wheelchair-Rentals",
@@ -246,7 +246,7 @@ export const rentalAgents = [
 
     {
         "agent": "Mobility Center of the Grand Strand",
-        "phone": "(843) 692-8001",
+        "phone": "843-692-8001",
         "notes": "",
         "email": "info@mobility-center.com",
         "url": "http://mobility-center.com/equipment-rentals/",
