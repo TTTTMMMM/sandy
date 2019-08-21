@@ -6,8 +6,13 @@ import {api_key} from '../lib/scripts/apikey.js';
 import {rentalAgents} from '../lib/scripts/rentalAgents.js';
 import {rentalAgentsKeyedByBeach} from '../lib/scripts/rentalAgents.js';
 import {mapStyle1} from '../lib/scripts/mapStyle1.js';
+import {mapStyle2} from '../lib/scripts/mapStyle2';
+import {mapStyle3} from '../lib/scripts/mapStyle3';
 import {theIWArray} from '../lib/scripts/rentalAgents.js';
 import {theBeachesKeyedByState} from '../lib/scripts/rentalAgents.js';
+import style3Map from './../lib/images/style3Map.png';
+import style2Map from './../lib/images/style2Map.png';
+import style1Map from './../lib/images/style1Map.png';
 
 // console.log(`${Object.keys(theBeachesKeyedByState)[1]}: ${JSON.stringify(theBeachesKeyedByState[Object.keys(theBeachesKeyedByState)[1]])}`);
 
@@ -23,6 +28,11 @@ var EAST_COAST_BOUNDS = {
     west: -80.00,
     east: -72.00,
 };
+
+/* the images that show up in the bottom left of google maps that let you choose a map style */
+document.querySelector("#style1").src = style1Map;
+document.querySelector("#style2").src = style2Map;
+document.querySelector("#style3").src = style3Map;
 
 function CenterControl(controlDiv, map, cityName, latlng, zLevel) {
     let controlUI = document.createElement('div');
@@ -82,6 +92,12 @@ function initMap() {
     // Put an "instructions" label on the map
     let instructionControlDiv = document.createElement('div');
     anotherControl(instructionControlDiv);
+
+    // Put the two style-pickers on the map
+    const ms1 = document.querySelector('#style1');
+    const ms2 = document.querySelector('#style2');
+    const ms3 = document.querySelector('#style3');
+
     
     // Place Beach Buttons Top Left
     map.controls[google.maps.ControlPosition.LEFT_TOP].push(centerControlDiv1);
@@ -92,6 +108,24 @@ function initMap() {
     // Place Instruction Label Top Center
     map.controls[google.maps.ControlPosition.TOP_CENTER].push(instructionControlDiv);
 
+    // Place style-pickers Left Bottom
+    map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(ms1);
+    map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(ms2);
+    map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(ms3);
+
+
+    ms1.addEventListener('click', function () {
+        map.setOptions({styles: mapStyle1});
+    });
+
+    ms2.addEventListener('click', function () {
+        map.setOptions({styles: mapStyle2});
+    });
+
+    ms3.addEventListener('click', function () {
+        map.setOptions({styles: mapStyle3});
+    });
+
     // This is the image that will be used for the google map markers, scaled appropriately
     let url = `./lib/images/longMascotIcon.png`;
         let image = {
@@ -99,6 +133,7 @@ function initMap() {
         scaledSize: new google.maps.Size(38, 38),
     };
 
+    let openInfoWindow = null;  /* keeps track of the open info window, so I can close it when the next icon is clicked (only one IW open at a time)
     /* put a marker on the map for each location, using the SH logo defined above */
     rentalAgents.forEach(agent => agent.locations.forEach(loc => {
         /* create a marker with the SH logo at every location based on rentalAgents[] */
@@ -113,20 +148,13 @@ function initMap() {
         let iw = new google.maps.InfoWindow({
                 content: contentString, 
             });
-        
+
         /* create the listener for each marker, which displays the infoWindow content when the marker is clicked */
         rentMarker.addListener('click', function () {
             let theIWDiv = theIWArray[loc.beach];
-            /* toggle opening and closing of infowWindow object */
-            if(theIWDiv.style.visibility === 'hidden') {  
-                theIWDiv.style.visibility = 'visible';
-                let contentString = theIWArray[loc.beach].outerHTML;
-                iw.content =  contentString;
-                iw.open(map, rentMarker);
-            } else {
-                iw.close(map, rentMarker);
-                theIWDiv.style.visibility = 'hidden';
-            }
+            (openInfoWindow) ? openInfoWindow.close() : null;
+            iw.open(map, rentMarker);
+            openInfoWindow = iw;
         })
     })); 
   

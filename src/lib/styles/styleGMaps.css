@@ -370,6 +370,51 @@ body > main > section:nth-of-type(3) > div > ul > li > div > div > button.active
   opacity: 1;
   transform: rotate(0deg);
 }
+/* 
+    divs that choose the styling of the Google Maps styling
+ */
+ #style1 {
+  border-radius: 50%;
+  margin-left: 12px;
+  margin: 5px;
+  margin-top: 2px;
+  border: 2px solid black;
+  height: 5vh;
+  width: 5vh;
+  transition: all .25s;
+}
+
+#style2 {
+  border-radius: 50%;
+  margin-left: 12px;
+  margin: 5px;
+  border: 2px solid black;
+  height: 5vh;
+  width: 5vh;
+  transition: all .25s;
+}
+
+#style3 {
+  border-radius: 50%;
+  margin-left: 12px;
+  margin: 5px;
+  border: 2px solid black;
+  height: 5vh;
+  width: 5vh;
+  transition: all .25s;
+}
+ 
+#style1:hover {
+  border: 3px solid black;
+}
+
+#style2:hover {
+  border: 3px solid black;
+}
+
+#style3:hover {
+  border: 3px solid black;
+}
 
 /**************************/
 /* really narrow screens  */
