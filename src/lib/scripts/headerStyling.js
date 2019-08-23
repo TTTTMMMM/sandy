@@ -12,10 +12,13 @@ document.querySelector("body > header > section:nth-of-type(2) > figure:nth-chil
 
 /* bullet shot facebook image  https://pt.vectorhq.com/psd/cracked-facebook-logo-psd-451808 */
 document.querySelector("body > a > img").src = fbImage;
+document.querySelector("body > a ").setAttribute('target', "_blank");
 
 /* header background image */
 document.querySelector("body > header").style.backgroundImage = `url('${headerBackgroundImageURL}')`;
 
 /* icon image in the menu */
 document.querySelector("body > section > ul > li:nth-child(5) > img").src = longMascotIcon;
+
+
 

@@ -113,17 +113,28 @@ function initMap() {
     map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(ms2);
     map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(ms3);
 
-
+    /* style1 picker */
     ms1.addEventListener('click', function () {
         map.setOptions({styles: mapStyle1});
+        ms1.style.border = "4px solid  hsla(12, 95%, 47%, 0.93)";
+        ms2.style.border = "2px solid black";
+        ms3.style.border = "2px solid black";
     });
 
+    /* style2 picker */
     ms2.addEventListener('click', function () {
         map.setOptions({styles: mapStyle2});
+        ms2.style.border = "4px solid  hsla(12, 95%, 47%, 0.93)";
+        ms1.style.border = "2px solid black";
+        ms3.style.border = "2px solid black";
     });
 
+    /* style1 picker */
     ms3.addEventListener('click', function () {
         map.setOptions({styles: mapStyle3});
+        ms3.style.border = "4px solid  hsla(12, 95%, 47%, 0.93)";
+        ms2.style.border = "2px solid black";
+        ms1.style.border = "2px solid black";
     });
 
     // This is the image that will be used for the google map markers, scaled appropriately
@@ -274,11 +285,11 @@ const ulStates = document.querySelector("body > main > section:nth-of-type(3) > 
 
  });
 
-
 const plusMinusButtons = document.querySelectorAll("body > main > section:nth-of-type(3) > div > ul > li > div > div > button"); 
 const plusMinusButtonsArray = Array.from(plusMinusButtons);
 const beachLinks  = document.querySelectorAll("body > main > section:nth-of-type(3) > div > ul > li > div > div > div > a"); 
 const beachLinksArray = Array.from(beachLinks);
+
 /* plusMinus button hocus pocus */
 function morphTheButton(e) {
       let beachRentalInfo = this.parentElement.querySelector(".accordion-container .accordion-content"); // as seen from the plusMinus <button>
@@ -297,7 +308,7 @@ function morphTheButton(e) {
 /* the class name of the rental info must be 'accordion-content' */
 function toggleAccordionContent(e) {
     let beachRentalInfo = this.parentElement.querySelector(".accordion-content");   // as seen from the beach <a> tag
-    let theButton = this.parentElement.parentElement.querySelector("button"); // as seen from the beach <a> tag
+    let theButton = this.parentElement.parentElement.querySelector("button");       // as seen from the beach <a> tag
 
     if(beachRentalInfo.style.opacity == 0) {
         beachRentalInfo.style.maxHeight = "500px";

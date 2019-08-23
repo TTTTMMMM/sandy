@@ -1,88 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Karla|Josefin+Sans:400&display=swap');
 
-.accordion-group {
-    margin: 0;
-    background-color: #DCE3E6;
-    display: block;
-    box-sizing: border-box;
-    padding: 10px 20px 9px 20px;
-    font-weight: 400;
-    font-size: 18px;
-    outline: 0;
-    width: 100%;
-    border-radius: 4px;
+body > main > section:nth-of-type(1) {
+    color: rgb(250, 245, 198);
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    height: auto; 
 }
 
 /* General FAQs line */
-h3 {
+body > main > section:nth-of-type(1) > h3 {
     display: block;
-    border-radius: 4px;
+    border-radius: 5px;
     margin: 0px;
     background-color: hsla(12, 95%, 47%, 0.93);
+    box-shadow:  .1em .1em .3em #000; 
     font-size: 24px;
     padding: 10px 50px 9px 20px;
+    width: 91%;
     text-decoration: none;
-    background-repeat: no-repeat;
-    background-position: right -155px, 0px, 0px; 
+    font-weight: normal;
 }
 
-/* General FAQs line */
-h3:hover {
-    cursor: pointer;
+/* centering the div that holds the questions <uls/> */
+body > main > section:nth-of-type(1) > div {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
-/* General FAQs line */
-h3 > a {
-    color: rgb(250, 245, 198);
-    font-weight: 400;
-    font-size: 18px;
-    width: 100%;
-    position: relative;
-}
+/* the unordered list holding the list items holding the questions */
+body > main > section:nth-of-type(1) > div > ul {
+    list-style-type: none; 
+    position: relative; 
+  }
 
-/* General FAQs line */
-h3 > a:hover {
-    color: rgb(250, 245, 198);
-}
-
-/* General FAQs line */
-h3 > a:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: rgb(250,245,198);
-    visibility: hidden;
-
-    -webkit-transition: all 0.5s ease-in-out 0s;
-    -moz-transition: all 0.5s ease-in-out 0s;
-    -o-transition: all 0.5s ease-in-out 0s;
-    transition: all 0.5s ease-in-out 0s;
-
-    -webkit-transform: scaleX(0);
-    -moz-transform: scaleX(0);
-    -o-transform: scaleX(0);
-    transform: scaleX(0);
-}
-
-/* General FAQs line link styling */
-h3 > a:hover:before {
-  visibility: visible;
-  -webkit-transform: scaleX(1);
-  transform: scaleX(1);
-}
-
-.accordion-body {
-    display: block;
-    transition: all .75s;
-}
-
-.accordion-inner {
-    border-bottom: none;
-    padding-top: 0;
-    display: block;
-    text-indent: 0px;
+/* the list items holding the questions <divs/> */
+body > main > section:nth-of-type(1) > div > ul > li {
+    float: left; 
+    width: 95%;
+    text-align: left;
 }
 
 .inner-accordion {
@@ -93,42 +51,10 @@ h3 > a:hover:before {
     background-color: #f7f7f7; 
     border-radius: 5px;
     transition: all .75s;
+    box-shadow: 0.1em 0.1em 0.3em #000;
 }
 
-/* question and answer container */
-.accordion-container {
-    padding: 0px 15px; 
-    color: rgb(71, 71, 233); 
-    font-weight: bold;
-    font-size: 16px;
-    transition: all .75s;
-}
-
-/* flex keeps the plusMinus Button in the same line as the actual question */
-.questionLine {
-    display: inline-block;
-}
-
-/* The question link in the faq */
-body > main > div > div > div > div > div > div > a {   
-    font-size: 17px;
-    margin-left: 12px;
-    top: -18px;
-    line-height: 20px;
-    transition: all .75s;
-}
-
-/* The question link in the faq */
-body > main > div > div > div > div > div > div > a:focus {   
-    text-decoration: underline;
-}
-
-/* The question link in the faq */
-[role=button] {
-    cursor: pointer;
-}
-
-/* The answer to the question  */
+/* The answers  */
 .accordion-content {
     font-family: "Karla", monospace;
     font-weight: 400;
@@ -136,15 +62,57 @@ body > main > div > div > div > div > div > div > a:focus {
     display: visible;
     padding-left: 10px;
     transition: all .75s;
+    background-color: rgb(250,245,198);
+    border-radius: 9px;
+    padding: 10px;
+    width: 95%;
+    margin: 12px;
+    margin-left: -17px;
+
+  }
+
+/* the question */
+body > main > section:nth-of-type(1) > div > ul > li > div > div > div > a {
+    color: black;
+    font-size: 12px;
+  }
+
+/* the name of the beach */
+body > main > section:nth-of-type(1) > div > ul > li > div > div > div > a:hover {
+    cursor: pointer;
+  }
+
+.questionline {
+    display: flex;
 }
+
+/* question and answer container */
+.accordion-container {
+    padding: 0px ; 
+    color: rgb(0, 0, 0); 
+    font-weight: bold;
+    font-size: 16px;
+    transition: all .75s;
+    margin-left: 15px;
+    flex: 12 12 auto;
+  }
 
 /* this is the styling used for any link that may appear in the answer */
 a.linkincontent {
     font-size: 16px;
 }
 
-/* plusMinus button styling */
-body > main > div > div > div > div > div > button {
+/* font size of state line  */
+body > main > section:nth-of-type(1) > div > ul > li > div > div > div > a {
+    font-size: 20px;
+  }
+  
+[role=button] {
+    cursor: pointer;
+}
+  
+  /* plusMinus button styling */
+  body > main > section:nth-of-type(1) > div > ul > li > div > div > button {
     color: rgb(250,245,198);
     background:  hsla(12, 95%, 47%, 0.93);
     width: 20px;
@@ -153,17 +121,19 @@ body > main > div > div > div > div > div > button {
     font-size: 14px;
     border-radius: 50%;
     cursor: pointer;
+    /* margin-right: 10px; */
     border: 0;
     outline: 0;
     padding: 0;
+    top: -2px;
     transition: all .75s;
   }
-
-/* plusMinus button styling  on hover */
-body > main > div > div > div > div > div > button {
+  
+  /* plusMinus button styling  on hover */
+  body > main > section:nth-of-type(1) > div > ul > li > div > div > button:hover {
     cursor: pointer;
-}
-
+  }
+  
   .plus,
   .minus {
     color: rgb(250,245,198);
@@ -179,31 +149,38 @@ body > main > div > div > div > div > div > button {
     bottom: 0;
     text-align: center;
     /* box-sizing: border-box; */
-    transition: .5s all ease-out;
+    transition: .5s all ease-in-out;;
   }
-
+  
   .plus {
     opacity: 1;
     transform: rotate(0deg);
   }
-
-  body > main > div > div > div > div > div > button.active .plus {
+  
+  body > main > section:nth-of-type(1) > div > ul > li > div > div > button.active .plus {
     opacity: 0;
     transform: rotate(90deg);
   }
-
+  
   .minus {
     opacity: 0;
     transform: rotate(-90deg);
   }
-
-  body > main > div > div > div > div > div > button.active .minus {
+  
+  body > main > section:nth-of-type(1) > div > ul > li > div > div > button.active .minus {
     opacity: 1;
     transform: rotate(0deg);
   }
 
+
+@media only screen and (max-width: 960px) {
+    body > main {
+        padding-top: 135px;
+    }
+}
+
 @media only screen and (max-width: 490px) {
     body > main {
-        padding-top: 50px;
+        padding-top: 55px;
     }
 }

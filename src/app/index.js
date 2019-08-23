@@ -11,7 +11,6 @@ import owcbw from '../lib/images/animation/onewheelchairboardwalk.jpg';
 import owcpf from '../lib/images/animation/onewheelchairpicketfence.jpg';
 import twcb from '../lib/images/animation/twowheelchairsbeach.jpg';
 
-
 /* sand scooter II image */
 document.querySelector("main > div > section:nth-of-type(1) > figure > img").src = ss2;
 

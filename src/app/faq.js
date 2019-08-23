@@ -6,93 +6,60 @@ import '../lib/scripts/fbpixelcode.js';
 import '../lib/scripts/headerStyling.js';
 import '../lib/scripts/footerStyling.js';
 
-import accordianArrow from '../lib/images/accordianArrow.png';
+import {q_and_A} from '../lib/scripts/questionsAndAnswers.js';
+
+q_and_A.forEach(x => { console.dir(x);});
 
 
-const accordianHeading = document.querySelector(".accordion-heading"); // h3
-const accordianToggle = document.querySelector(".accordion-toggle");  //the link
-const accordianBody = document.querySelector(".accordion-body");  // container for all questions
-const questionLinks  = document.querySelectorAll("body > main > div > div > div > div > div > div > a"); // each question in the FAQ
-const questionLinksArray = Array.from(questionLinks);
-const plusMinusButtons = document.querySelectorAll("body > main > div > div > div > div > div > button"); // plusMinus button next to question
+const ulQuestions = document.querySelector("body > main > section:nth-of-type(1) > div > ul");
+
+q_and_A.forEach(qa => {
+    const listItemInnerAccordion = document.createElement("li");
+    ulQuestions.appendChild(listItemInnerAccordion);
+    const divInnerAccordion = document.createElement("div");
+    divInnerAccordion.classList.add("inner-accordion");
+    const divQuestionline = document.createElement("div");
+    divQuestionline.classList.add("questionline");
+    const plusMinusButton = document.createElement("button");
+    const spanPlus = document.createElement("span");
+    const spanMinus = document.createElement("span");
+    plusMinusButton.appendChild(spanPlus);
+    plusMinusButton.appendChild(spanMinus);
+    spanPlus.classList.add("plus");
+    spanMinus.classList.add("minus");
+    const iFramePlus = document.createElement("i");
+    const iFrameMinus = document.createElement("i");
+    spanPlus.appendChild(iFramePlus);
+    spanMinus.appendChild(iFrameMinus);
+    iFramePlus.classList.add("fa",  "fa-plus");
+    iFrameMinus.classList.add("fa", "fa-minus");
+    const divAccordionContainer = document.createElement("div");
+    divAccordionContainer.classList.add("accordion-container");
+    const anchorButton = document.createElement("a");
+    anchorButton.style.role = "button";
+    anchorButton.innerHTML = qa.question;
+    const divAccordionContent = document.createElement("div");
+    divAccordionContent.classList.add("accordion-content");
+    divAccordionContent.style.opacity = 0;
+    divAccordionContent.style.maxHeight = 0;
+    listItemInnerAccordion.appendChild(divInnerAccordion);
+    divInnerAccordion.appendChild(divQuestionline);
+    divQuestionline.appendChild(plusMinusButton);
+    divQuestionline.appendChild(divAccordionContainer);
+    divAccordionContainer.appendChild(anchorButton);
+    divAccordionContainer.appendChild(divAccordionContent);
+    // Display answer below
+    divAccordionContent.innerHTML = `${qa.answer}`;
+});
+
+const plusMinusButtons = document.querySelectorAll("body > main > section:nth-of-type(1) > div > ul > li > div > div > button"); 
 const plusMinusButtonsArray = Array.from(plusMinusButtons);
-const accordianContent = document.querySelectorAll(".accordion-content"); // the answers to the questions
-const accordianContentArray = Array.from(accordianContent);
-const accordianContainer = document.querySelectorAll(".accordion-container"); // a container
-const accordianContainerArray = Array.from(accordianContainer);
-const innerAccordian = document.querySelectorAll(".inner-accordion"); // a container
-const innerAccordianArray = Array.from(innerAccordian);
-
-accordianHeading.style.backgroundImage = `url(${accordianArrow})`;
-
-let faqIsVisible = true;
-
-/* the whole faq is toggled if the 'General FAQs' line is clicked */
-function toggleFAQ(e) {
-    e.stopPropagation();
-    
-       if(!faqIsVisible) {
-            /* make each and every FAQ questions visible */
-            accordianBody.style.maxHeight = "5000px";
-            questionLinksArray.forEach(x => {
-                x.style.opacity = 1.0;
-                x.style.maxHeight = "400px";
-            });
-            plusMinusButtonsArray.forEach(x => {
-                x.style.opacity = 1.0;
-                x.style.maxHeight = "400px";
-            });
-            accordianContainerArray.forEach(x => {
-                x.style.opacity = 1.0;
-                x.style.maxHeight = "400px";
-            });
-            innerAccordianArray.forEach(x => {
-                x.style.opacity = 1.0;
-                x.style.maxHeight = "400px";
-            });
-            /* change the direction of the arrow */
-            accordianHeading.style.backgroundPosition = "right -155px, 0px, 0px"; 
-            faqIsVisible = true;
-        } else {
-            /* close up all the questions and answers */
-            accordianBody.style.maxHeight = 0;
-            /* change the direction of the arrow */
-            accordianHeading.style.backgroundPosition = "right -3px, 0px, 0px"; 
-            /* make questions invisible */
-            questionLinksArray.forEach(x => {
-                x.style.maxHeight = 0;
-                x.style.opacity = 0;
-            });
-            /* make answers invisible */
-            accordianContentArray.forEach(x => {
-                x.style.opacity = 0;
-                x.style.maxHeight = 0;
-            });
-            accordianContainerArray.forEach(x => {
-                x.style.opacity = 0;
-                x.style.maxHeight = 0;
-            });
-            innerAccordianArray.forEach(x => {
-                x.style.opacity = 0;
-                x.style.maxHeight = 0;
-            });
-            /* make plusMinus buttons invisible */
-            plusMinusButtonsArray.forEach(x => {
-                x.style.opacity = 0;
-                x.style.maxHeight = 0;
-                x.removeAttribute('class');
-            });
-            faqIsVisible = false;
-    }
-};
+const questionLinks  = document.querySelectorAll("body > main > section:nth-of-type(1) > div > ul > li > div > div > div > a"); 
+const questionLinksArray = Array.from(questionLinks);
 
 /* plusMinus button hocus pocus */
 function morphTheButton(e) {
-  /*  if(this.className.includes('active')) {
-        this.removeAttribute('class');
-    } else {
-        this.className += 'active';
-    } */
+
     let theAnswer = this.parentElement.querySelector(".accordion-container .accordion-content"); // as seen from the plusMinus <button>
     if(theAnswer.style.opacity == 0) {
         theAnswer.style.maxHeight = "500px";
@@ -104,14 +71,6 @@ function morphTheButton(e) {
         this.removeAttribute('class');
     }
 };
-
-accordianHeading.addEventListener('click',function (e){
-    toggleFAQ(e);
-}); 
-
-accordianToggle.addEventListener('click',function (e){
-    toggleFAQ(e);
-}); 
 
 /* this function toggles the answer (accordian-content) to the FAQ question   */
 /* the class name of the answer must be 'accordion-content'                   */
@@ -138,10 +97,6 @@ plusMinusButtonsArray.forEach(x => {
     x.addEventListener("click", morphTheButton);
 })
 
-/* initialize the answers not to be visible */
-accordianContentArray.forEach(x => {
-    x.style.maxHeight = 0;
-    x.style.opacity = 0;
-})
+
 
 
