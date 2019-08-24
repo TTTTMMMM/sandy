@@ -8,7 +8,7 @@ import '../lib/scripts/footerStyling.js';
 
 import {q_and_A} from '../lib/scripts/questionsAndAnswers.js';
 
-q_and_A.forEach(x => { console.dir(x);});
+// q_and_A.forEach(x => { console.dir(x);});
 
 
 const ulQuestions = document.querySelector("body > main > section:nth-of-type(1) > div > ul");
@@ -95,7 +95,14 @@ questionLinksArray.forEach(x => {
 
 plusMinusButtonsArray.forEach(x => {
     x.addEventListener("click", morphTheButton);
-})
+});
+
+let menuIsActive = false;
+const smallVuportMenu = document.querySelector("body > section > ul");
+smallVuportMenu.addEventListener('click', function() {
+    (!menuIsActive) ? this.style.top = "-15px" : this.style.top = "-150px";
+    menuIsActive = !menuIsActive;
+});
 
 
 

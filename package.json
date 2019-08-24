@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run build",
-    "build": "webpack -d  && cp src/index.html dist/index.html && cp src/gallery.html dist/gallery.html && webpack-dev-server --content-base src/ --inline --hot",
-    "build:prod": "webpack -p  && cp src/index.html dist/index.html && cp src/gallery.html dist/gallery.html"
+    "build": "webpack -d  && cp src/index.html dist/index.html && cp src/gallery.html dist/gallery.html && webpack-dev-server --host 192.168.1.151 --content-base src/ --inline --hot",
+    "build:prod": "webpack -p  && cp src/index.html dist/index.html && cp src/gallery.html dist/gallery.html "
   },
   "author": "TM",
   "license": "ISC",

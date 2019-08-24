@@ -12,8 +12,6 @@ var config = {
         faq: SRC_DIR + "/app/faq.js",
         locations: SRC_DIR + "/app/locations.js",
         gMaps: SRC_DIR + "/app/gMaps.js",
-       // devServer: '0.0.0.0',      // added this line to try to configure server myself instead of relying on default
-       // port: 8080,                // added this line to try to configure server myself instead of relying on default
     },
     module: {
         rules: [
@@ -74,10 +72,10 @@ var config = {
         new HtmlWebpackPlugin({
             template: SRC_DIR + '/locations.html',
             inject: true,
-            chunks: ['locations'],
+            chunks: ['locations', "all"],
             filename: 'locations.html'
         }),
-    ]
+    ],
 };
 
 module.exports = config;

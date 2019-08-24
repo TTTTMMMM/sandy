@@ -247,7 +247,7 @@ body > footer {
 @media (min-width: 320px) { /* screen is 320px wide or more */
     body > main {
         border-radius: 10px;
-        padding-top: 113px;
+        padding-top: 33px;
         --f: .23;
         --d: 16rem;  /* size of selected picture */
         --ty: calc(1.9*var(--tx) + 4rem); /*  calc(2*var(--tx) + 1rem) */
@@ -302,6 +302,12 @@ body > footer {
         --oy: calc(var(--tx) - .5*(1 - var(--f))*var(--d) + 1rem);
     }
 }
+
+@media only screen and (max-height: 500px) {
+    body > main {
+        padding-top: 23px;
+      }
+  }
 
   
   
