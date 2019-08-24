@@ -53,7 +53,7 @@ body > main > section:nth-of-type(2) {
   }
   
   #map .dInner {
-    font-size: 1.6vw;
+    font-size: 1.3vw;
     padding-left: 10px;
     padding-top: 5px;
     background-color: #fc3903;
@@ -71,7 +71,7 @@ body > main > section:nth-of-type(2) {
     margin-bottom: 2px;
     text-align: center;
     margin-left: 2px;
-    font-size: 1.5vw;
+    font-size: 1.3vw;
   }
   
   #map .dInstructionInner {
@@ -88,6 +88,7 @@ body > main > section:nth-of-type(2) {
     font-size: 15px;
     transition: all .5s;
     border: 1px solid  hsla(12, 95%, 47%, 0.93);
+    margin-bottom: 3px;
   }
 
   .IWp {
@@ -414,7 +415,11 @@ body > main > section:nth-of-type(3) > div > ul > li > div > div > button.active
 /**************************/
 /* really narrow screens  */
 /**************************/
-@media only screen and (max-width: 668px) {
+@media only screen and (max-width: 800px) {
+  font-size: 2.0vw;
+}
+
+@media only screen and (max-width: 720px) {
   body > main > section:nth-of-type(3) > div > ul > li > div > div > div > div > div > ul > li:nth-of-type(4) > a {
       color: blue;
     }
@@ -433,6 +438,14 @@ body > main > section:nth-of-type(3) > div > ul > li > div > div > button.active
     margin-left: 12px;
     font-size: 15px;
     color: blue;
+  }
+
+  .dInstructionInner {
+    display: none;
+  }
+
+  .dInner {
+    display: none;
   }
 
 }

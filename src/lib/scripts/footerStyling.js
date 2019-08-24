@@ -2,7 +2,7 @@ import madeinUSA from './../images/madeinusaparts.png';
 import mastercard from './../images/mastercard.png';
 import visa from './../images/visa.png';
 import discover from './../images/discover.png';
-import amex from './../images/amex.png';
+import amex from './../images/amex1.jpg';
 
 
 /* made in USA parts image */

@@ -100,10 +100,12 @@ plusMinusButtonsArray.forEach(x => {
 let menuIsActive = false;
 const smallVuportMenu = document.querySelector("body > section > ul");
 smallVuportMenu.addEventListener('click', function() {
-    (!menuIsActive) ? this.style.top = "-15px" : this.style.top = "-150px";
+    if(window.innerWidth < 500) {
+        (!menuIsActive) ? this.style.top = "-15px" : this.style.top = "-145px";
+    } 
+    this.style.width = "160px";
     menuIsActive = !menuIsActive;
 });
-
 
 
 

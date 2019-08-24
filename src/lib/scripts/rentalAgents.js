@@ -258,7 +258,7 @@ export const rentalAgents = [
      {
         "agent": "Dandy Don's",
         "phone": "410-289-2289",
-        "notes": "Hourly rentals only; for daily/weekly deliveries, call Sand Helper 855-743-5737",
+        "notes": "Hourly rentals only; for daily/weekly deliveries, call Sand Helper at 855-743-5737",
         "email": "contact@ocmdbikerentals.com",
         "url": "http://ocmdbikerentals.com/index.html",
         "locations": [

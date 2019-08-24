@@ -58,7 +58,7 @@ function anotherControl(controlDiv) {
     
     let controlText = document.createElement('div');
     controlText.classList.add("dInstructionInner");
-    controlText.innerHTML = `Zoom in on beach and click on icons for rental info.`;
+    controlText.innerHTML = `Click on icons`;
     controlText.style.fontFamily = "Josefin Sans, monotype";
     controlUI.appendChild(controlText);
 }
@@ -81,10 +81,10 @@ function initMap() {
     CenterControl(centerControlDiv1, map, 'Jersey Shore', joiseyShore, 9 );
 
     let centerControlDiv2 = document.createElement('div');
-    CenterControl(centerControlDiv2, map, 'Maryland/Delaware', ocmd, 10 );
+    CenterControl(centerControlDiv2, map, 'Maryland/Delaware', ocmd, 9 );
     
     let centerControlDiv3 = document.createElement('div');
-    CenterControl(centerControlDiv3, map, 'Virginia Beach/OBX', vabeach, 9 );
+    CenterControl(centerControlDiv3, map, 'Virginia Beach/OBX', vabeach, 8 );
     
     let centerControlDiv4 = document.createElement('div'); 
     CenterControl(centerControlDiv4, map, 'Carolina Beaches', ncBeaches, 9 );
@@ -334,8 +334,12 @@ beachLinksArray.forEach(x => {
 let menuIsActive = false;
 const smallVuportMenu = document.querySelector("body > section > ul");
 smallVuportMenu.addEventListener('click', function() {
-    (!menuIsActive) ? this.style.top = "-15px" : this.style.top = "-150px";
+    if(window.innerWidth < 500) {
+        (!menuIsActive) ? this.style.top = "-15px" : this.style.top = "-145px";
+    } 
+    this.style.width = "160px";
     menuIsActive = !menuIsActive;
 });
+
 
 
