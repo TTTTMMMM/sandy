@@ -1,9 +1,9 @@
 import './../lib/styles/style.css';
 
 import '../lib/scripts/googleAnalytics.js';
-import '../lib/scripts/fbpixelcode.js'; 
+import '../lib/scripts/fbpixelcode.js';
 import '../lib/scripts/headerStyling.js';
-import '../lib/scripts/footerStyling.js'; 
+import '../lib/scripts/footerStyling.js';
 
 import ss2 from '../lib/images/ss2.jpeg';
 import owcb from '../lib/images/animation/onewheelchairbeach.jpg';
@@ -31,7 +31,7 @@ const smallVuportMenu = document.querySelector("body > section > ul");
 smallVuportMenu.addEventListener('click', function() {
     if(window.innerWidth < 500) {
         (!menuIsActive) ? this.style.top = "-15px" : this.style.top = "-145px";
-    } 
-    this.style.width = "160px";
+    }
+    // this.style.width = "160px";
     menuIsActive = !menuIsActive;
 });

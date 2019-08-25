@@ -2,7 +2,7 @@ import './../lib/styles/style.css';
 import './../lib/styles/styleFaq.css';
 
 import '../lib/scripts/googleAnalytics.js';
-import '../lib/scripts/fbpixelcode.js'; 
+import '../lib/scripts/fbpixelcode.js';
 import '../lib/scripts/headerStyling.js';
 import '../lib/scripts/footerStyling.js';
 
@@ -52,9 +52,9 @@ q_and_A.forEach(qa => {
     divAccordionContent.innerHTML = `${qa.answer}`;
 });
 
-const plusMinusButtons = document.querySelectorAll("body > main > section:nth-of-type(1) > div > ul > li > div > div > button"); 
+const plusMinusButtons = document.querySelectorAll("body > main > section:nth-of-type(1) > div > ul > li > div > div > button");
 const plusMinusButtonsArray = Array.from(plusMinusButtons);
-const questionLinks  = document.querySelectorAll("body > main > section:nth-of-type(1) > div > ul > li > div > div > div > a"); 
+const questionLinks  = document.querySelectorAll("body > main > section:nth-of-type(1) > div > ul > li > div > div > div > a");
 const questionLinksArray = Array.from(questionLinks);
 
 /* plusMinus button hocus pocus */
@@ -102,8 +102,8 @@ const smallVuportMenu = document.querySelector("body > section > ul");
 smallVuportMenu.addEventListener('click', function() {
     if(window.innerWidth < 500) {
         (!menuIsActive) ? this.style.top = "-15px" : this.style.top = "-145px";
-    } 
-    this.style.width = "160px";
+    }
+    // this.style.width = "160px";
     menuIsActive = !menuIsActive;
 });
 

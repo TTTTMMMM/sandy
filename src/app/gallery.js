@@ -2,7 +2,7 @@ import './../lib/styles/style.css';
 import './../lib/styles/styleGallery.css';
 
 import '../lib/scripts/googleAnalytics.js';
-import '../lib/scripts/fbpixelcode.js'; 
+import '../lib/scripts/fbpixelcode.js';
 import '../lib/scripts/headerStyling.js';
 import '../lib/scripts/footerStyling.js';
 
@@ -76,7 +76,7 @@ const smallVuportMenu = document.querySelector("body > section > ul");
 smallVuportMenu.addEventListener('click', function() {
     if(window.innerWidth < 500) {
         (!menuIsActive) ? this.style.top = "-15px" : this.style.top = "-145px";
-    } 
-    this.style.width = "160px";
+    }
+    // this.style.width = "160px";
     menuIsActive = !menuIsActive;
 });

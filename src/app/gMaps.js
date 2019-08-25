@@ -37,25 +37,25 @@ document.querySelector("#style3").src = style3Map;
 function CenterControl(controlDiv, map, cityName, latlng, zLevel) {
     let controlUI = document.createElement('div');
     controlUI.classList.add("dOuter");
-    controlDiv.appendChild(controlUI); 
-    
+    controlDiv.appendChild(controlUI);
+
     let controlText = document.createElement('div');
     controlText.classList.add("dInner");
     controlText.innerHTML = cityName;
     controlText.style.fontFamily = "Josefin Sans, monotype";
     controlUI.appendChild(controlText);
-  
+
     controlUI.addEventListener('click', function() {
         map.panTo(latlng);
         map.setZoom(zLevel);
     });
 }
-  
+
 function anotherControl(controlDiv) {
     let controlUI = document.createElement('div');
     controlUI.classList.add("dInstructionOuter");
-    controlDiv.appendChild(controlUI); 
-    
+    controlDiv.appendChild(controlUI);
+
     let controlText = document.createElement('div');
     controlText.classList.add("dInstructionInner");
     controlText.innerHTML = `Click on icons`;
@@ -82,13 +82,13 @@ function initMap() {
 
     let centerControlDiv2 = document.createElement('div');
     CenterControl(centerControlDiv2, map, 'Maryland/Delaware', ocmd, 9 );
-    
+
     let centerControlDiv3 = document.createElement('div');
     CenterControl(centerControlDiv3, map, 'Virginia Beach/OBX', vabeach, 8 );
-    
-    let centerControlDiv4 = document.createElement('div'); 
+
+    let centerControlDiv4 = document.createElement('div');
     CenterControl(centerControlDiv4, map, 'Carolina Beaches', ncBeaches, 9 );
-    
+
     // Put an "instructions" label on the map
     let instructionControlDiv = document.createElement('div');
     anotherControl(instructionControlDiv);
@@ -98,13 +98,13 @@ function initMap() {
     const ms2 = document.querySelector('#style2');
     const ms3 = document.querySelector('#style3');
 
-    
+
     // Place Beach Buttons Top Left
     map.controls[google.maps.ControlPosition.LEFT_TOP].push(centerControlDiv1);
     map.controls[google.maps.ControlPosition.LEFT_TOP].push(centerControlDiv2);
     map.controls[google.maps.ControlPosition.LEFT_TOP].push(centerControlDiv3);
     map.controls[google.maps.ControlPosition.LEFT_TOP].push(centerControlDiv4);
-    
+
     // Place Instruction Label Top Center
     map.controls[google.maps.ControlPosition.TOP_CENTER].push(instructionControlDiv);
 
@@ -140,7 +140,7 @@ function initMap() {
     // This is the image that will be used for the google map markers, scaled appropriately
     let url = `./lib/images/longMascotIcon.png`;
         let image = {
-        url: url, 
+        url: url,
         scaledSize: new google.maps.Size(38, 38),
     };
 
@@ -157,7 +157,7 @@ function initMap() {
         /* create an infoWindow, which shows when the markers are clicked  */
         let contentString = theIWArray[loc.beach].outerHTML;
         let iw = new google.maps.InfoWindow({
-                content: contentString, 
+                content: contentString,
             });
 
         /* create the listener for each marker, which displays the infoWindow content when the marker is clicked */
@@ -167,8 +167,8 @@ function initMap() {
             iw.open(map, rentMarker);
             openInfoWindow = iw;
         })
-    })); 
-  
+    }));
+
     // Don't let the user zoom in too close or too far
     map.addListener('zoom_changed', function () {
         if(map.getZoom() < 6) {
@@ -184,7 +184,7 @@ function initMap() {
 window.initMap = initMap;
 // Do not delete! //
 
-/* 
+/*
     Let's throw some states and their beaches on section 3, shall we?
  */
 
@@ -270,25 +270,25 @@ const ulStates = document.querySelector("body > main > section:nth-of-type(3) > 
             theWebsiteLink.setAttribute('target', "_blank");
             theWebsiteLink.innerHTML = "Click/touch this link for info, pricing and reservations";
 
-     
+
             theRentalAgentsListItemURL.appendChild(theWebsiteLink);
             theRentalAgentsListItemURL.classList.add("IWliURL");
             theRentalAgentsListItemURL.style.fontFamily = "Josefin Sans, monotype";
             theRentalAgentsList.appendChild(theRentalAgentsListItemURL);
-    
+
             let theRentalAgentsListItemNotes = document.createElement("li");   // grab the notes
             theRentalAgentsListItemNotes.classList.add("IWliNotes");
             theRentalAgentsListItemNotes.style.fontFamily = "Josefin Sans, monotype";
             theRentalAgentsListItemNotes.innerHTML = ra.notes;
             theRentalAgentsList.appendChild(theRentalAgentsListItemNotes);
-        }); 
-    });   
+        });
+    });
 
  });
 
-const plusMinusButtons = document.querySelectorAll("body > main > section:nth-of-type(3) > div > ul > li > div > div > button"); 
+const plusMinusButtons = document.querySelectorAll("body > main > section:nth-of-type(3) > div > ul > li > div > div > button");
 const plusMinusButtonsArray = Array.from(plusMinusButtons);
-const beachLinks  = document.querySelectorAll("body > main > section:nth-of-type(3) > div > ul > li > div > div > div > a"); 
+const beachLinks  = document.querySelectorAll("body > main > section:nth-of-type(3) > div > ul > li > div > div > div > a");
 const beachLinksArray = Array.from(beachLinks);
 
 /* plusMinus button hocus pocus */
@@ -321,7 +321,7 @@ function toggleAccordionContent(e) {
         theButton.removeAttribute('class');
     }
 };
-  
+
 
 plusMinusButtonsArray.forEach(x => {
     x.addEventListener("click", morphTheButton);
@@ -336,8 +336,8 @@ const smallVuportMenu = document.querySelector("body > section > ul");
 smallVuportMenu.addEventListener('click', function() {
     if(window.innerWidth < 500) {
         (!menuIsActive) ? this.style.top = "-15px" : this.style.top = "-145px";
-    } 
-    this.style.width = "160px";
+    }
+    // this.style.width = "160px";
     menuIsActive = !menuIsActive;
 });
 

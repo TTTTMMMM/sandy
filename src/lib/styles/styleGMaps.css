@@ -8,7 +8,7 @@ html, body {
   }
 
 body > main {
-    padding-top: 171px;
+    padding-top: 151px;
     display: flex;
     flex-direction: column;
 }

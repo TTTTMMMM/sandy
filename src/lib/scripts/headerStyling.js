@@ -20,5 +20,8 @@ document.querySelector("body > header").style.backgroundImage = `url('${headerBa
 /* icon image in the menu */
 document.querySelector("body > section > ul > li:nth-child(5) > img").src = longMascotIcon;
 
+// set the width of the drop-down menu for small vuports
+document.querySelector("body > section > ul").style.width = "155px";
+
 
 

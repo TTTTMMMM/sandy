@@ -1,5 +1,5 @@
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
-/* https://codepen.io/thebabydino/pen/oWqpzw                          */
+/* props to: https://codepen.io/thebabydino/pen/oWqpzw                */
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
@@ -268,6 +268,7 @@ body > footer {
         --f: .3;
         --d: 20rem;  /* size of selected picture */
         --ty: calc(1.9*var(--tx) + 6rem); /*  calc(2*var(--tx) + 1rem) */
+        padding-top: 125px;
     }
 }
 
