@@ -23,5 +23,11 @@ document.querySelector("body > section > ul > li:nth-child(5) > img").src = long
 // set the width of the drop-down menu for small vuports
 document.querySelector("body > section > ul").style.width = "155px";
 
-
-
+let menuIsActive = false;
+const smallVuportMenu = document.querySelector("body > section > ul");
+smallVuportMenu.addEventListener('click', function() {
+    if(window.innerWidth < 500) {
+        (!menuIsActive) ? this.style.top = "-15px" : this.style.top = "-145px";
+    }
+    menuIsActive = !menuIsActive;
+});

@@ -26,12 +26,3 @@ document.querySelector("body > main > section:nth-of-type(1) > img:nth-child(2)"
 /* animation image1 */
 document.querySelector("body > main > section:nth-of-type(1) > img:nth-child(1)").src = owcb;
 
-let menuIsActive = false;
-const smallVuportMenu = document.querySelector("body > section > ul");
-smallVuportMenu.addEventListener('click', function() {
-    if(window.innerWidth < 500) {
-        (!menuIsActive) ? this.style.top = "-15px" : this.style.top = "-145px";
-    }
-    // this.style.width = "160px";
-    menuIsActive = !menuIsActive;
-});

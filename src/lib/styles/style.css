@@ -1,17 +1,17 @@
 
-@import url('https://use.fontawesome.com/releases/v5.9.0/css/all.css'); 
+@import url('https://use.fontawesome.com/releases/v5.9.0/css/all.css');
 @import url('https://fonts.googleapis.com/css?family=Karla|Josefin+Sans:400&display=swap');
 
 html {
   background: #DCE3E6;
-  font-family: 'Josefin Sans', monospace; 
+  font-family: 'Josefin Sans', monospace;
 }
 
 body {
    border-radius: 10px;
    margin: 28px;
    color :#333;
-   position: relative;    
+   position: relative;
    box-shadow: 0 0.3em 1em#000;
 }
 
@@ -78,7 +78,7 @@ body > header > section > nav > ul > li > a:before {
   -moz-transition: all 0.5s ease-in-out 0s;
   -o-transition: all 0.5s ease-in-out 0s;
   transition: all 0.5s ease-in-out 0s;
-  
+
   -webkit-transform: scaleX(0);
   -moz-transform: scaleX(0);
   -o-transform: scaleX(0);
@@ -96,7 +96,7 @@ body > header > section > nav > ul > li > a:before {
 /* styling in header                                                  */
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 body > header {
-  font-family: 'Karla', monospace; 
+  font-family: 'Karla', monospace;
   background-color: honeydew;
   background-size: cover;
   border: 0 solid #000;
@@ -106,9 +106,9 @@ body > header {
   right: 0;
   padding: 0px;
   padding-bottom: 10px;
-  border-radius: 10px; 
+  border-radius: 10px;
   box-shadow: .3em .3em 1em #000;
-  position: fixed; 
+  position: fixed;
   width: 99%;
   height: 140px;
   margin-left: 5px;
@@ -136,7 +136,7 @@ body > header > section:nth-child(1) > figure:nth-child(1):hover {
 body > header > section:nth-child(1) > figure:nth-child(1):not(:hover) {
     transform: scale(1.0);
     transition: all 1.5s;
-} 
+}
 
 /* navigation menu when there's a wide vuport */
 body > header > section:nth-child(1) > nav {
@@ -228,6 +228,18 @@ main > div > section:nth-of-type(1) > figure > figcaption {
 }
 
 /* drop cap */
+main > div > section:nth-of-type(1) > p:nth-of-type(1):first-letter {
+  color: hsla(12, 95%, 47%, 0.93);;
+  float: left;
+  font-family: Georgia;
+  font-size: 75px;
+  line-height: 60px;
+  padding-top: 4px;
+  padding-right: 8px;
+  padding-left: 3px;
+}
+
+/* drop cap */
 main > div > section:nth-of-type(1) > p:nth-of-type(2):first-letter {
   color: hsla(12, 95%, 47%, 0.93);;
   float: left;
@@ -253,10 +265,10 @@ main > div > section:nth-of-type(2) > p::first-letter {
 
 /* The first section in main holds the flipping (animated) images */
 body > main > section:nth-of-type(1) {
-  width: 82%;  
-  height: 35vw; 
-  overflow: hidden;  
-  position: relative;    
+  width: 82%;
+  height: 35vw;
+  overflow: hidden;
+  position: relative;
   border-radius: 3px;
   margin-bottom: 12px;
   margin-left: auto;   /* center section horizontally  #1 */
@@ -264,21 +276,21 @@ body > main > section:nth-of-type(1) {
 }
 
 /* The setup for animation */
-body > main > section:nth-of-type(1) > img { 
+body > main > section:nth-of-type(1) > img {
   margin-top: 5px;
-  position: absolute; 
-  animation: myAnimation 32s infinite; 
-  opacity: 0; 
-  width: 98%; 
+  position: absolute;
+  animation: myAnimation 32s infinite;
+  opacity: 0;
+  width: 98%;
   height: auto;
   border-radius: 12px;
-  box-shadow: .3em .3em .4em #000; 
+  box-shadow: .3em .3em .4em #000;
 }
 
 @keyframes myAnimation {
-  25%{opacity:1;} 
+  25%{opacity:1;}
   40%{opacity:0;}
-} 
+}
 
 /* Animation flips through four images below */
 body > main > section:nth-of-type(1) > img:nth-child(4){animation-delay:0s;}
@@ -288,12 +300,12 @@ body > main > section:nth-of-type(1) > img:nth-child(1){animation-delay:24s;}
 
 /* video section */
 body > main > section:nth-of-type(2) {
-  width: 80%; 
-  height: auto; 
-  overflow: hidden; 
-  position: relative; 
+  width: 80%;
+  height: auto;
+  overflow: hidden;
+  position: relative;
   border-radius: 12px;
-  box-shadow: .3em .3em 1em #000; 
+  box-shadow: .3em .3em 1em #000;
   margin-bottom: 9px;
   margin-left: auto;   /* center section horizontally  #1 */
   margin-right: auto  /* center section horizontally  #2 */
@@ -301,7 +313,7 @@ body > main > section:nth-of-type(2) {
 
 .wistia_responsive_padding {
   padding: 56.25% 0 0 0;
-  position: relative; 
+  position: relative;
 }
 
 .wistia_responsive_wrapper {
@@ -348,7 +360,7 @@ body > footer > section:nth-of-type(2) {
   display: inline-block;
   width: 35vw;
   min-width: 270px;
-  font-family: 'Karla', monospace; 
+  font-family: 'Karla', monospace;
   background-color: #eee;
 }
 
@@ -379,7 +391,7 @@ body > footer > section:nth-of-type(1) > img {
   left: 50%;          /* center made in USA image: step #4 */
   transform: translate(-50%, -50%);  /* center made in USA image: step #5 */
   border-radius: 3px;
-  box-shadow: .1em .1em .3em #000; 
+  box-shadow: .1em .1em .3em #000;
 }
 /*-------------------------------------*/
 
@@ -407,7 +419,7 @@ body > footer > section:nth-of-type(2) > ul > li > a {
 body > footer > section:nth-of-type(2) > ul > li > a > span:hover {
   color: hsla(12, 95%, 47%, 0.93);
   transition: all .5s ease-in-out;
-} 
+}
 
 /* stylize sms, phone, envelope and facebook icons upon unhover */
 body > footer > section:nth-of-type(2) > ul > li > a > span:not(:hover) {
@@ -425,7 +437,7 @@ body > footer > section:nth-of-type(2) > ul > li:nth-child(-n+4) > span {
   border-radius: 6px;
   padding: 3px 0;
   font-size: 8px;
-  
+
   /* Position the tooltip */
   position: absolute;
   z-index: 1;
@@ -439,7 +451,7 @@ body > footer > section:nth-of-type(2) > ul > li:nth-of-type(1):hover #tt1 {
   font-size: 14px;
   top: -39px;
   transition: all .5s;
-} 
+}
 
 /* when the link is not hovered over, make the text message tool tip invisible */
 body > footer > section:nth-of-type(2) > ul > li:nth-of-type(1):not(:hover) #tt1 {
@@ -456,7 +468,7 @@ body > footer > section:nth-of-type(2) > ul > li:nth-of-type(2):hover #tt2 {
   top: -39px;
   width: 140px;
   transition: all .5s;
-} 
+}
 
 /* when the link is not hovered over, make the phone message tool tip invisible */
 body > footer > section:nth-of-type(2) > ul > li:nth-of-type(2):not(:hover) #tt2 {
@@ -473,7 +485,7 @@ body > footer > section:nth-of-type(2) > ul > li:nth-of-type(3):hover #tt3 {
   top: -39px;
   width: 140px;
   transition: all .5s;
-} 
+}
 
 /* when the link is not hovered over, make the email message tool tip invisible */
 body > footer > section:nth-of-type(2) > ul > li:nth-of-type(3):not(:hover) #tt3 {
@@ -490,7 +502,7 @@ body > footer > section:nth-of-type(2) > ul > li:nth-of-type(4):hover #tt4 {
   width: 195px;
   font-size: 14px;
   top: -39px;
-} 
+}
 
 /* when the link is not hovered over, make the facebook message tool tip invisible */
 body > footer > section:nth-of-type(2) > ul > li:nth-of-type(4):not(:hover) #tt4 {
@@ -512,12 +524,12 @@ body > footer > section:nth-of-type(2) > ul > li:nth-of-type(5) {
 /* credit card unordered list styling */
 
 body > footer > section:nth-of-type(3) > ul {
-  list-style-type: none; 
+  list-style-type: none;
   display: inline-table;
-  position: absolute; 
-  top: 50%;           
-  left: 50%;          
-  transform: translate(-50%, -70%);  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -70%);
 }
 
 body > footer > section:nth-of-type(3) > ul > li {
@@ -528,7 +540,7 @@ body > footer > section:nth-of-type(3) > ul > li {
 /* credit card images */
 body > footer > section:nth-of-type(3) > ul > li img {
   border-radius: 3px;
-  box-shadow: .1em .1em .3em #000; 
+  box-shadow: .1em .1em .3em #000;
   width: 7vw;
   max-width: 100px;
   min-width: 50px;
@@ -538,7 +550,7 @@ body > footer > section:nth-of-type(3) > ul > li img {
 
 /* amex credit card is a little small */
 body > footer > section:nth-of-type(3) > ul > li:nth-of-type(4) > img {
-  transform: translate(0, 2px);  
+  transform: translate(0, 2px);
 }
 
 /* padding between font-awesome logos and telephone number, email, facebook and copyright words */
@@ -554,7 +566,7 @@ span {
 @media only screen and (max-width: 960px) {
 
 body > header {
-  background-position: top left; 
+  background-position: top left;
 }
 body > main {
   padding-top: 120px;
@@ -564,7 +576,7 @@ body > main {
 /* make header vertically smaller and set z-index         */
 /* to keep it in front of the drop down menu              */
 /*--------------------------------------------------------*/
-body > header { 
+body > header {
   height: 100px;
   z-index: 10;
 }
@@ -577,13 +589,13 @@ body > header > section:nth-of-type(1) {
 /* remove the first header image  */
 body > header > section:nth-of-type(1) > figure:nth-of-type(1) img {
   display: none;
-} 
+}
 
 /* resurrect the second section */
 body > header > section:nth-of-type(2)  {
   margin: auto;
   width: 100%;
-  border: 1px solid transparent; 
+  border: 1px solid transparent;
   display: block;
 }
 
@@ -622,12 +634,12 @@ body > header > section:nth-of-type(2) > figure:nth-child(1) img {
   }
 
   /* on hover, menu moves down to reveal list items */
-  body > section > ul:hover { 
+  body > section > ul:hover {
     top: 110px;
   }
 
   /* on hover, menu moves down to reveal list items */
-  body > section > ul:active { 
+  body > section > ul:active {
     top: 110px;
   }
 
@@ -655,13 +667,13 @@ body > header > section:nth-of-type(2) > figure:nth-child(1) img {
     font-family: "Karla";
     font-size: 19px;
   }
-   
+
 /* set the styling of the links in the dropdown menu upon hover */
   body > section > ul > li > a:hover {
     font-size: 19px;
     color: rgb(250, 245, 198);
   }
-  
+
 /* link styling (for the dropdown menu) (line underneath link) */
 body > section > ul > li > a:before {
 	content: "";
@@ -677,7 +689,7 @@ body > section > ul > li > a:before {
   -moz-transition: all 0.5s ease-in-out 0s;
   -o-transition: all 0.5s ease-in-out 0s;
   transition: all 0.5s ease-in-out 0s;
-  
+
   -webkit-transform: scaleX(0);
   -moz-transform: scaleX(0);
   -o-transform: scaleX(0);
@@ -689,10 +701,10 @@ body > section > ul > li > a:before {
      text-align: center;
   }
 
-/* styling the SH icon in the responsive menu */  
+/* styling the SH icon in the responsive menu */
 body > section > ul > li:nth-child(5) > img {
   width: 33px;
-  transform: translate(-20px, 5px); 
+  transform: translate(-20px, 5px);
 }
 /*---------------------------------------------------*/
 
@@ -707,11 +719,11 @@ body > header > section:nth-of-type(2) > figure:nth-child(1):hover {
 body > header > section:nth-of-type(2) > figure:nth-child(1):not(:hover) {
     width: 100%;
     transition: all 1.5s;
-} 
+}
 
 /* The first section in main holds the flipping (animated) images */
 body > main > section:nth-of-type(1) {
-  height: 35vw; 
+  height: 35vw;
 }
 
 }
@@ -776,7 +788,7 @@ body > main > section:nth-of-type(1) {
       font-size: 21px;
       visibility: visible;
       position: fixed;
-      top: -150px; 
+      top: -150px;
       background: hsla(12, 95%, 47%, 0.93);
       color: white;
       margin: 0 0 0 0;
@@ -789,14 +801,14 @@ body > main > section:nth-of-type(1) {
       right: 5%;
       padding-top: 20px;
     }
-    
+
     /* on hover, menu moves down to reveal list items */
-    body > section > ul:hover { 
+    body > section > ul:hover {
       top: -15px;
     }
 
     /* on hover, menu moves down to reveal list items */
-    body > section > ul:active { 
+    body > section > ul:active {
       top: -15px;
     }
 
@@ -821,7 +833,7 @@ body > main > section:nth-of-type(1) {
   }
 
   body > footer > section:nth-of-type(2) {
-    width: 104vw; 
+    width: 104vw;
     border-radius: 5px;
     box-shadow:  .1em .1em .3em rgb(0,0,0);
   }
@@ -845,7 +857,7 @@ body > main > section:nth-of-type(1) {
   }
 
   body > footer > section:nth-of-type(2) {
-    width: 110vw; 
+    width: 110vw;
     border-radius: 5px;
     box-shadow:  .1em .1em .3em rgb(0,0,0);
   }
@@ -873,7 +885,7 @@ body > main > section:nth-of-type(1) {
     font-size: 20px;
     visibility: visible;
     position: fixed;
-    top: -130px;
+    top: -120px;
     width: 200px;
     background: hsla(12, 95%, 47%, 0.93);
     color: white;
@@ -887,15 +899,15 @@ body > main > section:nth-of-type(1) {
     right: 5%;
   }
     /* on hover, menu moves down to reveal list items */
-    body > section > ul:hover { 
+    body > section > ul:hover {
       top: -3px;
     }
-  
+
     /* on hover, menu moves down to reveal list items */
-    body > section > ul:active { 
+    body > section > ul:active {
       top: -3px;
     }
-  
+
   body > main {
     padding-top: 17px;
   }
