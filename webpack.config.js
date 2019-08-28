@@ -7,10 +7,9 @@ var SRC_DIR = path.resolve(__dirname, "src");
 
 var config = {
     entry: {
-        index: SRC_DIR + "/app/index.js", 
+        index: SRC_DIR + "/app/index.js",
         gallery: SRC_DIR + "/app/gallery.js",
         faq: SRC_DIR + "/app/faq.js",
-        locations: SRC_DIR + "/app/locations.js",
         gMaps: SRC_DIR + "/app/gMaps.js",
     },
     module: {
@@ -68,12 +67,6 @@ var config = {
             inject: true,
             chunks: ['gMaps'],
             filename: 'gMaps.html'
-        }),
-        new HtmlWebpackPlugin({
-            template: SRC_DIR + '/locations.html',
-            inject: true,
-            chunks: ['locations', "all"],
-            filename: 'locations.html'
         }),
     ],
 };

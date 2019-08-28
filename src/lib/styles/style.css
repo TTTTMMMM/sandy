@@ -885,7 +885,7 @@ body > main > section:nth-of-type(1) {
     font-size: 20px;
     visibility: visible;
     position: fixed;
-    top: -120px;
+    top: -122px;
     width: 200px;
     background: hsla(12, 95%, 47%, 0.93);
     color: white;

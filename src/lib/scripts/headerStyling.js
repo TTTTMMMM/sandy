@@ -27,7 +27,7 @@ let menuIsActive = false;
 const smallVuportMenu = document.querySelector("body > section > ul");
 smallVuportMenu.addEventListener('click', function() {
     if(window.innerWidth < 500) {
-        (!menuIsActive) ? this.style.top = "-15px" : this.style.top = "-145px";
+        (!menuIsActive) ? this.style.top = "-8px" : this.style.top = "-145px";
     }
     menuIsActive = !menuIsActive;
 });

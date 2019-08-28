@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run build",
+    "prod": "npm run build:prod",
     "build": "webpack -d  && webpack-dev-server --host 192.168.1.151 --port 9001 --content-base src/ --inline --hot",
-    "build:prod": "webpack -p  "
+    "build:prod": "webpack -p"
   },
   "author": "TM",
   "license": "ISC",
