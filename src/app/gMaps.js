@@ -138,11 +138,11 @@ function initMap() {
     });
 
     // This is the image that will be used for the google map markers, scaled appropriately
-    let url = `./lib/images/longMascotIcon.png`;
+        let url = `./longMascotIcon.png`;
         let image = {
         url: url,
         scaledSize: new google.maps.Size(38, 38),
-    };
+        };
 
     let openInfoWindow = null;  /* keeps track of the open info window, so I can close it when the next icon is clicked (only one IW open at a time)
     /* put a marker on the map for each location, using the SH logo defined above */
