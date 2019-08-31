@@ -605,7 +605,7 @@ body > header > section:nth-of-type(2) > figure:nth-child(1) img {
   float: left;
   height: auto;
   display: block;
-  margin-top: -155px;
+  margin-top: -127px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -620,7 +620,7 @@ body > header > section:nth-of-type(2) > figure:nth-child(1) img {
     font-size: 20px;
     visibility: visible;
     position: fixed;
-    top: -10px;
+    top: -40px;
     background: hsla(12, 95%, 47%, 0.93);
     color: white;
     margin: 0 0 0 0;
@@ -697,12 +697,12 @@ body > section > ul > li > a:before {
 }
 
 /* center the word 'Menu' */
-  body > section > ul > li:nth-of-type(5) {
+  body > section > ul > li:nth-of-type(6) {
      text-align: center;
   }
 
 /* styling the SH icon in the responsive menu */
-body > section > ul > li:nth-child(5) > img {
+body > section > ul > li:nth-child(6) > img {
   width: 33px;
   transform: translate(-20px, 5px);
 }
@@ -788,7 +788,7 @@ body > main > section:nth-of-type(1) {
       font-size: 21px;
       visibility: visible;
       position: fixed;
-      top: -150px;
+      top: -170px;
       background: hsla(12, 95%, 47%, 0.93);
       color: white;
       margin: 0 0 0 0;
@@ -885,7 +885,7 @@ body > main > section:nth-of-type(1) {
     font-size: 20px;
     visibility: visible;
     position: fixed;
-    top: -122px;
+    top: -142px;
     width: 200px;
     background: hsla(12, 95%, 47%, 0.93);
     color: white;
@@ -906,6 +906,61 @@ body > main > section:nth-of-type(1) {
     /* on hover, menu moves down to reveal list items */
     body > section > ul:active {
       top: -3px;
+    }
+
+    /* setting color of list items to match the color of the sand in the logo */
+    body > section > ul > li {
+      padding: 2px;
+      margin: 2px;
+      visibility: visible;
+      color: rgb(250, 245, 198);
+    }
+
+    /* set the styling of the links in the dropdown menu */
+    body > section > ul > li > a {
+      text-decoration: none;
+      color: rgb(250, 245, 198);
+      font-family: "Karla";
+      font-size: 19px;
+    }
+
+    /* link styling (for the dropdown menu) (line underneath link) */
+    body > section > ul > li > a:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: rgb(250, 245, 198);
+      visibility: hidden;
+
+      -webkit-transition: all 0.5s ease-in-out 0s;
+      -moz-transition: all 0.5s ease-in-out 0s;
+      -o-transition: all 0.5s ease-in-out 0s;
+      transition: all 0.5s ease-in-out 0s;
+
+      -webkit-transform: scaleX(0);
+      -moz-transform: scaleX(0);
+      -o-transform: scaleX(0);
+      transform: scaleX(0);
+    }
+
+    /* set the styling of the links in the dropdown menu upon hover */
+    body > section > ul > li > a:hover {
+      font-size: 19px;
+      color: rgb(250, 245, 198);
+    }
+
+    /* center the word 'Menu' */
+    body > section > ul > li:nth-of-type(6) {
+      text-align: center;
+    }
+
+    /* styling the SH icon in the responsive menu */
+    body > section > ul > li:nth-child(6) > img {
+      width: 33px;
+      transform: translate(-20px, 5px);
     }
 
   body > main {

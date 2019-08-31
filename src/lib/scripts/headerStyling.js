@@ -18,16 +18,16 @@ document.querySelector("body > a ").setAttribute('target', "_blank");
 document.querySelector("body > header").style.backgroundImage = `url('${headerBackgroundImageURL}')`;
 
 /* icon image in the menu */
-document.querySelector("body > section > ul > li:nth-child(5) > img").src = longMascotIcon;
+document.querySelector("body > section > ul > li:nth-child(6) > img").src = longMascotIcon;
 
 // set the width of the drop-down menu for small vuports
-document.querySelector("body > section > ul").style.width = "155px";
+document.querySelector("body > section > ul").style.width = "135px";
 
 let menuIsActive = false;
 const smallVuportMenu = document.querySelector("body > section > ul");
 smallVuportMenu.addEventListener('click', function() {
     if(window.innerWidth < 500) {
-        (!menuIsActive) ? this.style.top = "-8px" : this.style.top = "-145px";
+        (!menuIsActive) ? this.style.top = "-8px" : this.style.top = "-170px";
     }
     menuIsActive = !menuIsActive;
 });
