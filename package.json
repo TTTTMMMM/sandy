@@ -6,8 +6,8 @@
   "scripts": {
     "start": "npm run build",
     "prod": "npm run build:prod",
-    "build": "webpack -d  && webpack-dev-server --host 192.168.1.151 --port 9001 --content-base src/ --inline --hot",
-    "build:prod": "webpack -p"
+    "build": "webpack -d && webpack-dev-server --host 192.168.1.151 --port 9001 --content-base src/ --inline --hot --open --https --cert /Users/tm/devDir/security/192.168.1.151.cer.pem --key /Users/tm/devDir/security/192.168.1.151.key.pem",
+    "build:prod": "webpack -p && cp ./src/lib/images/longMascotIcon.png ./dist/longMascotIcon.png && rm -rf /Users/tm/devDir/expressServer/public/ && cp -a ./dist/. /Users/tm/devDir/expressServer/public/"
   },
   "author": "TM",
   "license": "ISC",
