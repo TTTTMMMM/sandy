@@ -445,7 +445,7 @@ body
 /* really narrow screens  */
 /**************************/
 @media only screen and (max-width: 800px) {
-   font-size: 2vw;
+   font-size: 2.1vw;
 }
 
 @media only screen and (max-width: 720px) {
