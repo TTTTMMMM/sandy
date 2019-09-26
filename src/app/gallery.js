@@ -1,27 +1,27 @@
-import './../lib/styles/style.css';
-import './../lib/styles/styleGallery.css';
+import "./../lib/styles/style.css";
+import "./../lib/styles/styleGallery.css";
 
-import '../lib/scripts/googleAnalytics.js';
-import '../lib/scripts/fbpixelcode.js';
-import '../lib/scripts/headerStyling.js';
-import '../lib/scripts/footerStyling.js';
+import "../lib/scripts/googleAnalytics.js";
+import "../lib/scripts/fbpixelcode.js";
+import "../lib/scripts/headerStyling.js";
+import "../lib/scripts/footerStyling.js";
 
-import picketImage from '../lib/images/gallery/picketfence.jpeg';
-import reuben1Image from '../lib/images/gallery/reubenboardwalk.jpeg';
-import marriottImage from '../lib/images/gallery/marriottOCMD.jpeg';
-import twoScootsImage from '../lib/images/gallery/twoScoots.jpeg';
-import oneScootImage from '../lib/images/gallery/oneScoot.jpeg';
-import twoWheelsImage from '../lib/images/gallery/twoWheels.jpeg';
-import joystickImage from '../lib/images/gallery/joystick.jpeg';
-import footPlateImage from '../lib/images/gallery/footplate.jpeg';
-import beachEquipImage from '../lib/images/gallery/beachEquipment.jpeg';
-import reuben2Image from '../lib/images/gallery/reuben2.jpeg';
-import familyImage from '../lib/images/gallery/family.jpeg';
-import seatbeltImage from '../lib/images/gallery/seatbelt.jpeg';
-import redtopImage from '../lib/images/gallery/redtop.jpeg';
-import governorImage from '../lib/images/gallery/governor.jpeg';
-import wavingImage from '../lib/images/gallery/waving.jpeg';
-import loungingImage from '../lib/images/gallery/lounging.jpeg';
+import picketImage from "../lib/images/gallery/picketfence.jpeg";
+import reuben1Image from "../lib/images/gallery/reubenboardwalk.jpeg";
+import marriottImage from "../lib/images/gallery/marriottOCMD.jpeg";
+import twoScootsImage from "../lib/images/gallery/twoScoots.jpeg";
+import oneScootImage from "../lib/images/gallery/oneScoot.jpeg";
+import twoWheelsImage from "../lib/images/gallery/twoWheels.jpeg";
+import joystickImage from "../lib/images/gallery/joystick.jpeg";
+import footPlateImage from "../lib/images/gallery/footplate.jpeg";
+import beachEquipImage from "../lib/images/gallery/beachEquipment.jpeg";
+import reuben2Image from "../lib/images/gallery/reuben2.jpeg";
+import familyImage from "../lib/images/gallery/family.jpeg";
+import seatbeltImage from "../lib/images/gallery/seatbelt.jpeg";
+import redtopImage from "../lib/images/gallery/redtop.jpeg";
+import governorImage from "../lib/images/gallery/governor.jpeg";
+import wavingImage from "../lib/images/gallery/waving.jpeg";
+import loungingImage from "../lib/images/gallery/lounging.jpeg";
 
 /* image0 */
 document.querySelector("#picketfence").src = picketImage;
@@ -70,4 +70,3 @@ document.querySelector("#waver").src = wavingImage;
 
 /* image15 */
 document.querySelector("#lounging").src = loungingImage;
-

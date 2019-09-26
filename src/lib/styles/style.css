@@ -1,397 +1,408 @@
-
-@import url('https://use.fontawesome.com/releases/v5.9.0/css/all.css');
-@import url('https://fonts.googleapis.com/css?family=Karla|Josefin+Sans:400&display=swap');
+@import url("https://use.fontawesome.com/releases/v5.9.0/css/all.css");
+@import url("https://fonts.googleapis.com/css?family=Karla|Josefin+Sans:400&display=swap");
 
 html {
-  background: #DCE3E6;
-  font-family: 'Josefin Sans', monospace;
+   background: #dce3e6;
+   font-family: "Josefin Sans", monospace;
 }
 
 body {
    border-radius: 10px;
    margin: 28px;
-   color :#333;
+   color: #333;
    position: relative;
    box-shadow: 0 0.3em 1em#000;
 }
 
 /* the 'bullet-shot' facebook image from https://pt.vectorhq.com/psd/cracked-facebook-logo-psd-451808 */
 body > a > img {
-  right: 0px;
-  position: fixed;
-  z-index: 5;
+   right: 0px;
+   position: fixed;
+   z-index: 5;
 }
 
 body > a > img:hover {
-  top: 33vh;
-  left: 3px;
-  transition: all .5s;
+   top: 33vh;
+   left: 3px;
+   transition: all 0.5s;
 }
 
 /* Does this work for a touch device? Do I even need it? */
 body > a > img:active {
-  top: 33vh;
-  left: 3px;
-  transition: all .5s;
+   top: 33vh;
+   left: 3px;
+   transition: all 0.5s;
 }
 
 body > a > img:not(:hover) {
-  top: 33vh;
-  left: -10px;
-  transition: all .5s;
+   top: 33vh;
+   left: -10px;
+   transition: all 0.5s;
 }
 
 /* this is the responsive-list that comes into play when the vuport is tiny */
 body > section > ul {
-  display: none;
+   display: none;
 }
 
 h3 {
-  text-decoration: underline;
+   text-decoration: underline;
 }
 
 /* link styling */
 a {
-  text-decoration: none;
-  font-size: 25px;
-  color: #000;
-  position: relative;
+   text-decoration: none;
+   font-size: 25px;
+   color: #000;
+   position: relative;
 }
 
 /* link styling */
 a:hover {
-    color: #000;
+   color: #000;
 }
 
 /* link styling in header */
 body > header > section > nav > ul > li > a:before {
-	content: "";
-	position: absolute;
-	width: 100%;
-	height: 2px;
-	bottom: 0;
-	left: 0;
-	background-color: #000;
-  visibility: hidden;
+   content: "";
+   position: absolute;
+   width: 100%;
+   height: 2px;
+   bottom: 0;
+   left: 0;
+   background-color: #000;
+   visibility: hidden;
 
-  -webkit-transition: all 0.5s ease-in-out 0s;
-  -moz-transition: all 0.5s ease-in-out 0s;
-  -o-transition: all 0.5s ease-in-out 0s;
-  transition: all 0.5s ease-in-out 0s;
+   -webkit-transition: all 0.5s ease-in-out 0s;
+   -moz-transition: all 0.5s ease-in-out 0s;
+   -o-transition: all 0.5s ease-in-out 0s;
+   transition: all 0.5s ease-in-out 0s;
 
-  -webkit-transform: scaleX(0);
-  -moz-transform: scaleX(0);
-  -o-transform: scaleX(0);
-  transform: scaleX(0);
+   -webkit-transform: scaleX(0);
+   -moz-transform: scaleX(0);
+   -o-transform: scaleX(0);
+   transform: scaleX(0);
 }
 
 /* link styling */
-  a:hover:before {
-  visibility: visible;
-  -webkit-transform: scaleX(1);
-  transform: scaleX(1);
+a:hover:before {
+   visibility: visible;
+   -webkit-transform: scaleX(1);
+   transform: scaleX(1);
 }
 
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 /* styling in header                                                  */
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 body > header {
-  font-family: 'Karla', monospace;
-  background-color: honeydew;
-  background-size: cover;
-  border: 0 solid #000;
-  color: #000;
-  top: 0;
-  left: 0;
-  right: 0;
-  padding: 0px;
-  padding-bottom: 10px;
-  border-radius: 10px;
-  box-shadow: .3em .3em 1em #000;
-  position: fixed;
-  width: 99%;
-  height: 140px;
-  margin-left: 5px;
-  margin-right: 5px;
-  z-index: 10;
+   font-family: "Karla", monospace;
+   background-color: honeydew;
+   background-size: cover;
+   border: 0 solid #000;
+   color: #000;
+   top: 0;
+   left: 0;
+   right: 0;
+   padding: 0px;
+   padding-bottom: 10px;
+   border-radius: 10px;
+   box-shadow: 0.3em 0.3em 1em #000;
+   position: fixed;
+   width: 99%;
+   height: 140px;
+   margin-left: 5px;
+   margin-right: 5px;
+   z-index: 10;
 }
 
 /* 'long' logo image styling */
 body > header > section:nth-child(1) > figure:nth-child(1) img {
-  float: left;
-  vertical-align: middle;
-  height: auto;
-  width: 400px;
-  margin-top: -15px;
-  z-index: 9;
+   float: left;
+   vertical-align: middle;
+   height: auto;
+   width: 400px;
+   margin-top: -15px;
+   z-index: 9;
 }
 
 /* 'long' logo image styling -- hover magic */
 body > header > section:nth-child(1) > figure:nth-child(1):hover {
-    transform: translate(-48px, 0px);
-    transition: all 1.5s;
+   transform: translate(-48px, 0px);
+   transition: all 1.5s;
 }
 
 /* 'long' logo image styling -- unhover magic */
 body > header > section:nth-child(1) > figure:nth-child(1):not(:hover) {
-    transform: scale(1.0);
-    transition: all 1.5s;
+   transform: scale(1);
+   transition: all 1.5s;
 }
 
 /* navigation menu when there's a wide vuport */
 body > header > section:nth-child(1) > nav {
-    float: right;
+   float: right;
 }
 
 /* navigation element styling -- put the nav elements in a horizontal line */
 body > header > section:nth-child(1) > nav > ul:nth-child(1) {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  display: flex;
-  list-style: none;
-  vertical-align: middle;
+   margin-top: 0px;
+   margin-bottom: 0px;
+   display: flex;
+   list-style: none;
+   vertical-align: middle;
 }
 
 /* navigation element styling -- the phone number */
 body > header > section:nth-child(1) > nav > ul:nth-child(2) {
-  float: right;
-  display: flex;
-  list-style: none;
-  vertical-align: middle;
-  margin-top: 0px;
+   float: right;
+   display: flex;
+   list-style: none;
+   vertical-align: middle;
+   margin-top: 0px;
 }
 
 /* navigation element styling -- space the list items out */
 body > header > section:nth-child(1) > nav > ul li {
-  padding: 10px;
+   padding: 10px;
 }
 
 /* make second section invisible (which contains the responsive menu) */
 body > header > section:nth-of-type(2) {
-  display: none;
+   display: none;
 }
 
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 /* styling in main                                                    */
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 body > main {
-  padding-top: 141px;
-  display: block;
+   padding-top: 141px;
+   display: block;
 }
 
 /* holds the verbiage on the main section of the page  -- gives two columns */
 body > main > div {
-  width: 95%;
-  padding: 2px;
-  margin-left: 5px;
-  margin-bottom: 5px;
-  display: flex;
-  font-size: 17px;
+   width: 95%;
+   padding: 2px;
+   margin-left: 5px;
+   margin-bottom: 5px;
+   display: flex;
+   font-size: 17px;
 }
 
 /* the two columns of the main section */
 main > div > section:nth-of-type(1),
- main > div > section:nth-of-type(2) {
-  padding: 5px;
-  margin-left: 10px;
-  min-width: 150px;
-  width: 45vw;
+main > div > section:nth-of-type(2) {
+   padding: 5px;
+   margin-left: 10px;
+   min-width: 150px;
+   width: 45vw;
 }
 
 /* the image of the sand scooter II -- float allows text to wrap around image */
 main > div > section:nth-of-type(1) > figure {
-  display: block;
-  width: 30vw;
-  height: auto;
-  float: right;
-  max-width: 160px;
-  min-width: 120px;
+   display: block;
+   width: 30vw;
+   height: auto;
+   float: right;
+   max-width: 160px;
+   min-width: 120px;
 }
 
 main > div > section:nth-of-type(1) > figure > img {
-  border-radius: 50%;
-  box-shadow: 0 0 10px #000000;
-  margin-right: 6px;
-  margin-left: 6px;
-  margin-top: 10px;
-  margin-bottom: 6px;
-  width: 30vw;
-  height: auto;
-  float: right;
-  min-width: 120px;
-  max-width: 180px;
+   border-radius: 50%;
+   box-shadow: 0 0 10px #000000;
+   margin-right: 6px;
+   margin-left: 6px;
+   margin-top: 10px;
+   margin-bottom: 6px;
+   width: 30vw;
+   height: auto;
+   float: right;
+   min-width: 120px;
+   max-width: 180px;
 }
 
 main > div > section:nth-of-type(1) > figure > figcaption {
-    font-size: 12px;
-     text-align: center;
+   font-size: 12px;
+   text-align: center;
 }
 
 /* drop cap */
 main > div > section:nth-of-type(1) > p:nth-of-type(1):first-letter {
-  color: hsla(12, 95%, 47%, 0.93);;
-  float: left;
-  font-family: Georgia;
-  font-size: 75px;
-  line-height: 60px;
-  padding-top: 4px;
-  padding-right: 8px;
-  padding-left: 3px;
+   color: hsla(12, 95%, 47%, 0.93);
+   float: left;
+   font-family: Georgia;
+   font-size: 75px;
+   line-height: 60px;
+   padding-top: 4px;
+   padding-right: 8px;
+   padding-left: 3px;
 }
 
 /* drop cap */
 main > div > section:nth-of-type(1) > p:nth-of-type(2):first-letter {
-  color: hsla(12, 95%, 47%, 0.93);;
-  float: left;
-  font-family: Georgia;
-  font-size: 75px;
-  line-height: 60px;
-  padding-top: 4px;
-  padding-right: 8px;
-  padding-left: 3px;
+   color: hsla(12, 95%, 47%, 0.93);
+   float: left;
+   font-family: Georgia;
+   font-size: 75px;
+   line-height: 60px;
+   padding-top: 4px;
+   padding-right: 8px;
+   padding-left: 3px;
 }
 
 /* drop cap */
 main > div > section:nth-of-type(2) > p::first-letter {
-  color: hsla(12, 95%, 47%, 0.93);;
-  float: left;
-  font-family: Georgia;
-  font-size: 75px;
-  line-height: 60px;
-  padding-top: 4px;
-  padding-right: 8px;
-  padding-left: 3px;
+   color: hsla(12, 95%, 47%, 0.93);
+   float: left;
+   font-family: Georgia;
+   font-size: 75px;
+   line-height: 60px;
+   padding-top: 4px;
+   padding-right: 8px;
+   padding-left: 3px;
 }
 
 /* The first section in main holds the flipping (animated) images */
 body > main > section:nth-of-type(1) {
-  width: 82%;
-  height: 35vw;
-  overflow: hidden;
-  position: relative;
-  border-radius: 3px;
-  margin-bottom: 12px;
-  margin-left: auto;   /* center section horizontally  #1 */
-  margin-right: auto  /* center section horizontally  #2 */
+   width: 82%;
+   height: 35vw;
+   overflow: hidden;
+   position: relative;
+   border-radius: 3px;
+   margin-bottom: 12px;
+   margin-left: auto; /* center section horizontally  #1 */
+   margin-right: auto; /* center section horizontally  #2 */
 }
 
 /* The setup for animation */
 body > main > section:nth-of-type(1) > img {
-  margin-top: 5px;
-  position: absolute;
-  animation: myAnimation 32s infinite;
-  opacity: 0;
-  width: 98%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: .3em .3em .4em #000;
+   margin-top: 5px;
+   position: absolute;
+   animation: myAnimation 32s infinite;
+   opacity: 0;
+   width: 98%;
+   height: auto;
+   border-radius: 12px;
+   box-shadow: 0.3em 0.3em 0.4em #000;
 }
 
 @keyframes myAnimation {
-  25%{opacity:1;}
-  40%{opacity:0;}
+   25% {
+      opacity: 1;
+   }
+   40% {
+      opacity: 0;
+   }
 }
 
 /* Animation flips through four images below */
-body > main > section:nth-of-type(1) > img:nth-child(4){animation-delay:0s;}
-body > main > section:nth-of-type(1) > img:nth-child(3){animation-delay:8s;}
-body > main > section:nth-of-type(1) > img:nth-child(2){animation-delay:16s;}
-body > main > section:nth-of-type(1) > img:nth-child(1){animation-delay:24s;}
+body > main > section:nth-of-type(1) > img:nth-child(4) {
+   animation-delay: 0s;
+}
+body > main > section:nth-of-type(1) > img:nth-child(3) {
+   animation-delay: 8s;
+}
+body > main > section:nth-of-type(1) > img:nth-child(2) {
+   animation-delay: 16s;
+}
+body > main > section:nth-of-type(1) > img:nth-child(1) {
+   animation-delay: 24s;
+}
 
 /* video section */
 body > main > section:nth-of-type(2) {
-  width: 80%;
-  height: auto;
-  overflow: hidden;
-  position: relative;
-  border-radius: 12px;
-  box-shadow: .3em .3em 1em #000;
-  margin-bottom: 9px;
-  margin-left: auto;   /* center section horizontally  #1 */
-  margin-right: auto  /* center section horizontally  #2 */
+   width: 80%;
+   height: auto;
+   overflow: hidden;
+   position: relative;
+   border-radius: 12px;
+   box-shadow: 0.3em 0.3em 1em #000;
+   margin-bottom: 9px;
+   margin-left: auto; /* center section horizontally  #1 */
+   margin-right: auto; /* center section horizontally  #2 */
 }
 
 .wistia_responsive_padding {
-  padding: 56.25% 0 0 0;
-  position: relative;
+   padding: 56.25% 0 0 0;
+   position: relative;
 }
 
 .wistia_responsive_wrapper {
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
+   height: 100%;
+   left: 0;
+   position: absolute;
+   top: 0;
+   width: 100%;
 }
 
 .wistia_swatch {
-  height: 100%;
-  left: 0;
-  opacity: 0;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  transition: opacity 200ms;
-  width: 100%;
+   height: 100%;
+   left: 0;
+   opacity: 0;
+   overflow: hidden;
+   position: absolute;
+   top: 0;
+   transition: opacity 200ms;
+   width: 100%;
 }
 
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 /* style footer section                                               */
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 body > footer {
-  display: inline-flex;
-  width: 100%;
-  padding-top: 5px;
-  margin-top: 5px;
+   display: inline-flex;
+   width: 100%;
+   padding-top: 5px;
+   margin-top: 5px;
 }
 
 body > footer > section:nth-of-type(1) {
-  float: none;
-  display: inline-block;
-  width: 70vw;
-  min-width: 150px;
-  position: relative;    /* center made in USA image: step #1 */
-  background-color: #eee;
-  border-bottom-left-radius: 12px;
+   float: none;
+   display: inline-block;
+   width: 70vw;
+   min-width: 150px;
+   position: relative; /* center made in USA image: step #1 */
+   background-color: #eee;
+   border-bottom-left-radius: 12px;
 }
 
 body > footer > section:nth-of-type(2) {
-  float: none;
-  display: inline-block;
-  width: 35vw;
-  min-width: 270px;
-  font-family: 'Karla', monospace;
-  background-color: #eee;
+   float: none;
+   display: inline-block;
+   width: 35vw;
+   min-width: 270px;
+   font-family: "Karla", monospace;
+   background-color: #eee;
 }
 
 body > footer > section:nth-of-type(3) {
-  float: none;
-  display: inline-block;
-  position: relative;
-  margin-left: 0%;
-  min-width: 150px;
-  width: 100%;
-  text-align: center;
-  overflow: hidden;
-  background-color: #eee;
-  border-bottom-right-radius: 12px;
-  z-index: 0;
+   float: none;
+   display: inline-block;
+   position: relative;
+   margin-left: 0%;
+   min-width: 150px;
+   width: 100%;
+   text-align: center;
+   overflow: hidden;
+   background-color: #eee;
+   border-bottom-right-radius: 12px;
+   z-index: 0;
 }
 
 /*-------------------------------------*/
 /* Footer > Section 1 styling below    */
 /* made in USA image */
 body > footer > section:nth-of-type(1) > img {
-  width: 12vw;
-  max-width: 130px;
-  min-width: 90px;
-  height: auto;
-  position: absolute; /* center made in USA image: step #2 */
-  top: 50%;           /* center made in USA image: step #3 */
-  left: 50%;          /* center made in USA image: step #4 */
-  transform: translate(-50%, -50%);  /* center made in USA image: step #5 */
-  border-radius: 3px;
-  box-shadow: .1em .1em .3em #000;
+   width: 12vw;
+   max-width: 130px;
+   min-width: 90px;
+   height: auto;
+   position: absolute; /* center made in USA image: step #2 */
+   top: 50%; /* center made in USA image: step #3 */
+   left: 50%; /* center made in USA image: step #4 */
+   transform: translate(-50%, -50%); /* center made in USA image: step #5 */
+   border-radius: 3px;
+   box-shadow: 0.1em 0.1em 0.3em #000;
 }
 /*-------------------------------------*/
 
@@ -399,123 +410,143 @@ body > footer > section:nth-of-type(1) > img {
 /* Footer > Section 2 styling below    */
 /* contact information unordered list styling */
 body > footer > section:nth-of-type(2) > ul {
-  list-style: none;
-  display: inline-table;  /* 'inline-block' to verticalize the list */
+   list-style: none;
+   display: inline-table; /* 'inline-block' to verticalize the list */
 }
 
 body > footer > section:nth-of-type(2) > ul > li {
-  padding: 0px;
-  margin-left: 2px;
-  transform: translate(0px, 0px);  /* '50px, 0px' to verticalize list */
-  float: left;          /* 'none' to verticalize the list */
+   padding: 0px;
+   margin-left: 2px;
+   transform: translate(0px, 0px); /* '50px, 0px' to verticalize list */
+   float: left; /* 'none' to verticalize the list */
 }
 
 /* styling the links in the contact information section */
 body > footer > section:nth-of-type(2) > ul > li > a {
-  font-size: 16px;
+   font-size: 16px;
 }
 
 /* stylize sms, phone, envelope and facebook icons upon hover  */
 body > footer > section:nth-of-type(2) > ul > li > a > span:hover {
-  color: hsla(12, 95%, 47%, 0.93);
-  transition: all .5s ease-in-out;
+   color: hsla(12, 95%, 47%, 0.93);
+   transition: all 0.5s ease-in-out;
 }
 
 /* stylize sms, phone, envelope and facebook icons upon unhover */
 body > footer > section:nth-of-type(2) > ul > li > a > span:not(:hover) {
-  color: black;
-  transition: all .5s ease-in-out;
+   color: black;
+   transition: all 0.5s ease-in-out;
 }
 
 /* make tooltips of first four list items of contact section unordered list invisible */
-body > footer > section:nth-of-type(2) > ul > li:nth-child(-n+4) > span {
-  opacity: 0;
-  width: 175px;
-  background-color: hsla(12, 95%, 47%, 0.93);
-  color: rgb(250, 245, 198);
-  text-align: center;
-  border-radius: 6px;
-  padding: 3px 0;
-  font-size: 8px;
+body > footer > section:nth-of-type(2) > ul > li:nth-child(-n + 4) > span {
+   opacity: 0;
+   width: 175px;
+   background-color: hsla(12, 95%, 47%, 0.93);
+   color: rgb(250, 245, 198);
+   text-align: center;
+   border-radius: 6px;
+   padding: 3px 0;
+   font-size: 8px;
 
-  /* Position the tooltip */
-  position: absolute;
-  z-index: 1;
-  top: -10px;
-  left: -100%;
+   /* Position the tooltip */
+   position: absolute;
+   z-index: 1;
+   top: -10px;
+   left: -100%;
 }
 
 /* when the link is hovered over, make the text message tool tip visible */
 body > footer > section:nth-of-type(2) > ul > li:nth-of-type(1):hover #tt1 {
-  opacity: 1.0;
-  font-size: 14px;
-  top: -39px;
-  transition: all .5s;
+   opacity: 1;
+   font-size: 14px;
+   top: -39px;
+   transition: all 0.5s;
 }
 
 /* when the link is not hovered over, make the text message tool tip invisible */
-body > footer > section:nth-of-type(2) > ul > li:nth-of-type(1):not(:hover) #tt1 {
-  opacity: 0.0;
-  font-size: 8px;
-  top: -10px;
-  transition: all .5s;
+body
+   > footer
+   > section:nth-of-type(2)
+   > ul
+   > li:nth-of-type(1):not(:hover)
+   #tt1 {
+   opacity: 0;
+   font-size: 8px;
+   top: -10px;
+   transition: all 0.5s;
 }
 
 /* when the link is hovered over, make the phone tool tip visible */
 body > footer > section:nth-of-type(2) > ul > li:nth-of-type(2):hover #tt2 {
-  opacity: 1.0;
-  font-size: 14px;
-  top: -39px;
-  width: 140px;
-  transition: all .5s;
+   opacity: 1;
+   font-size: 14px;
+   top: -39px;
+   width: 140px;
+   transition: all 0.5s;
 }
 
 /* when the link is not hovered over, make the phone message tool tip invisible */
-body > footer > section:nth-of-type(2) > ul > li:nth-of-type(2):not(:hover) #tt2 {
-  opacity: 0.0;
-  font-size: 8px;
-  top: -10px;
-  transition: all .5s;
+body
+   > footer
+   > section:nth-of-type(2)
+   > ul
+   > li:nth-of-type(2):not(:hover)
+   #tt2 {
+   opacity: 0;
+   font-size: 8px;
+   top: -10px;
+   transition: all 0.5s;
 }
 
 /* when the link is hovered over, make the email tool tip visible */
 body > footer > section:nth-of-type(2) > ul > li:nth-of-type(3):hover #tt3 {
-  opacity: 1.0;
-  font-size: 14px;
-  top: -39px;
-  width: 140px;
-  transition: all .5s;
+   opacity: 1;
+   font-size: 14px;
+   top: -39px;
+   width: 140px;
+   transition: all 0.5s;
 }
 
 /* when the link is not hovered over, make the email message tool tip invisible */
-body > footer > section:nth-of-type(2) > ul > li:nth-of-type(3):not(:hover) #tt3 {
-  opacity: 0.0;
-  font-size: 8px;
-  top: -10px;
-  transition: all .5s;
+body
+   > footer
+   > section:nth-of-type(2)
+   > ul
+   > li:nth-of-type(3):not(:hover)
+   #tt3 {
+   opacity: 0;
+   font-size: 8px;
+   top: -10px;
+   transition: all 0.5s;
 }
 
 /* when the link is hovered over, make the facebook tool tip visible */
 body > footer > section:nth-of-type(2) > ul > li:nth-of-type(4):hover #tt4 {
-  opacity: 1.0;
-  transition: all .5s;
-  width: 195px;
-  font-size: 14px;
-  top: -39px;
+   opacity: 1;
+   transition: all 0.5s;
+   width: 195px;
+   font-size: 14px;
+   top: -39px;
 }
 
 /* when the link is not hovered over, make the facebook message tool tip invisible */
-body > footer > section:nth-of-type(2) > ul > li:nth-of-type(4):not(:hover) #tt4 {
-  opacity: 0.0;
-  font-size: 8px;
-  top: -10px;
-  transition: all .5s;
+body
+   > footer
+   > section:nth-of-type(2)
+   > ul
+   > li:nth-of-type(4):not(:hover)
+   #tt4 {
+   opacity: 0;
+   font-size: 8px;
+   top: -10px;
+   transition: all 0.5s;
 }
 
 /* copyright wording styling */
 body > footer > section:nth-of-type(2) > ul > li:nth-of-type(5) {
-  font-size: 11px;
-  margin-top: 10px;
+   font-size: 11px;
+   margin-top: 10px;
 }
 /*-------------------------------------*/
 
@@ -524,39 +555,39 @@ body > footer > section:nth-of-type(2) > ul > li:nth-of-type(5) {
 /* credit card unordered list styling */
 
 body > footer > section:nth-of-type(3) > ul {
-  list-style-type: none;
-  width: 30vw;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -70%);
+   list-style-type: none;
+   width: 30vw;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -70%);
 }
 
 body > footer > section:nth-of-type(3) > ul > li {
-  float: left;
-  vertical-align: middle;
+   float: left;
+   vertical-align: middle;
 }
 
 /* credit card images */
 body > footer > section:nth-of-type(3) > ul > li img {
-  border-radius: 3px;
-  box-shadow: .1em .1em .3em #000;
-  width: 7vw;
-  max-width: 100px;
-  min-width: 50px;
-  height: auto;
-  margin: 2px;
+   border-radius: 3px;
+   box-shadow: 0.1em 0.1em 0.3em #000;
+   width: 7vw;
+   max-width: 100px;
+   min-width: 50px;
+   height: auto;
+   margin: 2px;
 }
 
 /* amex credit card is a little small */
 body > footer > section:nth-of-type(3) > ul > li:nth-of-type(4) > img {
-  transform: translate(0, 2px);
+   transform: translate(0, 2px);
 }
 
 /* padding between font-awesome logos and telephone number, email, facebook and copyright words */
 span {
-  margin-right: 15px;
-  color: black;
+   margin-right: 15px;
+   color: black;
 }
 /*-------------------------------------*/
 
@@ -564,368 +595,117 @@ span {
 /* make it responsive                                     */
 /*--------------------------------------------------------*/
 @media only screen and (max-width: 960px) {
+   body > header {
+      background-position: top left;
+   }
+   body > main {
+      padding-top: 120px;
+   }
 
-body > header {
-  background-position: top left;
-}
-body > main {
-  padding-top: 120px;
-}
+   /*--------------------------------------------------------*/
+   /* make header vertically smaller and set z-index         */
+   /* to keep it in front of the drop down menu              */
+   /*--------------------------------------------------------*/
+   body > header {
+      height: 100px;
+      z-index: 10;
+   }
 
-/*--------------------------------------------------------*/
-/* make header vertically smaller and set z-index         */
-/* to keep it in front of the drop down menu              */
-/*--------------------------------------------------------*/
-body > header {
-  height: 100px;
-  z-index: 10;
-}
-
-/* remove the first section in the header */
-body > header > section:nth-of-type(1) {
-  width: 0px;
-}
-
-/* remove the first header image  */
-body > header > section:nth-of-type(1) > figure:nth-of-type(1) img {
-  display: none;
-}
-
-/* resurrect the second section */
-body > header > section:nth-of-type(2)  {
-  margin: auto;
-  width: 100%;
-  border: 1px solid transparent;
-  display: block;
-}
-
-/* 2nd logo image styling -- size the 'short' logo image */
-body > header > section:nth-of-type(2) > figure:nth-child(1) img {
-  width: 170px;
-  float: left;
-  height: auto;
-  display: block;
-  margin-top: -127px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/*---------------------------------------------------*/
-/* menu under the header                             */
-/*---------------------------------------------------*/
-  body > section > ul {
-    display: block;
-    list-style: none;
-    font-family: "Karla";
-    font-size: 20px;
-    visibility: visible;
-    position: fixed;
-    top: -40px;
-    background: hsla(12, 95%, 47%, 0.93);
-    color: white;
-    margin: 0 0 0 0;
-    padding: 0.1em 0.1em 0.1em .1em;
-    transition: 1s;
-    height: auto;
-    z-index: 9;
-    border-radius: 0em 0em .5em .5em;
-    box-shadow:  .1em .1em .3em #000;
-    right: 5%;
-  }
-
-  /* on hover, menu moves down to reveal list items */
-  body > section > ul:hover {
-    top: 110px;
-  }
-
-  /* on hover, menu moves down to reveal list items */
-  body > section > ul:active {
-    top: 110px;
-  }
-
-  /* setting color of list items to match the color of the sand in the logo */
-  body > section > ul > li {
-    padding: 2px;
-    margin: 2px;
-    visibility: visible;
-    color: rgb(250, 245, 198);
-  }
-
-  /* setting styling of wheelchair bullets in the menu */
-  body > section > ul > li > span {
-    padding: 2px;
-    margin: 2px;
-    margin-right: 10px;
-    color: rgb(250, 245, 198);
-    font-size: 18px;
-  }
-
-  /* set the styling of the links in the dropdown menu */
-  body > section > ul > li > a {
-    text-decoration: none;
-    color: rgb(250, 245, 198);
-    font-family: "Karla";
-    font-size: 19px;
-  }
-
-/* set the styling of the links in the dropdown menu upon hover */
-  body > section > ul > li > a:hover {
-    font-size: 19px;
-    color: rgb(250, 245, 198);
-  }
-
-/* link styling (for the dropdown menu) (line underneath link) */
-body > section > ul > li > a:before {
-	content: "";
-	position: absolute;
-	width: 100%;
-	height: 2px;
-	bottom: 0;
-	left: 0;
-	background-color: rgb(250, 245, 198);
-  visibility: hidden;
-
-  -webkit-transition: all 0.5s ease-in-out 0s;
-  -moz-transition: all 0.5s ease-in-out 0s;
-  -o-transition: all 0.5s ease-in-out 0s;
-  transition: all 0.5s ease-in-out 0s;
-
-  -webkit-transform: scaleX(0);
-  -moz-transform: scaleX(0);
-  -o-transform: scaleX(0);
-  transform: scaleX(0);
-}
-
-/* center the word 'Menu' */
-  body > section > ul > li:nth-of-type(6) {
-     text-align: center;
-  }
-
-/* styling the SH icon in the responsive menu */
-body > section > ul > li:nth-child(6) > img {
-  width: 33px;
-  transform: translate(-20px, 5px);
-}
-/*---------------------------------------------------*/
-
-/* 2nd logo image styling -- scale hover magic */
-body > header > section:nth-of-type(2) > figure:nth-child(1):hover {
-    width: 100%;
-    transform: translate(-42px, 0px);
-    transition: all 1.5s;
-}
-
-/* 2nd logo image styling -- scale hover magic backout */
-body > header > section:nth-of-type(2) > figure:nth-child(1):not(:hover) {
-    width: 100%;
-    transition: all 1.5s;
-}
-
-/* The first section in main holds the flipping (animated) images */
-body > main > section:nth-of-type(1) {
-  height: 35vw;
-}
-
-}
-/**************************/
-/* really narrow screens  */
-/**************************/
-/*-----------------------------------------*/
-/*  491px <  device width < 640px wide     */
-/*-----------------------------------------*/
-@media only screen and (max-width: 640px) {
-    body > footer > section:nth-of-type(1) {
-      display: none;
-    }
-}
-
-/*-----------------------------------------*/
-/*  361px <  device width < 490px wide     */
-/*-----------------------------------------*/
-@media only screen and (max-width: 490px) {
-    body > footer > section:nth-of-type(1) {
-      display: none;
+   /* remove the first section in the header */
+   body > header > section:nth-of-type(1) {
       width: 0px;
-    }
+   }
 
-    body > footer > section:nth-of-type(3) {
+   /* remove the first header image  */
+   body > header > section:nth-of-type(1) > figure:nth-of-type(1) img {
       display: none;
-      width: 0px;
-    }
+   }
 
-      /* copyright wording styling */
-    body > footer > section:nth-of-type(2) > ul > li:nth-of-type(5) {
-      font-size: 11px;
-      margin-top: 6px;
-      padding-left: 52px;
-    }
+   /* resurrect the second section */
+   body > header > section:nth-of-type(2) {
+      margin: auto;
+      width: 100%;
+      border: 1px solid transparent;
+      display: block;
+   }
 
-    body > footer > section:nth-of-type(2) {
-      width: 96vw;
-      border-radius: 5px;
-      box-shadow:  .1em .1em .3em rgb(0, 0, 0);
-    }
+   /* 2nd logo image styling -- size the 'short' logo image */
+   body > header > section:nth-of-type(2) > figure:nth-child(1) img {
+      width: 170px;
+      float: left;
+      height: auto;
+      display: block;
+      margin-top: -127px;
+      margin-left: auto;
+      margin-right: auto;
+   }
 
-    body > footer > section:nth-of-type(2) > ul > li {
-      padding-left: 4vw;
-      padding-right: 4vw;
-    }
-
-    body {
-      width: 96vw;
-      margin: 8px;
-    }
-
-    body > header {
-      display: none;
-    }
-
-    /* the responsive menu that's always lurking */
-    body > section > ul {
+   /*---------------------------------------------------*/
+   /* menu under the header                             */
+   /*---------------------------------------------------*/
+   body > section > ul {
       display: block;
       list-style: none;
       font-family: "Karla";
-      font-size: 21px;
+      font-size: 20px;
       visibility: visible;
       position: fixed;
-      top: -177px;
+      top: -40px;
       background: hsla(12, 95%, 47%, 0.93);
       color: white;
       margin: 0 0 0 0;
-      padding: 0.1em 0.1em 0.1em .1em;
+      padding: 0.1em 0.1em 0.1em 0.1em;
       transition: 1s;
       height: auto;
       z-index: 9;
-      border-radius: .5em .5em .5em .5em;
-      box-shadow:  .1em .1em .3em #000;
+      border-radius: 0em 0em 0.5em 0.5em;
+      box-shadow: 0.1em 0.1em 0.3em #000;
       right: 5%;
-      padding-top: 20px;
-    }
+   }
 
-    /* on hover, menu moves down to reveal list items */
-    body > section > ul:hover {
-      top: -15px;
-    }
+   /* on hover, menu moves down to reveal list items */
+   body > section > ul:hover {
+      top: 110px;
+   }
 
-    /* on hover, menu moves down to reveal list items */
-    body > section > ul:active {
-      top: -15px;
-    }
+   /* on hover, menu moves down to reveal list items */
+   body > section > ul:active {
+      top: 110px;
+   }
 
-    body > main {
-      padding-top: 33px;
-    }
-
-    body > main > section:nth-of-type(1) > img {
-      height: 32vw;
-      width: auto;
-      box-shadow:  .1em .1em .3em #000;
-      margin-left: 4vw;
-    }
-}
-
-/*-----------------------------------------*/
-/*  321px <  device width < 361px wide     */
-/*-----------------------------------------*/
-@media only screen and (max-width: 361px) {
-  body > footer > section:nth-of-type(3) {
-    display: none;
-  }
-
-  body > footer > section:nth-of-type(2) {
-    width: 104vw;
-    border-radius: 5px;
-    box-shadow:  .1em .1em .3em rgb(0,0,0);
-  }
-
-  body {
-    width: 104vw;
-    margin: 8px;
-  }
-
-  body > main > section:nth-of-type(1) > img {
-    margin-left: 7vw;
-  }
-}
-
-/*-----------------------------------------*/
-/*     device width < 321px wide           */
-/*-----------------------------------------*/
-@media only screen and (max-width: 321px) {
-  body > footer > section:nth-of-type(3) {
-    display: none;
-  }
-
-  body > footer > section:nth-of-type(2) {
-    width: 110vw;
-    border-radius: 5px;
-    box-shadow:  .1em .1em .3em rgb(0,0,0);
-  }
-
-  body {
-    width: 110vw;
-    margin: 8px;
-  }
-
-  body > main > section:nth-of-type(1) > img {
-    margin-left: 10vw;
-  }
-}
-
-/*------------------------------------*/
-@media only screen and (max-height: 415px) {
-  body > header {
-    display: none;
-  }
-
-  body > section > ul {
-    display: block;
-    list-style: none;
-    font-family: "Karla";
-    font-size: 20px;
-    visibility: visible;
-    position: fixed;
-    top: -157px;
-    width: 200px;
-    background: hsla(12, 95%, 47%, 0.93);
-    color: white;
-    margin: 0 0 0 0;
-    padding: 0.1em 0.1em 0.1em .1em;
-    transition: 1s;
-    height: auto;
-    z-index: 9;
-    border-radius: 0em 0em .5em .5em;
-    box-shadow:  .1em .1em .3em #000;
-    right: 5%;
-  }
-    /* on hover, menu moves down to reveal list items */
-    body > section > ul:hover {
-      top: -3px;
-    }
-
-    /* on hover, menu moves down to reveal list items */
-    body > section > ul:active {
-      top: -3px;
-    }
-
-    /* setting color of list items to match the color of the sand in the logo */
-    body > section > ul > li {
+   /* setting color of list items to match the color of the sand in the logo */
+   body > section > ul > li {
       padding: 2px;
       margin: 2px;
       visibility: visible;
       color: rgb(250, 245, 198);
-    }
+   }
 
-    /* set the styling of the links in the dropdown menu */
-    body > section > ul > li > a {
+   /* setting styling of wheelchair bullets in the menu */
+   body > section > ul > li > span {
+      padding: 2px;
+      margin: 2px;
+      margin-right: 10px;
+      color: rgb(250, 245, 198);
+      font-size: 18px;
+   }
+
+   /* set the styling of the links in the dropdown menu */
+   body > section > ul > li > a {
       text-decoration: none;
       color: rgb(250, 245, 198);
       font-family: "Karla";
       font-size: 19px;
-    }
+   }
 
-    /* link styling (for the dropdown menu) (line underneath link) */
-    body > section > ul > li > a:before {
+   /* set the styling of the links in the dropdown menu upon hover */
+   body > section > ul > li > a:hover {
+      font-size: 19px;
+      color: rgb(250, 245, 198);
+   }
+
+   /* link styling (for the dropdown menu) (line underneath link) */
+   body > section > ul > li > a:before {
       content: "";
       position: absolute;
       width: 100%;
@@ -944,34 +724,282 @@ body > main > section:nth-of-type(1) {
       -moz-transform: scaleX(0);
       -o-transform: scaleX(0);
       transform: scaleX(0);
-    }
+   }
 
-    /* set the styling of the links in the dropdown menu upon hover */
-    body > section > ul > li > a:hover {
-      font-size: 19px;
-      color: rgb(250, 245, 198);
-    }
-
-    /* center the word 'Menu' */
-    body > section > ul > li:nth-of-type(6) {
+   /* center the word 'Menu' */
+   body > section > ul > li:nth-of-type(6) {
       text-align: center;
-    }
+   }
 
-    /* styling the SH icon in the responsive menu */
-    body > section > ul > li:nth-child(6) > img {
+   /* styling the SH icon in the responsive menu */
+   body > section > ul > li:nth-child(6) > img {
       width: 33px;
       transform: translate(-20px, 5px);
-    }
+   }
+   /*---------------------------------------------------*/
 
-  body > main {
-    padding-top: 17px;
-  }
+   /* 2nd logo image styling -- scale hover magic */
+   body > header > section:nth-of-type(2) > figure:nth-child(1):hover {
+      width: 100%;
+      transform: translate(-42px, 0px);
+      transition: all 1.5s;
+   }
+
+   /* 2nd logo image styling -- scale hover magic backout */
+   body > header > section:nth-of-type(2) > figure:nth-child(1):not(:hover) {
+      width: 100%;
+      transition: all 1.5s;
+   }
+
+   /* The first section in main holds the flipping (animated) images */
+   body > main > section:nth-of-type(1) {
+      height: 35vw;
+   }
+}
+/**************************/
+/* really narrow screens  */
+/**************************/
+/*-----------------------------------------*/
+/*  491px <  device width < 640px wide     */
+/*-----------------------------------------*/
+@media only screen and (max-width: 640px) {
+   body > footer > section:nth-of-type(1) {
+      display: none;
+   }
+}
+
+/*-----------------------------------------*/
+/*  361px <  device width < 490px wide     */
+/*-----------------------------------------*/
+@media only screen and (max-width: 490px) {
+   body > footer > section:nth-of-type(1) {
+      display: none;
+      width: 0px;
+   }
+
+   body > footer > section:nth-of-type(3) {
+      display: none;
+      width: 0px;
+   }
+
+   /* copyright wording styling */
+   body > footer > section:nth-of-type(2) > ul > li:nth-of-type(5) {
+      font-size: 11px;
+      margin-top: 6px;
+      padding-left: 52px;
+   }
+
+   body > footer > section:nth-of-type(2) {
+      width: 96vw;
+      border-radius: 5px;
+      box-shadow: 0.1em 0.1em 0.3em rgb(0, 0, 0);
+   }
+
+   body > footer > section:nth-of-type(2) > ul > li {
+      padding-left: 4vw;
+      padding-right: 4vw;
+   }
+
+   body {
+      width: 96vw;
+      margin: 8px;
+   }
+
+   body > header {
+      display: none;
+   }
+
+   /* the responsive menu that's always lurking */
+   body > section > ul {
+      display: block;
+      list-style: none;
+      font-family: "Karla";
+      font-size: 21px;
+      visibility: visible;
+      position: fixed;
+      top: -177px;
+      background: hsla(12, 95%, 47%, 0.93);
+      color: white;
+      margin: 0 0 0 0;
+      padding: 0.1em 0.1em 0.1em 0.1em;
+      transition: 1s;
+      height: auto;
+      z-index: 9;
+      border-radius: 0.5em 0.5em 0.5em 0.5em;
+      box-shadow: 0.1em 0.1em 0.3em #000;
+      right: 5%;
+      padding-top: 20px;
+   }
+
+   /* on hover, menu moves down to reveal list items */
+   body > section > ul:hover {
+      top: -15px;
+   }
+
+   /* on hover, menu moves down to reveal list items */
+   body > section > ul:active {
+      top: -15px;
+   }
+
+   body > main {
+      padding-top: 33px;
+   }
+
+   body > main > section:nth-of-type(1) > img {
+      height: 32vw;
+      width: auto;
+      box-shadow: 0.1em 0.1em 0.3em #000;
+      margin-left: 4vw;
+   }
+}
+
+/*-----------------------------------------*/
+/*  321px <  device width < 361px wide     */
+/*-----------------------------------------*/
+@media only screen and (max-width: 361px) {
+   body > footer > section:nth-of-type(3) {
+      display: none;
+   }
+
+   body > footer > section:nth-of-type(2) {
+      width: 104vw;
+      border-radius: 5px;
+      box-shadow: 0.1em 0.1em 0.3em rgb(0, 0, 0);
+   }
+
+   body {
+      width: 104vw;
+      margin: 8px;
+   }
+
+   body > main > section:nth-of-type(1) > img {
+      margin-left: 7vw;
+   }
+}
+
+/*-----------------------------------------*/
+/*     device width < 321px wide           */
+/*-----------------------------------------*/
+@media only screen and (max-width: 321px) {
+   body > footer > section:nth-of-type(3) {
+      display: none;
+   }
+
+   body > footer > section:nth-of-type(2) {
+      width: 110vw;
+      border-radius: 5px;
+      box-shadow: 0.1em 0.1em 0.3em rgb(0, 0, 0);
+   }
+
+   body {
+      width: 110vw;
+      margin: 8px;
+   }
+
+   body > main > section:nth-of-type(1) > img {
+      margin-left: 10vw;
+   }
+}
+
+/*------------------------------------*/
+@media only screen and (max-height: 415px) {
+   body > header {
+      display: none;
+   }
+
+   body > section > ul {
+      display: block;
+      list-style: none;
+      font-family: "Karla";
+      font-size: 20px;
+      visibility: visible;
+      position: fixed;
+      top: -157px;
+      width: 200px;
+      background: hsla(12, 95%, 47%, 0.93);
+      color: white;
+      margin: 0 0 0 0;
+      padding: 0.1em 0.1em 0.1em 0.1em;
+      transition: 1s;
+      height: auto;
+      z-index: 9;
+      border-radius: 0em 0em 0.5em 0.5em;
+      box-shadow: 0.1em 0.1em 0.3em #000;
+      right: 5%;
+   }
+   /* on hover, menu moves down to reveal list items */
+   body > section > ul:hover {
+      top: -3px;
+   }
+
+   /* on hover, menu moves down to reveal list items */
+   body > section > ul:active {
+      top: -3px;
+   }
+
+   /* setting color of list items to match the color of the sand in the logo */
+   body > section > ul > li {
+      padding: 2px;
+      margin: 2px;
+      visibility: visible;
+      color: rgb(250, 245, 198);
+   }
+
+   /* set the styling of the links in the dropdown menu */
+   body > section > ul > li > a {
+      text-decoration: none;
+      color: rgb(250, 245, 198);
+      font-family: "Karla";
+      font-size: 19px;
+   }
+
+   /* link styling (for the dropdown menu) (line underneath link) */
+   body > section > ul > li > a:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: rgb(250, 245, 198);
+      visibility: hidden;
+
+      -webkit-transition: all 0.5s ease-in-out 0s;
+      -moz-transition: all 0.5s ease-in-out 0s;
+      -o-transition: all 0.5s ease-in-out 0s;
+      transition: all 0.5s ease-in-out 0s;
+
+      -webkit-transform: scaleX(0);
+      -moz-transform: scaleX(0);
+      -o-transform: scaleX(0);
+      transform: scaleX(0);
+   }
+
+   /* set the styling of the links in the dropdown menu upon hover */
+   body > section > ul > li > a:hover {
+      font-size: 19px;
+      color: rgb(250, 245, 198);
+   }
+
+   /* center the word 'Menu' */
+   body > section > ul > li:nth-of-type(6) {
+      text-align: center;
+   }
+
+   /* styling the SH icon in the responsive menu */
+   body > section > ul > li:nth-child(6) > img {
+      width: 33px;
+      transform: translate(-20px, 5px);
+   }
+
+   body > main {
+      padding-top: 17px;
+   }
 }
 
 /* noscript pixel */
 noscript > img {
-  height: 1px;
-  width: 1px;
-  display: none;
+   height: 1px;
+   width: 1px;
+   display: none;
 }
-
