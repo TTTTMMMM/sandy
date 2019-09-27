@@ -1,7 +1,8 @@
+/* eslint-disable quotes */
 // rentalAgents array maps rental agents to beaches (locations)
 // gets you to think about all the beaches an agent services
 
-let theBeaches = {
+const theBeaches = {
    ocmd: {
       beach: "Ocean City, MD",
       location: { lat: 38.3365, lng: -75.0849 },
@@ -266,10 +267,10 @@ export const rentalAgents = [
 
 // "swap" the beach and rental agents to set up for next step
 // gets you to think of all agents that service a beach
-let tempLocationRentals = [];
+const tempLocationRentals = [];
 rentalAgents.forEach(agent =>
    agent.locations.forEach(loc => {
-      let locRentalObject = {};
+      const locRentalObject = {};
       locRentalObject.beach = loc.beach;
       locRentalObject.rentalAgent = agent.agent;
       locRentalObject.phone = agent.phone;
@@ -281,16 +282,16 @@ rentalAgents.forEach(agent =>
 );
 
 //  now, this step makes the beach a key (therefore unique) and has each rental agent object as the value
-export let rentalAgentsKeyedByBeach = {};
+export const rentalAgentsKeyedByBeach = {};
 tempLocationRentals.map(locR => {
    if (rentalAgentsKeyedByBeach.hasOwnProperty(locR.beach)) {
       // this magical step checks to see if I've already seen this beach (think: counting word frequency problem)
-      let skinnyLocR = {};
+      const skinnyLocR = {};
       Object.assign(skinnyLocR, locR), // Object.assign(dest, src),
          delete skinnyLocR.beach; // don't need the name of the beach since it's the key of this array
       rentalAgentsKeyedByBeach[locR.beach].push(skinnyLocR);
    } else {
-      let skinnyLocR = {};
+      const skinnyLocR = {};
       Object.assign(skinnyLocR, locR);
       delete skinnyLocR.beach; // don't need the name of the beach since it's the key of this array
       rentalAgentsKeyedByBeach[locR.beach] = [skinnyLocR]; // note: this is an array of 1 object, not just an object
@@ -305,36 +306,36 @@ rentalAgentsKeyedByBeach["Ocean City, MD"].forEach( ra => {
 */
 
 /* create the html div element (infoWindow) that will be displayed by google maps when a SH icon is clicked */
-let theBeaches1 = Object.keys(rentalAgentsKeyedByBeach); // gets all the beaches so I can troll through them below
+const theBeaches1 = Object.keys(rentalAgentsKeyedByBeach); // gets all the beaches so I can troll through them below
 
-export let theIWArray = [];
+export const theIWArray = [];
 theBeaches1.forEach(b => {
-   let theIWDiv = document.createElement("div");
+   const theIWDiv = document.createElement("div");
    theIWDiv.classList.add("IWdiv");
    theIWDiv.style.visibility = "visible"; // this property allows me to toggle the infoWindow on the Google map
-   let theBeachName = document.createElement("p");
+   const theBeachName = document.createElement("p");
    theBeachName.classList.add("IWp");
    theBeachName.innerHTML = b;
    theIWDiv.appendChild(theBeachName);
    theIWDiv.style.fontFamily = "Josefin Sans, monotype";
-   let theRentalAgentsList = document.createElement("ul"); // the rental agents will be stored in an unordered list and displayed below the beach name
+   const theRentalAgentsList = document.createElement("ul"); // the rental agents will be stored in an unordered list and displayed below the beach name
    theRentalAgentsList.classList.add("IWul");
    theIWDiv.appendChild(theRentalAgentsList);
    rentalAgentsKeyedByBeach[b].forEach(ra => {
-      let theRentalAgentsListItemName = document.createElement("li"); // each rental agent will be an item on the unordered list
+      const theRentalAgentsListItemName = document.createElement("li"); // each rental agent will be an item on the unordered list
       theRentalAgentsListItemName.classList.add("IWliName");
       theRentalAgentsListItemName.style.fontFamily = "Josefin Sans, monotype";
       theRentalAgentsListItemName.innerHTML = ra.rentalAgent;
       theRentalAgentsList.appendChild(theRentalAgentsListItemName);
 
-      let theRentalAgentsListItemPhone = document.createElement("li"); // get the phone #
+      const theRentalAgentsListItemPhone = document.createElement("li"); // get the phone #
       theRentalAgentsListItemPhone.classList.add("IWliPhone");
       theRentalAgentsListItemPhone.style.fontFamily = "Josefin Sans, monotype";
       theRentalAgentsListItemPhone.innerHTML = ra.phone;
       theRentalAgentsList.appendChild(theRentalAgentsListItemPhone);
 
-      let theRentalAgentsListItemEmail = document.createElement("li"); // get the email address
-      let theEmailLink = document.createElement("a");
+      const theRentalAgentsListItemEmail = document.createElement("li"); // get the email address
+      const theEmailLink = document.createElement("a");
       theEmailLink.setAttribute("href", "mailto:" + ra.email);
       theEmailLink.innerHTML = ra.email;
       theRentalAgentsListItemEmail.appendChild(theEmailLink);
@@ -342,8 +343,8 @@ theBeaches1.forEach(b => {
       theRentalAgentsListItemEmail.style.fontFamily = "Josefin Sans, monotype";
       theRentalAgentsList.appendChild(theRentalAgentsListItemEmail);
 
-      let theRentalAgentsListItemURL = document.createElement("li"); // get the URL (make it a link that opens in a new tab)
-      let theWebsiteLink = document.createElement("a");
+      const theRentalAgentsListItemURL = document.createElement("li"); // get the URL (make it a link that opens in a new tab)
+      const theWebsiteLink = document.createElement("a");
       theWebsiteLink.setAttribute("href", ra.url);
       theWebsiteLink.setAttribute("target", "_blank");
       theWebsiteLink.innerHTML = "Info, Pricing and Reservations";
@@ -353,32 +354,32 @@ theBeaches1.forEach(b => {
       theRentalAgentsListItemURL.style.fontFamily = "Josefin Sans, monotype";
       theRentalAgentsList.appendChild(theRentalAgentsListItemURL);
 
-      let theRentalAgentsListItemNotes = document.createElement("li"); // grab the notes
+      const theRentalAgentsListItemNotes = document.createElement("li"); // grab the notes
       theRentalAgentsListItemNotes.classList.add("IWliNotes");
       theRentalAgentsListItemNotes.style.fontFamily = "Josefin Sans, monotype";
       theRentalAgentsListItemNotes.innerHTML = ra.notes;
       theRentalAgentsList.appendChild(theRentalAgentsListItemNotes);
    });
    theIWArray[b] = theIWDiv;
-   //console.log(`${theIWArray[b]}`);
+   // console.log(`${theIWArray[b]}`);
 });
 
 // Set up the array for the next Array.map() to create an object of beaches keyed by state
-let theBeachesInArrayForm = Object.keys(theBeaches).map(key => {
+const theBeachesInArrayForm = Object.keys(theBeaches).map(key => {
    return theBeaches[key];
 });
 //  now, this step makes the state a key (therefore unique) and has each beach name as the value
-export let theBeachesKeyedByState = {};
+export const theBeachesKeyedByState = {};
 theBeachesInArrayForm.map(w => {
    if (theBeachesKeyedByState.hasOwnProperty(w.state)) {
       // this magical step checks to see if I've already seen this beach (think: counting word frequency problem)
-      let skinnyBeach = {};
+      const skinnyBeach = {};
       Object.assign(skinnyBeach, w); // Object.assign(dest, src);
       delete skinnyBeach.location; // don't need the location coordinates
       delete skinnyBeach.state; // don't need the name of the state since it's the key of this array
       theBeachesKeyedByState[w.state].push(skinnyBeach);
    } else {
-      let skinnyBeach = {};
+      const skinnyBeach = {};
       Object.assign(skinnyBeach, w);
       delete skinnyBeach.location; // don't need the location coordinates
       delete skinnyBeach.state; // don't need the name of the state since it's the key of this array

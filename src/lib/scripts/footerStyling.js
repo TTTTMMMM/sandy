@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 import madeinUSA from "./../images/madeinusaparts.png";
 import mastercard from "./../images/mastercard.png";
 import visa from "./../images/visa.png";

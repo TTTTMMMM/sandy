@@ -1,5 +1,6 @@
 // All the FAQ 'Qs' and 'As' are stored in an array of objects, each object having a question and answer attribute
 
+// eslint-disable-next-line camelcase
 export const q_and_A = [
    {
       question: `Where do I store the scooter during my multi-day rental period?`,

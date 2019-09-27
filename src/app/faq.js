@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 import "./../lib/styles/style.css";
 import "./../lib/styles/styleFaq.css";
 
@@ -64,7 +65,7 @@ const questionLinksArray = Array.from(questionLinks);
 
 /* plusMinus button hocus pocus */
 function morphTheButton(e) {
-   let theAnswer = this.parentElement.querySelector(
+   const theAnswer = this.parentElement.querySelector(
       ".accordion-container .accordion-content"
    ); // as seen from the plusMinus <button>
    if (theAnswer.style.opacity == 0) {
@@ -81,8 +82,8 @@ function morphTheButton(e) {
 /* this function toggles the answer (accordian-content) to the FAQ question   */
 /* the class name of the answer must be 'accordion-content'                   */
 function toggleAccordionContent(e) {
-   let theAnswer = this.parentElement.querySelector(".accordion-content"); // as seen from the question <a> tag
-   let theButton = this.parentElement.parentElement.querySelector("button"); // as seen from the question <a> tag
+   const theAnswer = this.parentElement.querySelector(".accordion-content"); // as seen from the question <a> tag
+   const theButton = this.parentElement.parentElement.querySelector("button"); // as seen from the question <a> tag
 
    if (theAnswer.style.opacity == 0) {
       theAnswer.style.maxHeight = "500px";

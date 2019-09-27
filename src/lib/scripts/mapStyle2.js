@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 export const mapStyle2 = [
    {
       featureType: "all",

@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 import fbImage from "./../images/facebook.png";
 import longMascot from "./../images/longMascot.png";
 import shortMascot from "./../images/shortMascot.png";

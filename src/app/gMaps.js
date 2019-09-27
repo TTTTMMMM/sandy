@@ -1,8 +1,9 @@
+/* eslint-disable new-cap */
+/* eslint-disable quotes */
 import "./../lib/styles/style.css";
 import "./../lib/styles/styleGMaps.css";
 import "../lib/scripts/headerStyling.js";
 import "../lib/scripts/footerStyling.js";
-import { api_key } from "../lib/scripts/apikey.js";
 import { rentalAgents } from "../lib/scripts/rentalAgents.js";
 import { rentalAgentsKeyedByBeach } from "../lib/scripts/rentalAgents.js";
 import { mapStyle1 } from "../lib/scripts/mapStyle1.js";
@@ -16,13 +17,13 @@ import style1Map from "./../lib/images/style1Map.png";
 
 // console.log(`${Object.keys(theBeachesKeyedByState)[1]}: ${JSON.stringify(theBeachesKeyedByState[Object.keys(theBeachesKeyedByState)[1]])}`);
 
-var map;
-var vabeach = { lat: 36.5, lng: -75.9 };
-var ocmd = { lat: 38.5, lng: -75.04 };
-var joiseyShore = { lat: 39.41, lng: -74.6 };
-var ncBeaches = { lat: 34.0, lng: -78.35 };
+let map;
+const vabeach = { lat: 36.5, lng: -75.9 };
+const ocmd = { lat: 38.5, lng: -75.04 };
+const joiseyShore = { lat: 39.41, lng: -74.6 };
+const ncBeaches = { lat: 34.0, lng: -78.35 };
 
-var EAST_COAST_BOUNDS = {
+const EAST_COAST_BOUNDS = {
    north: 42.0,
    south: 30.0,
    west: -80.0,
@@ -35,11 +36,11 @@ document.querySelector("#style2").src = style2Map;
 document.querySelector("#style3").src = style3Map;
 
 function CenterControl(controlDiv, map, cityName, latlng, zLevel) {
-   let controlUI = document.createElement("div");
+   const controlUI = document.createElement("div");
    controlUI.classList.add("dOuter");
    controlDiv.appendChild(controlUI);
 
-   let controlText = document.createElement("div");
+   const controlText = document.createElement("div");
    controlText.classList.add("dInner");
    controlText.innerHTML = cityName;
    controlText.style.fontFamily = "Josefin Sans, monotype";
@@ -52,11 +53,11 @@ function CenterControl(controlDiv, map, cityName, latlng, zLevel) {
 }
 
 function anotherControl(controlDiv) {
-   let controlUI = document.createElement("div");
+   const controlUI = document.createElement("div");
    controlUI.classList.add("dInstructionOuter");
    controlDiv.appendChild(controlUI);
 
-   let controlText = document.createElement("div");
+   const controlText = document.createElement("div");
    controlText.classList.add("dInstructionInner");
    controlText.innerHTML = `Click on icons`;
    controlText.style.fontFamily = "Josefin Sans, monotype";
@@ -77,20 +78,20 @@ function initMap() {
    });
 
    // Put 4 Buttons on the Google map that automatically zoom to the beach
-   let centerControlDiv1 = document.createElement("div");
+   const centerControlDiv1 = document.createElement("div");
    CenterControl(centerControlDiv1, map, "Jersey Shore", joiseyShore, 9);
 
-   let centerControlDiv2 = document.createElement("div");
+   const centerControlDiv2 = document.createElement("div");
    CenterControl(centerControlDiv2, map, "Maryland/Delaware", ocmd, 9);
 
-   let centerControlDiv3 = document.createElement("div");
+   const centerControlDiv3 = document.createElement("div");
    CenterControl(centerControlDiv3, map, "Virginia Beach/OBX", vabeach, 8);
 
-   let centerControlDiv4 = document.createElement("div");
+   const centerControlDiv4 = document.createElement("div");
    CenterControl(centerControlDiv4, map, "Carolina Beaches", ncBeaches, 9);
 
    // Put an "instructions" label on the map
-   let instructionControlDiv = document.createElement("div");
+   const instructionControlDiv = document.createElement("div");
    anotherControl(instructionControlDiv);
 
    // Put the two style-pickers on the map
@@ -139,8 +140,8 @@ function initMap() {
    });
 
    // This is the image that will be used for the google map markers, scaled appropriately
-   let url = `./longMascotIcon.png`;
-   let image = {
+   const url = `./longMascotIcon.png`;
+   const image = {
       url: url,
       scaledSize: new google.maps.Size(38, 38),
    };
@@ -150,21 +151,20 @@ function initMap() {
    rentalAgents.forEach(agent =>
       agent.locations.forEach(loc => {
          /* create a marker with the SH logo at every location based on rentalAgents[] */
-         let rentMarker = new google.maps.Marker({
+         const rentMarker = new google.maps.Marker({
             position: new google.maps.LatLng(loc.location),
             map: map,
             icon: image,
          });
 
          /* create an infoWindow, which shows when the markers are clicked  */
-         let contentString = theIWArray[loc.beach].outerHTML;
-         let iw = new google.maps.InfoWindow({
+         const contentString = theIWArray[loc.beach].outerHTML;
+         const iw = new google.maps.InfoWindow({
             content: contentString,
          });
 
          /* create the listener for each marker, which displays the infoWindow content when the marker is clicked */
          rentMarker.addListener("click", function() {
-            let theIWDiv = theIWArray[loc.beach];
             openInfoWindow ? openInfoWindow.close() : null;
             iw.open(map, rentMarker);
             openInfoWindow = iw;
@@ -238,7 +238,7 @@ theStates.forEach(s => {
       divAccordionContainer.appendChild(anchorButton);
       divAccordionContainer.appendChild(divAccordionContent);
       // Display Rental Agent Information below
-      //divAccordionContent.innerHTML = `${bb.beach} rental info here`;
+      // divAccordionContent.innerHTML = `${bb.beach} rental info here`;
       rentalAgentsKeyedByBeach[bb.beach].forEach(ra => {
          const divIWDiv = document.createElement("div");
          divIWDiv.classList.add("IWdiv");
@@ -248,22 +248,22 @@ theStates.forEach(s => {
          theRentalAgentsList.classList.add("IWul");
          divIWDiv.appendChild(theRentalAgentsList);
 
-         let theRentalAgentsListItemName = document.createElement("li"); // each rental agent will be an item on the unordered list
+         const theRentalAgentsListItemName = document.createElement("li"); // each rental agent will be an item on the unordered list
          theRentalAgentsListItemName.classList.add("IWliName");
          theRentalAgentsListItemName.style.fontFamily =
             "Josefin Sans, monotype";
          theRentalAgentsListItemName.innerHTML = ra.rentalAgent;
          theRentalAgentsList.appendChild(theRentalAgentsListItemName);
 
-         let theRentalAgentsListItemPhone = document.createElement("li"); // get the phone #
+         const theRentalAgentsListItemPhone = document.createElement("li"); // get the phone #
          theRentalAgentsListItemPhone.classList.add("IWliPhone");
          theRentalAgentsListItemPhone.style.fontFamily =
             "Josefin Sans, monotype";
          theRentalAgentsListItemPhone.innerHTML = ra.phone;
          theRentalAgentsList.appendChild(theRentalAgentsListItemPhone);
 
-         let theRentalAgentsListItemEmail = document.createElement("li"); // get the email address
-         let theEmailLink = document.createElement("a");
+         const theRentalAgentsListItemEmail = document.createElement("li"); // get the email address
+         const theEmailLink = document.createElement("a");
          theEmailLink.setAttribute("href", "mailto:" + ra.email);
          theEmailLink.innerHTML = ra.email;
          theRentalAgentsListItemEmail.appendChild(theEmailLink);
@@ -272,8 +272,8 @@ theStates.forEach(s => {
             "Josefin Sans, monotype";
          theRentalAgentsList.appendChild(theRentalAgentsListItemEmail);
 
-         let theRentalAgentsListItemURL = document.createElement("li"); // get the URL (make it a link that opens in a new tab)
-         let theWebsiteLink = document.createElement("a");
+         const theRentalAgentsListItemURL = document.createElement("li"); // get the URL (make it a link that opens in a new tab)
+         const theWebsiteLink = document.createElement("a");
          theWebsiteLink.setAttribute("href", ra.url);
          theWebsiteLink.setAttribute("target", "_blank");
          theWebsiteLink.innerHTML =
@@ -284,7 +284,7 @@ theStates.forEach(s => {
          theRentalAgentsListItemURL.style.fontFamily = "Josefin Sans, monotype";
          theRentalAgentsList.appendChild(theRentalAgentsListItemURL);
 
-         let theRentalAgentsListItemNotes = document.createElement("li"); // grab the notes
+         const theRentalAgentsListItemNotes = document.createElement("li"); // grab the notes
          theRentalAgentsListItemNotes.classList.add("IWliNotes");
          theRentalAgentsListItemNotes.style.fontFamily =
             "Josefin Sans, monotype";
@@ -304,8 +304,8 @@ const beachLinks = document.querySelectorAll(
 const beachLinksArray = Array.from(beachLinks);
 
 /* plusMinus button hocus pocus */
-function morphTheButton(e) {
-   let beachRentalInfo = this.parentElement.querySelector(
+function morphTheButton() {
+   const beachRentalInfo = this.parentElement.querySelector(
       ".accordion-container .accordion-content"
    ); // as seen from the plusMinus <button>
    if (beachRentalInfo.style.opacity == 0) {
@@ -321,9 +321,11 @@ function morphTheButton(e) {
 
 /* this function toggles the beach rental info                   */
 /* the class name of the rental info must be 'accordion-content' */
-function toggleAccordionContent(e) {
-   let beachRentalInfo = this.parentElement.querySelector(".accordion-content"); // as seen from the beach <a> tag
-   let theButton = this.parentElement.parentElement.querySelector("button"); // as seen from the beach <a> tag
+function toggleAccordionContent() {
+   const beachRentalInfo = this.parentElement.querySelector(
+      ".accordion-content"
+   ); // as seen from the beach <a> tag
+   const theButton = this.parentElement.parentElement.querySelector("button"); // as seen from the beach <a> tag
 
    if (beachRentalInfo.style.opacity == 0) {
       beachRentalInfo.style.maxHeight = "500px";

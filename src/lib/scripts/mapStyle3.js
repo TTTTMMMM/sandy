@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 export const mapStyle3 = [
    {
       featureType: "administrative",

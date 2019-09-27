@@ -1,3 +1,5 @@
+/* eslint-disable quotes */
+/* eslint-disable prefer-spread */
 // Facebook Pixel Code
 !(function(f, b, e, v, n, t, s) {
    if (f.fbq) return;
